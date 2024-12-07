@@ -9,27 +9,16 @@ caption {
 }
 h1 {
     font-weight: bold;
-    margin:0;
+    margin:0 auto;
     font-size: 666px;
     line-height: 0.9;
     font-family: sans;
+    text-align: center;
 }
 
 @media (max-width: 750px) {
     h1 {
-        font-size: 433px;
-    }
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 333px;
-    }
-}
-
-@media (max-width: 400px) {
-    h1 {
-        font-size: 210px;
+        font-size: calc(100vw / 1.6);
     }
 }
 
