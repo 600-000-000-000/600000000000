@@ -12,11 +12,11 @@ h1 {
     margin:0 auto;
     font-size: 666px;
     line-height: 0.9;
-    font-family: sans;
     text-align: center;
+    font-family: sans-serif;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1100px) {
     h1 {
         font-size: calc(100vw / 1.6);
     }
@@ -27,7 +27,7 @@ h2 {
     margin:0;
     font-size: 30px;
     line-height: 0.9;
-    font-family: sans;
+    font-family: sans-serif;
 }
 h3 {
   font-weight: bold;
@@ -40,24 +40,41 @@ section {
     padding: 24px;
     margin: 24px 0;
 }
+
 #team {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    max-width: 1400px;
-    margin: 24px auto;
+    gap: 24px;
+    max-width: 1029px;
+    margin: 0 auto;
 }
+
 .team {
-    padding: 24px;
-    margin: 24px;
-    color: orange;
+    aspect-ratio: 1 / 1;
     background: white;
-    box-sizing: border-box;
-    border-radius: 100%;
+    width: 327px;
+    border-radius: 50%;
+    align-content: center;
+
+    @media (max-width: 1100px) {
+        width: calc((100vw / 3) - 32px);
+    }
 }
+
+.team h2 {
+    color: #f7931a;
+    margin-bottom: 5px;
+
+    @media (max-width: 1100px) {
+        font-size: 22px;
+    }
+}
+
 .team img {
-    width: 210px;
+    /*margin-top: 25px;*/
+    /*width: 210px;*/
+    width: calc(80% - 50px);
+    margin: 25px 0 10px;
 }
 .team a:visited,
 .team a {
