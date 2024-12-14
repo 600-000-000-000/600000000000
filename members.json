@@ -1,0 +1,90 @@
+{
+    "nostr_url": "https://iris.to",
+    "members": [
+        {
+            "name": "dni",
+            "role": "CEO",
+            "img": "img/dni2.jpg",
+            "nostr": "dni@600.wtf"
+        },
+        {
+            "name": "nind",
+            "role": "CXO",
+            "img": "img/nind.jpg",
+            "nostr": "n@600.wtf"
+        },
+        {
+            "name": "michael1011",
+            "role": "CTO",
+            "img": "img/m2.png",
+            "nostr": "m@bol.tz"
+        },
+        {
+            "name": "sat",
+            "role": "CMO",
+            "img": "img/sat2.jpg",
+            "nostr": "sat@600.wtf"
+        },
+        {
+            "name": "flx",
+            "role": "CWO",
+            "img": "img/flx.jpg",
+            "nostr": "flx@600.wtf"
+        },
+        {
+            "name": "shillie",
+            "role": "CDO",
+            "img": "img/quillie2.jpg",
+            "nostr": "quillie@600.wtf"
+        },
+        {
+            "name": "derPeter21",
+            "role": "CSI",
+            "img": "img/p21.jpg",
+            "nostr": "derPeter21@600.wtf"
+        },
+        {
+            "name": "arbadacarba",
+            "role": "CMO",
+            "img": "img/arbadacarba.jpg",
+            "nostr": "arbadacarba@600.wtf"
+        },
+        {
+            "name": "janine",
+            "role": "CMO",
+            "img": "img/janine.jpg",
+            "nostr": "janine@600.wtf"
+        },
+        {
+            "name": "benarc",
+            "role": "CVO",
+            "img": "img/benarc.jpg",
+            "nostr": "ben@nostr.com"
+        },
+        {
+            "name": "tobo",
+            "role": "CDO",
+            "img": "img/tobo.jpg",
+            "nostr": "tobo@600.wtf"
+        },
+        {
+            "name": "r0cks1",
+            "role": "CAO",
+            "img": "img/r0cks1.jpg",
+            "nostr": "r0cks1@600.wtf"
+        },
+        {
+            "name": "Lightrider",
+            "role": "COO",
+            "img": "img/lightrider.png",
+            "nostr": "lightrider@600.wtf"
+        },
+        {
+            "name": "BlackCoffee",
+            "role": "CHO",
+            "img": "img/blackcoffee600bn.jpg",
+            "nostr": "bc@600.wtf"
+        }
+
+    ]
+}
