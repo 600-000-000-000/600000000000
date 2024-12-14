@@ -76,7 +76,6 @@
         }).then(response => {
             response.json().then((json => {
                 let team = document.getElementById("team");
-                console.log(json);
                 json.members.forEach(member => {
                     let div = document.createElement("div");
                     div.className = "team";
