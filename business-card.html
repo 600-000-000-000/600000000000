@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+    <meta charset="UTF-8">
+    <title>600 billion business card</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="keywords" value="600 Milliarden, 600.000.000.000, 600000000000, 600 billion">
+    <meta name="description" value="600.000.000.000 busness cards's">
+    <meta name="author" value="600.000.000.000 collective">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="600 000 000 000">
+    <meta property="og:description" content="600.000.000.000 bitcoin business card">
+    <meta property="og:image" content="https://600.wtf/img/600.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        #pdf, body {
+            text-align: center;
+        }
+        button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <div style="margin: 21px auto; width: 148mm;">
+        <div id="pdf" style="position: relative; width: 148mm; height: 105mm">
+            <div style="background-image:url(memes/eistuete_600.jpg);position:absolute;top:0;left:0;right:-1mm;bottom:0;"></div>
+        </div>
+    </div>
+    <button onclick="myPrint('pdf')">Print</button>
+    <script>
+        const opts = {
+            margin: 0,
+            filename: '600-billion-business-card.pdf',
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 2 },
+            jsPDF: {
+                <!-- hotfixes:["px_scaling"], -->
+                unit: 'mm',
+                format: 'a6',
+                orientation: 'landscape'
+            }
+
+        };
+        const myPrint = (el_id) => {
+            const element = document.getElementById(el_id);
+            const pdf = html2pdf(element, opts);
+            console.log(pdf);
+        }
+    </script>
+</body>
+</html>
