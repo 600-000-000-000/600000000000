@@ -84,7 +84,12 @@
             "role": "CHO",
             "img": "img/blackcoffee600bn.jpg",
             "nostr": "bc@600.wtf"
+        },
+        {
+            "name": "darren",
+            "role": "CIO",
+            "img": "img/darren.png",
+            "nostr": "darren@600.wtf"
         }
-
     ]
 }
