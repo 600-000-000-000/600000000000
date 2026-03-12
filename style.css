@@ -3,10 +3,15 @@ body {
     color: white;
     text-align: center;
     margin: 0 auto;
+    font-family: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
 }
+
 caption {
-    text-align:center;
+    text-align: center;
 }
+
 h1 {
     font-weight: bold;
     margin: 86px 0;
@@ -30,17 +35,21 @@ h1 {
 }
 
 h2 {
-    font-weight: bold;
-    margin:0;
+    font-weight: 800;
+    margin: 0 0 10px;
     font-size: 30px;
-    line-height: 0.9;
-    font-family: sans-serif;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
+
 h3 {
-  font-weight: bold;
-  color: #333;
-  margin: 0;
-  font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.3;
 }
 
 section {
@@ -74,47 +83,62 @@ section {
 }
 
 .team img {
-    /*margin-top: 25px;*/
-    /*width: 210px;*/
     width: calc(80% - 50px);
     margin: 25px 0 10px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
+
 .team a:visited,
 .team a {
     color: #333;
 }
 
 p {
-  margin-top: 0;
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 17px;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
 }
 
 #team img {
     border-radius: 100%;
 }
+
 #memes img {
     width: 25%;
     padding: 21px;
     object-fit: contain;
 }
+
 #memes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
+
 ul {
-    margin:0;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
+
 i {
     font-size: 0.6em;
 }
 
-a, a:visited {
+a,
+a:visited {
     color: white;
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.14em;
+}
+
+a:hover {
+    text-decoration-style: wavy;
 }
 
 .frame {
@@ -124,6 +148,7 @@ a, a:visited {
     margin: 24px auto 0;
     overflow: hidden;
 }
+
 iframe {
     border: 20px solid black;
     width: 1200px;
@@ -144,6 +169,7 @@ iframe {
     flex-wrap: wrap;
     background: #222;
 }
+
 .ordinal {
     padding: 9px;
 }
@@ -199,6 +225,10 @@ iframe {
 
     .team h3 {
         font-size: 14px;
+    }
+
+    p {
+        font-size: 16px;
     }
 
     section {
@@ -257,6 +287,10 @@ iframe {
 
     .team h3 {
         font-size: 14px;
+    }
+
+    p {
+        font-size: 15px;
     }
 
     section {
