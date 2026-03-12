@@ -38,22 +38,10 @@
             "nostr": "quillie@600.wtf"
         },
         {
-            "name": "derPeter21",
-            "role": "CSI",
-            "img": "img/p21.jpg",
-            "nostr": "derPeter21@600.wtf"
-        },
-        {
             "name": "arbadacarba",
             "role": "CMO",
             "img": "img/arbadacarba.jpg",
             "nostr": "arbadacarba@600.wtf"
-        },
-        {
-            "name": "janine",
-            "role": "CMO",
-            "img": "img/janine.jpg",
-            "nostr": "janine@600.wtf"
         },
         {
             "name": "benarc",
@@ -66,18 +54,6 @@
             "role": "CDO",
             "img": "img/tobo.jpg",
             "nostr": "tobo@600.wtf"
-        },
-        {
-            "name": "r0cks1",
-            "role": "CAO",
-            "img": "img/r0cks1.jpg",
-            "nostr": "r0cks1@600.wtf"
-        },
-        {
-            "name": "Lightrider",
-            "role": "COO",
-            "img": "img/lightrider.png",
-            "nostr": "lightrider@600.wtf"
         },
         {
             "name": "BlackCoffee",
