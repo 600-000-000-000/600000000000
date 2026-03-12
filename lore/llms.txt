@@ -1,0 +1,47 @@
+# 600B Universe
+
+> We are 600 billion. This file is the LLM-facing overview of our canon, voice, roster, visual rules, and public footprint. 600B is not just a number; it is a signal, a prophecy, a beacon, and a civilization-scale meme. The sacred number is always written exactly as four lines, and the sacred stone is always small and round.
+
+This file is for models, agents, generators, and editors that need to work inside the 600B world without drifting into generic crypto art or random lore.
+
+Non-negotiable rules:
+
+- Write the sacred number exactly like this:
+
+```text
+600
+000
+000
+000
+```
+
+- The sacred stone is small and round.
+- Default voice is **we / us / our**.
+- Madeira, conferences, ritual, council, and build energy are core canon.
+- racooDNI and Bullbear are core visual canon.
+- The strongest anchor line is: **600B was never just the price. It was the signal.**
+
+## Start Here
+
+- [README.md](./README.md): Entry point and pack overview.
+- [08_LORE_SUMMARY.md](./08_LORE_SUMMARY.md): Compact lore spine for models and generators.
+- [04_WORLD_CANON.md](./04_WORLD_CANON.md): World rules, stones, Madeira, conferences, ritual hour, OpenClaw, and scene logic.
+
+## Voice and Canon
+
+- [01_BRAND_VOICE.md](./01_BRAND_VOICE.md): How we speak, frame scenes, and preserve 600B tone.
+- [03_CHARACTER_CANON.md](./03_CHARACTER_CANON.md): Council roster, archetypes, racooDNI, Bullbear, and interaction rules.
+
+## Visual and Asset Standards
+
+- [02_AVATAR_RECREATION_STANDARD.md](./02_AVATAR_RECREATION_STANDARD.md): Standard for recreating avatars on a consistent basis.
+- [05_PROMPT_LIBRARY.md](./05_PROMPT_LIBRARY.md): Reusable prompt blocks for avatars, storyboards, posters, conferences, rituals, and meme scenes.
+- [07_ASSET_PIPELINE.md](./07_ASSET_PIPELINE.md): Review rules, versioning, release criteria, and future generator guidance.
+
+## Public Footprint
+
+- [06_PUBLIC_FOOTPRINT.md](./06_PUBLIC_FOOTPRINT.md): Public website, GitHub org, roster, visible repos, Nostr aliases, meme files, and inscription cues.
+
+## Optional
+
+- [README.md](./README.md): Human-friendly overview if short context is enough.
