@@ -1,0 +1,13 @@
+{
+  "name": "600000000000-static",
+  "private": true,
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^25.5.0",
+    "typescript": "^5.9.3"
+  }
+}

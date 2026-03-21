@@ -388,3 +388,325 @@ iframe {
         width: 100px;
     }
 }
+
+.business-card-page {
+    --bc-color-bg: #f7931a;
+    --bc-color-paper: #f8f5f0;
+    --bc-color-ink: #222;
+    --bc-color-ink-soft: #333;
+    --bc-color-accent: #f7931a;
+    --bc-color-border: rgba(34, 34, 34, 0.14);
+    --bc-color-shadow: rgba(0, 0, 0, 0.2);
+    --bc-space-1: 6px;
+    --bc-space-2: 10px;
+    --bc-space-3: 14px;
+    --bc-space-4: 18px;
+    --bc-space-5: 24px;
+    --bc-space-6: 30px;
+    --bc-radius-soft: 12px;
+    --bc-radius-round: 999px;
+    background: radial-gradient(circle at top right, #ffc56e 0%, var(--bc-color-bg) 45%, #de7f00 100%);
+    color: var(--bc-color-paper);
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+}
+
+.business-card-page .business-card-layout {
+    width: min(1160px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: var(--bc-space-5) 0 var(--bc-space-6);
+    box-sizing: border-box;
+}
+
+.business-card-page .business-card-header {
+    margin-bottom: var(--bc-space-4);
+}
+
+.business-card-page .business-card-header h1 {
+    min-height: auto;
+    display: block;
+    margin: 0 0 var(--bc-space-2);
+    padding: 0;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Helvetica Neue Condensed Bold", sans-serif;
+    font-size: clamp(42px, 11vw, 98px);
+    line-height: 0.92;
+    word-spacing: normal;
+    text-align: left;
+}
+
+.business-card-page .business-card-header p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.business-card-page .business-card-status,
+.business-card-page .business-card-error {
+    margin: 0 0 var(--bc-space-4);
+    padding: var(--bc-space-2) var(--bc-space-3);
+    border-radius: var(--bc-radius-soft);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(34, 34, 34, 0.2);
+    text-align: left;
+}
+
+.business-card-page .business-card-status[data-kind="success"] {
+    border-color: rgba(120, 255, 169, 0.5);
+}
+
+.business-card-page .business-card-status[data-kind="error"],
+.business-card-page .business-card-error {
+    border-color: rgba(255, 169, 122, 0.6);
+    background: rgba(122, 36, 10, 0.32);
+}
+
+.business-card-page .business-card-content {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr);
+    gap: var(--bc-space-5);
+    align-items: start;
+}
+
+.business-card-page .business-card-members,
+.business-card-page .business-card-preview-area {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: calc(var(--bc-radius-soft) + 6px);
+    padding: var(--bc-space-4);
+    box-shadow: 0 18px 40px var(--bc-color-shadow);
+}
+
+.business-card-page .business-card-members h2,
+.business-card-page .business-card-preview-area h2 {
+    margin: 0 0 var(--bc-space-3);
+    font-size: 28px;
+    color: #fff;
+}
+
+.business-card-page .business-card-grid {
+    display: grid;
+    gap: var(--bc-space-2);
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 3px;
+}
+
+.business-card-page .business-member-item {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    gap: var(--bc-space-2);
+    align-items: center;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--bc-radius-soft);
+    background: rgba(34, 34, 34, 0.44);
+    color: #fff;
+    padding: var(--bc-space-2);
+    text-align: left;
+    cursor: pointer;
+}
+
+.business-card-page .business-member-item:hover {
+    border-color: rgba(255, 255, 255, 0.72);
+}
+
+.business-card-page .business-member-item.is-selected {
+    border-color: #fff;
+    box-shadow: 0 0 0 2px rgba(247, 147, 26, 0.6);
+}
+
+.business-card-page .business-member-item img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.business-card-page .business-member-item-meta {
+    display: block;
+    min-width: 0;
+}
+
+.business-card-page .business-member-item-meta strong,
+.business-card-page .business-member-item-meta span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.business-card-page .business-member-item-meta strong {
+    font-size: 16px;
+}
+
+.business-card-page .business-member-item-meta span {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.business-card-page .business-card-preview-shell {
+    overflow-x: auto;
+    padding-bottom: var(--bc-space-1);
+}
+
+.business-card-page .business-preview-card {
+    width: 85mm;
+    height: 55mm;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: var(--bc-radius-soft);
+    border: 1px solid var(--bc-color-border);
+    background: linear-gradient(120deg, #fefefe 0%, var(--bc-color-paper) 62%, #f1e8d8 100%);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.26);
+    display: grid;
+    grid-template-columns: 31% 1fr;
+    color: var(--bc-color-ink);
+    overflow: hidden;
+}
+
+.business-card-page .business-preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.business-card-page .business-preview-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.2mm;
+    padding: 4.2mm;
+    min-width: 0;
+}
+
+.business-card-page .business-preview-meta h3 {
+    margin: 0;
+    color: var(--bc-color-ink);
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Helvetica Neue Condensed Bold", sans-serif;
+    letter-spacing: 0.18mm;
+    font-size: 7.2mm;
+    line-height: 0.95;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.business-card-page .business-preview-meta p {
+    margin: 0;
+    color: var(--bc-color-ink-soft);
+    font-size: 3.8mm;
+    line-height: 1.2;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.business-card-page .business-preview-meta a,
+.business-card-page .business-preview-meta a:visited {
+    color: #ce6700;
+    font-size: 3.4mm;
+    font-weight: 700;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.business-card-page .business-card-controls {
+    margin-top: var(--bc-space-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--bc-space-2);
+}
+
+.business-card-page .business-card-controls button {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--bc-radius-round);
+    padding: 12px 16px;
+    font-weight: 700;
+    font-size: 15px;
+    background: rgba(34, 34, 34, 0.85);
+    color: #fff;
+    cursor: pointer;
+}
+
+.business-card-page .business-card-controls button:hover {
+    background: #fff;
+    color: var(--bc-color-accent);
+}
+
+.business-card-page .business-card-controls button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+    .business-card-page .business-card-content {
+        grid-template-columns: 1fr;
+    }
+
+    .business-card-page .business-card-grid {
+        max-height: 38vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .business-card-page .business-card-layout {
+        width: calc(100% - 20px);
+        padding: var(--bc-space-4) 0;
+    }
+
+    .business-card-page .business-card-members,
+    .business-card-page .business-card-preview-area {
+        padding: var(--bc-space-3);
+    }
+
+    .business-card-page .business-card-controls button {
+        width: 100%;
+    }
+
+    .business-card-page .business-preview-card {
+        width: 100%;
+        max-width: 85mm;
+        aspect-ratio: 85 / 55;
+        height: auto;
+    }
+
+    .business-card-page .business-member-item {
+        grid-template-columns: 48px 1fr;
+    }
+
+    .business-card-page .business-member-item img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media print {
+    body.business-card-page {
+        background: #fff;
+        padding: 0;
+        margin: 0;
+    }
+
+    body.business-card-page * {
+        visibility: hidden;
+    }
+
+    body.business-card-page .business-preview-card,
+    body.business-card-page .business-preview-card * {
+        visibility: visible;
+    }
+
+    body.business-card-page .business-preview-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 85mm;
+        height: 55mm;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>600 000 000 000 - Business Card</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" value="Generate printable 600 member business cards in browser">
+</head>
+<body class="business-card-page">
+    <main class="business-card-layout">
+        <header class="business-card-header">
+            <h1>Business Card Export</h1>
+            <p>Select a member to preview a card, then export or print it when ready.</p>
+        </header>
+
+        <p class="business-card-status" id="business-card-status" data-testid="status-message" role="status" aria-live="polite">Loading members...</p>
+        <p class="business-card-error" id="business-card-error" data-testid="error-state" role="alert" hidden></p>
+
+        <section class="business-card-content" aria-label="Business card generator">
+            <div class="business-card-members" aria-label="Member selection">
+                <h2>Members</h2>
+                <div class="business-card-grid" id="business-member-grid" data-testid="member-grid" role="listbox" aria-label="Members"></div>
+            </div>
+
+            <div class="business-card-preview-area" aria-label="Card preview and export">
+                <h2>Live Preview</h2>
+                <div class="business-card-preview-shell">
+                    <article class="business-preview-card" id="business-preview-card" data-testid="preview-card" aria-label="Business card preview">
+                        <img id="business-preview-image" class="business-preview-image" alt="Selected member">
+                        <div class="business-preview-meta">
+                            <h3 id="business-preview-name"></h3>
+                            <p id="business-preview-role"></p>
+                            <a id="business-preview-nostr" target="_blank" rel="noopener noreferrer"></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="business-card-controls" data-testid="export-controls">
+                    <button id="business-export-button" data-testid="export-button" type="button">Export Selected PDF</button>
+                    <button id="business-print-button" data-testid="print-button" type="button">Print Fallback</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="vendor/html2pdf.bundle.min.js"></script>
+    <script>
+        (function () {
+            const CARD_WIDTH_MM = 85;
+            const CARD_HEIGHT_MM = 55;
+
+            const elements = {
+                status: document.getElementById("business-card-status"),
+                error: document.getElementById("business-card-error"),
+                grid: document.getElementById("business-member-grid"),
+                previewCard: document.getElementById("business-preview-card"),
+                previewImage: document.getElementById("business-preview-image"),
+                previewName: document.getElementById("business-preview-name"),
+                previewRole: document.getElementById("business-preview-role"),
+                previewNostr: document.getElementById("business-preview-nostr"),
+                exportButton: document.getElementById("business-export-button"),
+                printButton: document.getElementById("business-print-button")
+            };
+
+            const state = {
+                members: [],
+                selectedIndex: -1,
+                exporting: false,
+                blocked: true
+            };
+
+            function isValidMember(member) {
+                return Boolean(
+                    member &&
+                    typeof member.name === "string" && member.name.trim() &&
+                    typeof member.role === "string" && member.role.trim() &&
+                    typeof member.img === "string" && member.img.trim() &&
+                    typeof member.nostr === "string" && member.nostr.trim()
+                );
+            }
+
+            function normalizeMember(member) {
+                return {
+                    name: member.name.trim(),
+                    role: member.role.trim(),
+                    img: member.img.trim(),
+                    nostr: member.nostr.trim()
+                };
+            }
+
+            function getSelectedMember() {
+                if (state.selectedIndex < 0 || state.selectedIndex >= state.members.length) {
+                    return null;
+                }
+                return state.members[state.selectedIndex];
+            }
+
+            function setStatus(message, kind) {
+                elements.status.textContent = message;
+                elements.status.dataset.kind = kind || "info";
+            }
+
+            function showError(message) {
+                elements.error.hidden = false;
+                elements.error.textContent = message;
+                state.blocked = true;
+                updateControlState();
+            }
+
+            function clearError() {
+                elements.error.hidden = true;
+                elements.error.textContent = "";
+            }
+
+            function sanitizeFilename(value) {
+                return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "member";
+            }
+
+            function updateControlState() {
+                const hasSelection = Boolean(getSelectedMember());
+                const disable = state.blocked || state.exporting || !hasSelection;
+                const memberButtons = elements.grid.querySelectorAll(".business-member-item");
+
+                elements.exportButton.disabled = disable;
+                elements.printButton.disabled = state.blocked || !hasSelection;
+                elements.exportButton.textContent = state.exporting ? "Exporting..." : "Export Selected PDF";
+
+                memberButtons.forEach(function (button) {
+                    button.disabled = state.exporting;
+                });
+            }
+
+            function renderMemberGrid() {
+                elements.grid.innerHTML = "";
+
+                state.members.forEach(function (member, index) {
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "business-member-item";
+                    button.dataset.index = String(index);
+                    button.dataset.testid = "member-item";
+                    button.setAttribute("data-testid", "member-item");
+                    button.setAttribute("role", "option");
+                    button.setAttribute("aria-pressed", "false");
+
+                    const image = document.createElement("img");
+                    image.src = member.img;
+                    image.alt = member.name;
+
+                    const textWrap = document.createElement("span");
+                    textWrap.className = "business-member-item-meta";
+
+                    const name = document.createElement("strong");
+                    name.textContent = member.name;
+
+                    const role = document.createElement("span");
+                    role.textContent = member.role;
+
+                    textWrap.appendChild(name);
+                    textWrap.appendChild(role);
+                    button.appendChild(image);
+                    button.appendChild(textWrap);
+
+                    button.addEventListener("click", function () {
+                        selectMember(index);
+                    });
+
+                    elements.grid.appendChild(button);
+                });
+            }
+
+            function updateSelectedState() {
+                const nodes = elements.grid.querySelectorAll(".business-member-item");
+                nodes.forEach(function (node, index) {
+                    const isSelected = index === state.selectedIndex;
+                    node.classList.toggle("is-selected", isSelected);
+                    node.setAttribute("aria-pressed", String(isSelected));
+                });
+            }
+
+            function renderPreview(member) {
+                elements.previewName.textContent = member.name;
+                elements.previewRole.textContent = member.role;
+                elements.previewNostr.href = "https://njump.me/" + member.nostr;
+                elements.previewNostr.textContent = member.nostr;
+                elements.previewImage.src = member.img;
+                elements.previewImage.alt = member.name + " portrait";
+            }
+
+            async function waitForPreviewReady() {
+                const image = elements.previewImage;
+                const imageReady = image.complete && image.naturalWidth > 0;
+
+                if (!imageReady) {
+                    await new Promise(function (resolve) {
+                        const done = function () {
+                            window.clearTimeout(timeoutId);
+                            image.removeEventListener("load", done);
+                            image.removeEventListener("error", done);
+                            resolve();
+                        };
+                        const timeoutId = window.setTimeout(done, 2500);
+                        image.addEventListener("load", done, { once: true });
+                        image.addEventListener("error", done, { once: true });
+                    });
+                }
+
+                if (document.fonts && document.fonts.ready) {
+                    await document.fonts.ready.catch(function () {
+                        return undefined;
+                    });
+                }
+            }
+
+            async function exportSelectedCard(source) {
+                const member = getSelectedMember();
+
+                if (!member || state.blocked || state.exporting) {
+                    return;
+                }
+
+                state.exporting = true;
+                updateControlState();
+                setStatus("Preparing export for " + member.name + "...", "info");
+
+                try {
+                    await waitForPreviewReady();
+
+                    if (typeof window.html2pdf !== "function") {
+                        throw new Error("Missing local PDF exporter");
+                    }
+
+                    const filename = "business-card-" + sanitizeFilename(member.name) + ".pdf";
+                    await window.html2pdf()
+                        .set({
+                            margin: 0,
+                            filename: filename,
+                            image: { type: "jpeg", quality: 0.98 },
+                            html2canvas: { scale: 3, useCORS: true, backgroundColor: "#f8f5f0" },
+                            jsPDF: { unit: "mm", format: [CARD_WIDTH_MM, CARD_HEIGHT_MM], orientation: "landscape" }
+                        })
+                        .from(elements.previewCard)
+                        .save(filename);
+
+                    setStatus("Exported " + filename + ".", "success");
+                } catch (error) {
+                    setStatus("PDF export failed. Opened print fallback.", "error");
+                    window.print();
+                } finally {
+                    state.exporting = false;
+                    updateControlState();
+                }
+            }
+
+            function selectMember(index) {
+                if (state.exporting || index < 0 || index >= state.members.length) {
+                    return;
+                }
+
+                state.selectedIndex = index;
+                renderPreview(state.members[index]);
+                updateSelectedState();
+                state.blocked = false;
+                updateControlState();
+
+                setStatus("Selected " + state.members[index].name + ".", "info");
+            }
+
+            async function loadMembers() {
+                setStatus("Loading members...", "info");
+
+                try {
+                    const response = await fetch("members.json", {
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("members.json load failed with status " + response.status);
+                    }
+
+                    const json = await response.json();
+                    const members = Array.isArray(json && json.members) ? json.members.filter(isValidMember).map(normalizeMember) : [];
+
+                    if (!members.length) {
+                        state.members = [];
+                        renderMemberGrid();
+                        state.selectedIndex = -1;
+                        state.blocked = true;
+                        updateControlState();
+                        setStatus("No members available for export.", "error");
+                        showError("No valid members found in members.json.");
+                        return;
+                    }
+
+                    clearError();
+                    state.members = members;
+                    renderMemberGrid();
+                    selectMember(0);
+                    setStatus("Ready. Select a member to preview, then export or print the card.", "success");
+                } catch (error) {
+                    state.members = [];
+                    state.selectedIndex = -1;
+                    state.blocked = true;
+                    renderMemberGrid();
+                    updateControlState();
+                    setStatus("Could not load members data.", "error");
+                    showError("Failed to load members.json. Check that the file exists and is valid JSON.");
+                }
+            }
+
+            elements.previewImage.addEventListener("error", function () {
+                elements.previewImage.src = "img/600.png";
+                setStatus("Member image failed to load. Using fallback image.", "error");
+            });
+
+            elements.exportButton.addEventListener("click", function () {
+                void exportSelectedCard("manual");
+            });
+
+            elements.printButton.addEventListener("click", function () {
+                if (!getSelectedMember() || state.blocked) {
+                    return;
+                }
+                setStatus("Print dialog opened for selected card.", "info");
+                window.print();
+            });
+
+            updateControlState();
+            loadMembers();
+        })();
+    </script>
+</body>
+</html>
