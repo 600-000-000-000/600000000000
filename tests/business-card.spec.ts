@@ -33,22 +33,46 @@ function getValidMembers(): Member[] {
 }
 
 test("smoke load exposes grid, preview, and controls", async ({ page }) => {
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
   await expect(page.getByTestId("member-grid")).toBeVisible();
   await expect(page.getByTestId("preview-card")).toBeVisible();
+  await expect(page.getByTestId("theme-toggle")).toBeVisible();
+  await expect(page.getByTestId("theme-toggle")).not.toBeChecked();
+  await expect(page.getByTestId("preview-card")).toHaveAttribute("data-theme", "dark");
   await expect(page.getByTestId("export-controls")).toBeVisible();
   await expect(page.getByTestId("export-button")).toBeEnabled();
 });
 
+test("theme toggle switches card face between dark and light", async ({ page }) => {
+  await page.goto("/business-cards.html");
+
+  const toggle = page.getByTestId("theme-toggle");
+  const themeControls = page.getByTestId("theme-controls");
+  const previewCard = page.getByTestId("preview-card");
+
+  await expect(previewCard).toHaveAttribute("data-theme", "dark");
+  await expect(previewCard).not.toHaveClass(/is-light/);
+
+  await themeControls.click();
+  await expect(toggle).toBeChecked();
+  await expect(previewCard).toHaveAttribute("data-theme", "light");
+  await expect(previewCard).toHaveClass(/is-light/);
+
+  await themeControls.click();
+  await expect(toggle).not.toBeChecked();
+  await expect(previewCard).toHaveAttribute("data-theme", "dark");
+  await expect(previewCard).not.toHaveClass(/is-light/);
+});
+
 test("member count matches valid entries in members.json", async ({ page }) => {
   const validMembers = getValidMembers();
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
   await expect(page.getByTestId("member-item")).toHaveCount(validMembers.length);
 });
 
 test("default selection populates preview content", async ({ page }) => {
   const validMembers = getValidMembers();
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
 
   await expect(page.locator('[data-testid="member-item"]').first()).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("#business-preview-name")).toHaveText(validMembers[0].name);
@@ -58,7 +82,7 @@ test("default selection populates preview content", async ({ page }) => {
 
 test("clicking a member changes selected state without triggering a PDF download", async ({ page }) => {
   const validMembers = getValidMembers();
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
 
   const secondMember = page.locator('[data-testid="member-item"]').nth(1);
   let downloaded = false;
@@ -83,7 +107,7 @@ test("print fallback calls window.print exactly once", async ({ page }) => {
     };
   });
 
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
   await page.getByTestId("print-button").click();
 
   await expect.poll(async () => {
@@ -94,7 +118,7 @@ test("print fallback calls window.print exactly once", async ({ page }) => {
 });
 
 test("explicit export button downloads a non-empty PDF", async ({ page }) => {
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
 
   const [download] = await Promise.all([
     page.waitForEvent("download"),
@@ -114,8 +138,9 @@ test("explicit export button downloads a non-empty PDF", async ({ page }) => {
 
 test("member clicks are ignored while export is already running", async ({ page }) => {
   const validMembers = getValidMembers();
+  const livePreviewName = page.getByTestId("preview-card").first().locator("#business-preview-name");
 
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
 
   await page.evaluate(() => {
     const exporter = () => {
@@ -141,7 +166,7 @@ test("member clicks are ignored while export is already running", async ({ page 
 
   await expect(page.getByTestId("export-button")).toHaveText("Exporting...");
   await secondMember.click({ force: true });
-  await expect(page.locator("#business-preview-name")).toHaveText(validMembers[0].name);
+  await expect(livePreviewName).toHaveText(validMembers[0].name);
 
   await exportPromise;
   await expect(page.getByTestId("export-button")).toHaveText("Export Selected PDF");
@@ -156,7 +181,7 @@ test("fetch failure shows error state and disables export actions", async ({ pag
     });
   });
 
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
 
   await expect(page.getByTestId("error-state")).toBeVisible();
   await expect(page.getByTestId("export-button")).toBeDisabled();
@@ -172,7 +197,7 @@ test("empty member data shows error and no selectable members", async ({ page })
     });
   });
 
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
 
   await expect(page.getByTestId("error-state")).toBeVisible();
   await expect(page.getByTestId("member-item")).toHaveCount(0);
@@ -181,7 +206,7 @@ test("empty member data shows error and no selectable members", async ({ page })
 
 test("mobile viewport keeps core controls visible and interactive", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
 
   await expect(page.getByTestId("member-grid")).toBeVisible();
   await expect(page.getByTestId("export-button")).toBeVisible();
@@ -207,7 +232,7 @@ test("page load and export path have no uncaught console errors", async ({ page 
     }
   });
 
-  await page.goto("/business-card.html");
+  await page.goto("/business-cards.html");
   await Promise.all([
     page.waitForEvent("download"),
     page.getByTestId("export-button").click()

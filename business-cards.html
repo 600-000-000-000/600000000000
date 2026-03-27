@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>600 000 000 000 - Business Card</title>
+    <title>600 000 000 000 - Business Cards</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
     <link rel="stylesheet" href="style.css">
     <meta name="description" value="Generate printable 600 member business cards in browser">
@@ -11,11 +11,10 @@
 <body class="business-card-page">
     <main class="business-card-layout">
         <header class="business-card-header">
-            <h1>Business Card Export</h1>
+            <h1>Business Cards</h1>
             <p>Select a member to preview a card, then export or print it when ready.</p>
         </header>
 
-        <p class="business-card-status" id="business-card-status" data-testid="status-message" role="status" aria-live="polite">Loading members...</p>
         <p class="business-card-error" id="business-card-error" data-testid="error-state" role="alert" hidden></p>
 
         <section class="business-card-content" aria-label="Business card generator">
@@ -30,11 +29,24 @@
                     <article class="business-preview-card" id="business-preview-card" data-testid="preview-card" aria-label="Business card preview">
                         <img id="business-preview-image" class="business-preview-image" alt="Selected member">
                         <div class="business-preview-meta">
-                            <h3 id="business-preview-name"></h3>
-                            <p id="business-preview-role"></p>
-                            <a id="business-preview-nostr" target="_blank" rel="noopener noreferrer"></a>
+                            <span class="business-preview-brand">
+                                <img src="img/600.png" class="business-preview-brand-logo" alt="600 000 000 000 logo" loading="eager" decoding="sync">
+                            </span>
+                            <div class="business-preview-content">
+                                <p class="business-preview-kicker">600 000 000 000</p>
+                                <h3 id="business-preview-name"></h3>
+                                <p id="business-preview-role"></p>
+                                <a id="business-preview-nostr" target="_blank" rel="noopener noreferrer"></a>
+                            </div>
                         </div>
                     </article>
+                </div>
+                <div class="business-card-theme" data-testid="theme-controls">
+                    <label class="business-card-theme-toggle" for="business-theme-toggle">
+                        <input id="business-theme-toggle" data-testid="theme-toggle" type="checkbox" aria-label="Use light mode for card face">
+                        <span class="business-card-theme-segment business-card-theme-segment-dark" aria-hidden="true">Dark</span>
+                        <span class="business-card-theme-segment business-card-theme-segment-light" aria-hidden="true">Light</span>
+                    </label>
                 </div>
                 <div class="business-card-controls" data-testid="export-controls">
                     <button id="business-export-button" data-testid="export-button" type="button">Export Selected PDF</button>
@@ -51,7 +63,6 @@
             const CARD_HEIGHT_MM = 55;
 
             const elements = {
-                status: document.getElementById("business-card-status"),
                 error: document.getElementById("business-card-error"),
                 grid: document.getElementById("business-member-grid"),
                 previewCard: document.getElementById("business-preview-card"),
@@ -59,6 +70,7 @@
                 previewName: document.getElementById("business-preview-name"),
                 previewRole: document.getElementById("business-preview-role"),
                 previewNostr: document.getElementById("business-preview-nostr"),
+                themeToggle: document.getElementById("business-theme-toggle"),
                 exportButton: document.getElementById("business-export-button"),
                 printButton: document.getElementById("business-print-button")
             };
@@ -67,7 +79,8 @@
                 members: [],
                 selectedIndex: -1,
                 exporting: false,
-                blocked: true
+                blocked: true,
+                cardTheme: "dark"
             };
 
             function isValidMember(member) {
@@ -94,11 +107,6 @@
                     return null;
                 }
                 return state.members[state.selectedIndex];
-            }
-
-            function setStatus(message, kind) {
-                elements.status.textContent = message;
-                elements.status.dataset.kind = kind || "info";
             }
 
             function showError(message) {
@@ -129,6 +137,23 @@
                 memberButtons.forEach(function (button) {
                     button.disabled = state.exporting;
                 });
+            }
+
+            function applyCardTheme() {
+                const isLight = state.cardTheme === "light";
+                elements.previewCard.classList.toggle("is-light", isLight);
+                elements.previewCard.setAttribute("data-theme", state.cardTheme);
+                if (elements.themeToggle) {
+                    elements.themeToggle.checked = isLight;
+                }
+            }
+
+            function handleThemeToggle() {
+                if (!elements.themeToggle) {
+                    return;
+                }
+                state.cardTheme = elements.themeToggle.checked ? "light" : "dark";
+                applyCardTheme();
             }
 
             function renderMemberGrid() {
@@ -213,7 +238,40 @@
                 }
             }
 
-            async function exportSelectedCard(source) {
+            function createExportClone() {
+                const sourceRect = elements.previewCard.getBoundingClientRect();
+                const exportHost = document.createElement("div");
+                const exportCard = elements.previewCard.cloneNode(true);
+
+                exportHost.setAttribute("aria-hidden", "true");
+                exportHost.style.position = "fixed";
+                exportHost.style.left = "0";
+                exportHost.style.top = "0";
+                exportHost.style.width = "0";
+                exportHost.style.height = "0";
+                exportHost.style.overflow = "hidden";
+                exportHost.style.opacity = "0";
+                exportHost.style.pointerEvents = "none";
+                exportHost.style.zIndex = "-1";
+
+                exportCard.classList.add("is-exporting");
+                exportCard.style.width = sourceRect.width + "px";
+                exportCard.style.height = sourceRect.height + "px";
+
+                exportHost.appendChild(exportCard);
+                document.body.appendChild(exportHost);
+
+                return {
+                    card: exportCard,
+                    cleanup: function () {
+                        exportHost.remove();
+                    },
+                    width: Math.round(sourceRect.width),
+                    height: Math.round(sourceRect.height)
+                };
+            }
+
+            async function exportSelectedCard() {
                 const member = getSelectedMember();
 
                 if (!member || state.blocked || state.exporting) {
@@ -222,7 +280,8 @@
 
                 state.exporting = true;
                 updateControlState();
-                setStatus("Preparing export for " + member.name + "...", "info");
+
+                let exportNode = null;
 
                 try {
                     await waitForPreviewReady();
@@ -232,22 +291,36 @@
                     }
 
                     const filename = "business-card-" + sanitizeFilename(member.name) + ".pdf";
+                    exportNode = createExportClone();
+
                     await window.html2pdf()
                         .set({
                             margin: 0,
                             filename: filename,
                             image: { type: "jpeg", quality: 0.98 },
-                            html2canvas: { scale: 3, useCORS: true, backgroundColor: "#f8f5f0" },
+                            html2canvas: {
+                                scale: 3,
+                                useCORS: true,
+                                backgroundColor: null,
+                                x: 0,
+                                y: 0,
+                                scrollX: 0,
+                                scrollY: 0,
+                                width: exportNode.width,
+                                height: exportNode.height,
+                                windowWidth: exportNode.width,
+                                windowHeight: exportNode.height
+                            },
                             jsPDF: { unit: "mm", format: [CARD_WIDTH_MM, CARD_HEIGHT_MM], orientation: "landscape" }
                         })
-                        .from(elements.previewCard)
+                        .from(exportNode.card)
                         .save(filename);
-
-                    setStatus("Exported " + filename + ".", "success");
                 } catch (error) {
-                    setStatus("PDF export failed. Opened print fallback.", "error");
                     window.print();
                 } finally {
+                    if (exportNode) {
+                        exportNode.cleanup();
+                    }
                     state.exporting = false;
                     updateControlState();
                 }
@@ -263,13 +336,9 @@
                 updateSelectedState();
                 state.blocked = false;
                 updateControlState();
-
-                setStatus("Selected " + state.members[index].name + ".", "info");
             }
 
             async function loadMembers() {
-                setStatus("Loading members...", "info");
-
                 try {
                     const response = await fetch("members.json", {
                         headers: {
@@ -290,7 +359,6 @@
                         state.selectedIndex = -1;
                         state.blocked = true;
                         updateControlState();
-                        setStatus("No members available for export.", "error");
                         showError("No valid members found in members.json.");
                         return;
                     }
@@ -299,35 +367,36 @@
                     state.members = members;
                     renderMemberGrid();
                     selectMember(0);
-                    setStatus("Ready. Select a member to preview, then export or print the card.", "success");
                 } catch (error) {
                     state.members = [];
                     state.selectedIndex = -1;
                     state.blocked = true;
                     renderMemberGrid();
                     updateControlState();
-                    setStatus("Could not load members data.", "error");
                     showError("Failed to load members.json. Check that the file exists and is valid JSON.");
                 }
             }
 
             elements.previewImage.addEventListener("error", function () {
                 elements.previewImage.src = "img/600.png";
-                setStatus("Member image failed to load. Using fallback image.", "error");
             });
 
             elements.exportButton.addEventListener("click", function () {
-                void exportSelectedCard("manual");
+                void exportSelectedCard();
             });
 
             elements.printButton.addEventListener("click", function () {
                 if (!getSelectedMember() || state.blocked) {
                     return;
                 }
-                setStatus("Print dialog opened for selected card.", "info");
                 window.print();
             });
 
+            if (elements.themeToggle) {
+                elements.themeToggle.addEventListener("change", handleThemeToggle);
+            }
+
+            applyCardTheme();
             updateControlState();
             loadMembers();
         })();

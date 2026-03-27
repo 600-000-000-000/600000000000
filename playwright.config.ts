@@ -10,7 +10,7 @@ export default defineConfig({
   },
   webServer: {
     command: "python3 -m http.server 4173 --bind 127.0.0.1",
-    url: "http://127.0.0.1:4173/business-card.html",
+    url: "http://127.0.0.1:4173/business-cards.html",
     reuseExistingServer: !process.env.CI,
     timeout: 120000
   }
