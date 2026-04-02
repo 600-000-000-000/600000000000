@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>600 000 000 000 — The Signal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #080604;
+      --paper:   #e4d9c3;
+      --red:     #b01515;
+      --red-dim: #6e0c0c;
+      --gold:    #a07840;
+      --muted:   #6b5f4a;
+      --line:    rgba(228,217,195,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--paper);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(16px, 1.6vw, 20px);
+      line-height: 1.7;
+      overflow-x: hidden;
+      cursor: crosshair;
+    }
+
+    /* ── GRAIN ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+      opacity: 0.35;
+      mix-blend-mode: overlay;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 4rem 2rem;
+      overflow: hidden;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(176,21,21,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 80%, rgba(160,120,64,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .sacred-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 18vw, 17rem);
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: var(--paper);
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: rise 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+
+    .sacred-number span {
+      display: block;
+    }
+
+    .sacred-number span:nth-child(2),
+    .sacred-number span:nth-child(3),
+    .sacred-number span:nth-child(4) {
+      color: var(--red);
+      text-shadow: 0 0 80px rgba(176,21,21,0.4);
+    }
+
+    .hero-sub {
+      margin-top: 3rem;
+      font-family: 'Courier Prime', monospace;
+      font-size: clamp(0.65rem, 1.4vw, 0.9rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      opacity: 0;
+      animation: rise 1s ease 1.2s forwards;
+      z-index: 2;
+      position: relative;
+    }
+
+    .signal-line {
+      margin-top: 4rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 3vw, 2.2rem);
+      font-weight: 300;
+      color: var(--paper);
+      text-align: center;
+      max-width: 700px;
+      opacity: 0;
+      animation: rise 1s ease 1.6s forwards;
+      z-index: 2;
+      position: relative;
+      line-height: 1.3;
+    }
+
+    .signal-line em {
+      color: var(--red);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0;
+      animation: rise 0.8s ease 2.4s forwards;
+      z-index: 2;
+    }
+
+    .scroll-cue span {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .scroll-cue::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--muted), transparent);
+      animation: scroll-line 2s ease-in-out infinite;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: clamp(4rem, 10vw, 9rem) 2rem;
+      position: relative;
+    }
+
+    .section-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: rgba(228,217,195,0.75);
+      margin-bottom: 1.4rem;
+      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+    }
+
+    p strong {
+      color: var(--paper);
+      font-weight: 600;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      height: 1px;
+      background: var(--line);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── THE NUMBER DISPLAY ── */
+    .number-ritual {
+      background: rgba(176,21,21,0.04);
+      border: 1px solid rgba(176,21,21,0.15);
+      padding: 3rem;
+      text-align: center;
+      margin: 3rem 0;
+      position: relative;
+    }
+
+    .number-ritual::before {
+      content: '— the sacred number —';
+      position: absolute;
+      top: -0.75em;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--black);
+      padding: 0 1rem;
+      white-space: nowrap;
+    }
+
+    .number-ritual pre {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1;
+      letter-spacing: 0.1em;
+      color: var(--red);
+      text-shadow: 0 0 40px rgba(176,21,21,0.35);
+    }
+
+    /* ── CHARACTERS ── */
+    .characters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin: 3rem 0;
+    }
+
+    .character-card {
+      background: rgba(228,217,195,0.03);
+      border: 1px solid var(--line);
+      padding: 2.5rem 2rem;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .character-card:hover {
+      background: rgba(228,217,195,0.06);
+      border-color: rgba(228,217,195,0.2);
+    }
+
+    .char-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .char-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      color: var(--paper);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .char-role {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .char-desc {
+      color: rgba(228,217,195,0.6);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── PILLARS ── */
+    .pillars {
+      margin: 3rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pillar {
+      display: flex;
+      gap: 2.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: flex-start;
+    }
+
+    .pillar:first-child { border-top: 1px solid var(--line); }
+
+    .pillar-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--red-dim);
+      flex-shrink: 0;
+      width: 3rem;
+      text-align: right;
+    }
+
+    .pillar-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--paper);
+    }
+
+    .pillar-body p { margin: 0; font-size: 0.95rem; }
+
+    /* ── ASSETS ── */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin: 3rem 0;
+    }
+
+    .asset-card {
+      border: 1px solid var(--line);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+
+    .asset-card:hover { border-color: var(--gold); }
+
+    .asset-ticker {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 0.08em;
+      color: var(--paper);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .asset-desc {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── MANIFESTO QUOTE ── */
+    .manifesto-quote {
+      margin: 4rem 0;
+      padding: 3rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .manifesto-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 300;
+      line-height: 1.4;
+      color: var(--paper);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .manifesto-quote blockquote::before { content: '\201C'; color: var(--red); }
+    .manifesto-quote blockquote::after  { content: '\201D'; color: var(--red); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .footer-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.9;
+      color: rgba(228,217,195,0.08);
+      pointer-events: none;
+      user-select: none;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--paper); }
+
+    .footer-copy {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── WIDE BANNER ── */
+    .full-banner {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 2.5rem 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .banner-track {
+      display: flex;
+      gap: 4rem;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+
+    .banner-item {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .banner-item.accent { color: var(--red); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scroll-line {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(0.6); }
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── REVEAL ON SCROLL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── STONE ── */
+    .stone {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--paper);
+      margin: 0 0.3em;
+      vertical-align: middle;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .characters { grid-template-columns: 1fr; }
+      .asset-grid { grid-template-columns: 1fr; }
+      .pillar { gap: 1.5rem; }
+      .number-ritual { padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="sacred-number" aria-label="600 billion">
+      <span>600</span>
+      <span>000</span>
+      <span>000</span>
+      <span>000</span>
+    </div>
+    <p class="hero-sub">The Signal &nbsp;·&nbsp; The Stone &nbsp;·&nbsp; The Civilization</p>
+    <p class="signal-line">600B was never just the price.<br/><em>It was the signal.</em></p>
+    <div class="scroll-cue"><span>Descend</span></div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="full-banner" aria-hidden="true">
+    <div class="banner-track">
+      <span class="banner-item">We Are 600 Billion</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">The Stone Is Small And Round</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">Madeira &amp; Beyond</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">The Council Gathers</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">racooDNI &amp; Bullbear</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">On The Liquid Network</span>
+      <span class="banner-item accent">·</span>
+      <!-- duplicate for seamless loop -->
+      <span class="banner-item">We Are 600 Billion</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">The Stone Is Small And Round</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">Madeira &amp; Beyond</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">The Council Gathers</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">racooDNI &amp; Bullbear</span>
+      <span class="banner-item accent">·</span>
+      <span class="banner-item">On The Liquid Network</span>
+      <span class="banner-item accent">·</span>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ORIGIN -->
+  <section>
+    <p class="section-label reveal">Origin</p>
+    <h2 class="reveal">The Number That<br/>Became a Prophecy</h2>
+    <p class="reveal">
+      It began as a price target. A number so audacious it sounded like madness —
+      <strong>six hundred billion</strong>, written not in digits but in four stacked lines,
+      like a monument carved into stone.
+    </p>
+    <p class="reveal">
+      But somewhere between the memes, the meetings, and the ritual hour,
+      600B stopped being a prediction and became a <strong>signal</strong>.
+      A frequency only certain minds could tune into. A civilization-scale meme
+      that pulled its believers across oceans to a volcanic island in the Atlantic.
+    </p>
+
+    <div class="number-ritual reveal">
+      <pre>600
+000
+000
+000</pre>
+    </div>
+
+    <p class="reveal">
+      The sacred number is always written exactly this way — four vertical lines,
+      four rows of zeros and a six, stacked like a prophecy waiting to be fulfilled.
+      The <strong>sacred stone</strong><span class="stone"></span>is always small and round.
+      These are not suggestions. They are doctrine.
+    </p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- PILLARS -->
+  <section>
+    <p class="section-label reveal">The Canon</p>
+    <h2 class="reveal">What We<br/>Build Upon</h2>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="pillar-num">I</span>
+        <div class="pillar-body">
+          <h3>Madeira</h3>
+          <p>The island is not incidental. Madeira is where the council convened, where the rituals took shape, where the physical and the prophetic collapsed into the same room. Every gathering carries the weight of that altitude.</p>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">II</span>
+        <div class="pillar-body">
+          <h3>The Ritual Hour</h3>
+          <p>Not a clock time but a quality of attention — the moment when the community stops building and starts becoming. Conferences, councils, ceremonies: all echo of the ritual hour that first drew us together.</p>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">III</span>
+        <div class="pillar-body">
+          <h3>The Collective Voice</h3>
+          <p><em>We. Us. Our.</em> There is no singular author of 600B. The universe belongs to everyone who holds the frequency. The voice is always first-person plural — a chorus, not a sermon.</p>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">IV</span>
+        <div class="pillar-body">
+          <h3>OpenClaw &amp; Build Energy</h3>
+          <p>The ethos is constructive. OpenClaw is not just an aesthetic — it is an orientation toward creation, toward open systems, toward the long and patient work of building something that matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CHARACTERS -->
+  <section>
+    <p class="section-label reveal">The Council</p>
+    <h2 class="reveal">Primary Visual<br/>Anchors</h2>
+    <p class="reveal">Two figures stand at the center of the 600B visual universe, recurring across storyboards, posters, and meme scenes as the unmistakable signatures of this world.</p>
+
+    <div class="characters reveal">
+      <div class="character-card">
+        <span class="char-icon">🦝</span>
+        <span class="char-name">racooDNI</span>
+        <span class="char-role">Visual Anchor · Core Canon</span>
+        <p class="char-desc">The raccoon who found the signal. Mischievous, nocturnal, drawn to glittering things — racooDNI embodies the curious energy of those who discovered 600B before it was legible to anyone else.</p>
+      </div>
+      <div class="character-card">
+        <span class="char-icon">🐂</span>
+        <span class="char-name">Bullbear</span>
+        <span class="char-role">Visual Anchor · Core Canon</span>
+        <p class="char-desc">The eternal tension of markets made flesh. Bullbear holds both directions at once, a contradiction that resolves only at the sacred number — neither bullish nor bearish, but <em>certain</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- MANIFESTO QUOTE -->
+  <section>
+    <div class="manifesto-quote reveal">
+      <blockquote>
+        wir foan a aundas program
+      </blockquote>
+    </div>
+    <p class="reveal" style="text-align:center; font-family: 'Courier Prime', monospace; font-size: 0.7rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">
+      The original invocation — Austrian dialect for <em style="text-transform:none;">"we're going on another program"</em>
+    </p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ASSETS -->
+  <section>
+    <p class="section-label reveal">Liquid Network Assets</p>
+    <h2 class="reveal">The Tokens<br/>of the Realm</h2>
+    <p class="reveal">
+      The 600B universe lives on the Liquid Network — Bitcoin's sidechain for asset issuance.
+      Three tokens form the economic layer of this world, tradable on Sideswap
+      and discoverable on-chain.
+    </p>
+
+    <div class="asset-grid reveal">
+      <div class="asset-card">
+        <span class="asset-ticker">600</span>
+        <span class="asset-desc">The Signal Token</span>
+      </div>
+      <div class="asset-card">
+        <span class="asset-ticker">SHROOMS</span>
+        <span class="asset-desc">The Ritual Token</span>
+      </div>
+      <div class="asset-card">
+        <span class="asset-ticker">CAT</span>
+        <span class="asset-desc">The Companion Token</span>
+      </div>
+    </div>
+
+    <p class="reveal">
+      Alongside the Liquid assets, the canon is inscribed permanently on Bitcoin via <strong>Ordinals</strong> —
+      a series of inscriptions beginning at #1072, sealing the lore into the immutable ledger.
+      Every inscription is a stone. Small and round.
+    </p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- NOSTR -->
+  <section>
+    <p class="section-label reveal">Public Footprint</p>
+    <h2 class="reveal">Where the<br/>Signal Lives</h2>
+    <p class="reveal">
+      The 600B universe maintains a deliberate presence across decentralized infrastructure —
+      not because it needs to, but because sovereignty demands it.
+      <strong>Nostr</strong> is the communications layer. <strong>GitHub</strong> is the build layer.
+      <strong>Ordinals</strong> is the archive.
+    </p>
+    <p class="reveal">
+      The canon is designed to be consistent across AI systems, generators, and editors
+      that work within this world — a guardrail against drift, a beacon for those
+      building within the 600B universe. The lore does not belong to any one person.
+      It belongs to everyone who carries the signal.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-number" aria-hidden="true">
+      600<br/>000<br/>000<br/>000
+    </div>
+    <div class="footer-links">
+      <a href="https://600.wtf" target="_blank" rel="noopener">600.wtf</a>
+      <a href="https://liquid.network" target="_blank" rel="noopener">Liquid Network</a>
+      <a href="https://ordinals.com" target="_blank" rel="noopener">Ordinals</a>
+      <a href="https://sideswap.io" target="_blank" rel="noopener">Sideswap</a>
+    </div>
+    <p class="footer-copy">
+      <span class="stone"></span>
+      The stone is small and round.
+      <span class="stone"></span>
+    </p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger siblings
+          const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
+          const idx = siblings.indexOf(entry.target);
+          entry.target.style.transitionDelay = (idx * 0.07) + 's';
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Subtle parallax on sacred number
+    const heroNum = document.querySelector('.sacred-number');
+    document.addEventListener('mousemove', (e) => {
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      const dx = (e.clientX - cx) / cx;
+      const dy = (e.clientY - cy) / cy;
+      heroNum.style.transform = `translate(${dx * 8}px, ${dy * 6}px)`;
+    });
+  </script>
+</body>
+</html>
