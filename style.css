@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'Alfa Slab One';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('img/AlfaSlabOne-Regular.ttf') format('truetype');
+}
+
 body {
-    background: radial-gradient(circle at top right, #ffc56e 0%, #f7931a 45%, #de7f00 100%);
+    background: #f7931a;
     color: white;
     text-align: center;
     margin: 0 auto;
@@ -12,12 +20,12 @@ caption {
 }
 
 h1 {
-    font-weight: bold;
+    font-weight: 400;
     margin: 86px 0;
     font-size: 56vh;
-    line-height: 0.77;
+    line-height: 0.85;
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Alfa Slab One', serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -420,7 +428,7 @@ iframe {
     --bc-space-6: 30px;
     --bc-radius-soft: 12px;
     --bc-radius-round: 999px;
-    background: radial-gradient(circle at top right, #ffc56e 0%, var(--bc-color-bg) 45%, #de7f00 100%);
+    background: #f7931a;
     color: var(--bc-color-paper);
     margin: 0;
     min-height: 100vh;
