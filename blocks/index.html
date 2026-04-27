@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blocks</title>
+  <style>
+    @font-face {
+      font-family: 'Alfa Slab One';
+      font-style: normal;
+      font-weight: 400;
+      src: url('./AlfaSlabOne-Regular.ttf') format('truetype');
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #f7931a; overflow: hidden; }
+    canvas { display: block; }
+    #counter {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Anton', 'Alfa Slab One', sans-serif;
+      font-size: 21px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.08em;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <div id="counter">6 CUBES</div>
+  <script>
+    const canvas = document.getElementById('c');
+    const gl = canvas.getContext('webgl', { alpha: true, antialias: true });
+    const dpr = window.devicePixelRatio || 1;
+
+    let W = window.innerWidth, H = window.innerHeight;
+    let D = Math.min(W, H) * 3;
+    let FOCAL = Math.min(W, H) * 1.1;
+
+    // ── Shader helpers ──────────────────────────────────────────────────────
+    function compile(type, src) {
+      const s = gl.createShader(type);
+      gl.shaderSource(s, src); gl.compileShader(s); return s;
+    }
+    function program(vsrc, fsrc, binds = []) {
+      const p = gl.createProgram();
+      gl.attachShader(p, compile(gl.VERTEX_SHADER, vsrc));
+      gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fsrc));
+      binds.forEach(([i, n]) => gl.bindAttribLocation(p, i, n));
+      gl.linkProgram(p); return p;
+    }
+
+    // ── Line shader (wireframes + box) ──────────────────────────────────────
+    // CPU-projected 2D clip-space positions
+    const lineProg = program(`
+      attribute vec2 aPos;
+      void main() { gl_Position = vec4(aPos, 0.0, 1.0); }
+    `, `
+      precision mediump float;
+      uniform vec4 uColor;
+      void main() { gl_FragColor = uColor; }
+    `, [[0, 'aPos']]);
+
+    const uLineColor = gl.getUniformLocation(lineProg, 'uColor');
+
+    // ── Texture shader (floor text) ─────────────────────────────────────────
+    // World-space positions → GPU perspective division gives correct UV interp
+    const texProg = program(`
+      attribute vec3 aWorld;
+      attribute vec2 aUV;
+      uniform float uW, uH, uF;
+      varying vec2 vUV;
+      void main() {
+        float vz = aWorld.z + uF;
+        gl_Position = vec4(
+          (aWorld.x - uW * 0.5) * 2.0 * uF / uW,
+          -(aWorld.y - uH * 0.5) * 2.0 * uF / uH,
+          0.0,
+          vz
+        );
+        vUV = aUV;
+      }
+    `, `
+      precision mediump float;
+      uniform sampler2D uTex;
+      varying vec2 vUV;
+      void main() { gl_FragColor = texture2D(uTex, vUV); }
+    `, [[0, 'aWorld'], [1, 'aUV']]);
+
+    const uTexW = gl.getUniformLocation(texProg, 'uW');
+    const uTexH = gl.getUniformLocation(texProg, 'uH');
+    const uTexF = gl.getUniformLocation(texProg, 'uF');
+
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+    // ── Buffers ──────────────────────────────────────────────────────────────
+    const EDGES           = 12;
+    const BOX_VCOUNT      = EDGES * 2;
+    const FLOATS_PER_CUBE = EDGES * 2 * 2;
+
+    const boxVerts  = new Float32Array(BOX_VCOUNT * 2);
+    let   cubeVerts = new Float32Array(6 * FLOATS_PER_CUBE);
+
+    const boxBuf   = gl.createBuffer();
+    const cubeBuf  = gl.createBuffer();
+    const floorBuf = gl.createBuffer();
+
+    // ── Floor text texture ───────────────────────────────────────────────────
+    // Portrait texture: width maps to floor x-axis, height maps to floor z-axis (depth).
+    // Text is rotated -90° so it runs near→far along the depth of the floor.
+    const TEX_W = 1024, TEX_H = 2048;
+    const texCanvas = document.createElement('canvas');
+    texCanvas.width = TEX_W; texCanvas.height = TEX_H;
+    const tCtx = texCanvas.getContext('2d');
+    const floorTex = gl.createTexture();
+
+    function uploadFloorTex() {
+      gl.bindTexture(gl.TEXTURE_2D, floorTex);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texCanvas);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.generateMipmap(gl.TEXTURE_2D);
+    }
+
+    function drawFloorText() {
+      tCtx.clearRect(0, 0, TEX_W, TEX_H);
+      tCtx.fillStyle = 'rgba(255,255,255,0.88)';
+      tCtx.textAlign = 'center';
+      tCtx.textBaseline = 'middle';
+
+      // 4 lines top→bottom = far→near on the floor
+      const lines = ['600', '000', '000', '000'];
+
+      // Fit font to width; also ensure all 4 lines fit in height
+      let fs = 600;
+      tCtx.font = `400 ${fs}px "Alfa Slab One", serif`;
+      while (
+        (tCtx.measureText('000').width > TEX_W * 0.92 || fs * 4 * 1.1 > TEX_H) && fs > 10
+      ) {
+        fs -= 4;
+        tCtx.font = `400 ${fs}px "Alfa Slab One", serif`;
+      }
+
+      const lineH = TEX_H / 4;
+      lines.forEach((line, i) => {
+        tCtx.fillText(line, TEX_W / 2, lineH * i + lineH / 2);
+      });
+
+      uploadFloorTex();
+    }
+
+    // Reliable font loading via FontFace API
+    const alfaFont = new FontFace('Alfa Slab One', "url('./AlfaSlabOne-Regular.ttf')");
+    document.fonts.add(alfaFont);
+    drawFloorText(); // initial draw with fallback font
+    alfaFont.load().then(drawFloorText); // redraw once font is ready
+
+    // Floor quad (2 triangles covering bottom face y=H, full x/z extent)
+    // UV: near edge (z=0) → v=1 (text base), far edge (z=D) → v=0 (text top)
+    // so the text lies flat and reads correctly from the camera
+    const floorVerts = new Float32Array(6 * 5); // 6 verts × (x,y,z,u,v)
+    function updateFloorGeom() {
+      // Text quad: centred on the floor, 1/3 of full width and depth
+      const x0 = W / 3, x1 = 2 * W / 3;
+      const z0 = D / 3, z1 = 2 * D / 3;
+      floorVerts.set([
+        x0, H, z1,  0, 0,   // far-left
+        x1, H, z1,  1, 0,   // far-right
+        x1, H, z0,  1, 1,   // near-right
+        x0, H, z1,  0, 0,   // far-left
+        x1, H, z0,  1, 1,   // near-right
+        x0, H, z0,  0, 1,   // near-left
+      ]);
+      gl.bindBuffer(gl.ARRAY_BUFFER, floorBuf);
+      gl.bufferData(gl.ARRAY_BUFFER, floorVerts, gl.STATIC_DRAW);
+    }
+
+    // ── Cube geometry ────────────────────────────────────────────────────────
+    const CUBE_V = [
+      [-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],
+      [-1,-1, 1],[1,-1, 1],[1,1, 1],[-1,1, 1],
+    ];
+    const CUBE_E = [
+      [0,1],[1,2],[2,3],[3,0],
+      [4,5],[5,6],[6,7],[7,4],
+      [0,4],[1,5],[2,6],[3,7],
+    ];
+
+    // ── Rotation (in-place on tmp) ───────────────────────────────────────────
+    const tmp = new Float32Array(3);
+    function rotX(v, a) {
+      const c = Math.cos(a), s = Math.sin(a);
+      const y = v[1]*c - v[2]*s, z = v[1]*s + v[2]*c;
+      v[1] = y; v[2] = z;
+    }
+    function rotY(v, a) {
+      const c = Math.cos(a), s = Math.sin(a);
+      const x = v[0]*c + v[2]*s, z = -v[0]*s + v[2]*c;
+      v[0] = x; v[2] = z;
+    }
+
+    // CPU projection → clip space (for line shader)
+    function clipX(wx, wz) { return ((W/2 + (wx - W/2) * FOCAL / (wz + FOCAL)) / W) * 2 - 1; }
+    function clipY(wy, wz) { return 1 - ((H/2 + (wy - H/2) * FOCAL / (wz + FOCAL)) / H) * 2; }
+
+    // ── Physics ──────────────────────────────────────────────────────────────
+    function rand(a, b) { return a + Math.random() * (b - a); }
+
+    const CUBE_SIZE = Math.min(W, H) * 0.08;
+    const FRICTION  = 0.35;
+    const SPIN_DAMP = 0.998;
+    const MAX_SPIN  = 0.18;
+
+    function makeCube() {
+      const size = CUBE_SIZE;
+      const speed = rand(3.5, 7.0);
+      const angle = rand(0, Math.PI * 2);
+      return {
+        x: rand(size, W - size), y: rand(size, H - size), z: rand(size, D - size),
+        vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, vz: rand(-4.0, 4.0),
+        size,
+        ax: rand(0, Math.PI * 2), ay: rand(0, Math.PI * 2),
+        wx: rand(-0.012, 0.012),  wy: rand(-0.015, 0.015),
+      };
+    }
+
+    const cubes = Array.from({ length: 6 }, makeCube);
+
+    const counter = document.getElementById('counter');
+    function updateCounter() {
+      counter.textContent = cubes.length + (cubes.length === 1 ? ' CUBE' : ' CUBES');
+    }
+
+    function spawnCube() {
+      const size = CUBE_SIZE;
+      cubes.push({
+        x: W / 2, y: H / 2, z: D - size,
+        vx: rand(-1.5, 1.5), vy: rand(-1.5, 1.5), vz: rand(-7.0, -4.5),
+        size,
+        ax: rand(0, Math.PI * 2), ay: rand(0, Math.PI * 2),
+        wx: rand(-0.012, 0.012),  wy: rand(-0.015, 0.015),
+      });
+      const needed = cubes.length * FLOATS_PER_CUBE;
+      if (needed > cubeVerts.length) cubeVerts = new Float32Array(needed * 2);
+      updateCounter();
+    }
+    setInterval(spawnCube, 10000);
+
+    function resolveCollisions() {
+      for (let i = 0; i < cubes.length; i++) {
+        for (let j = i + 1; j < cubes.length; j++) {
+          const a = cubes[i], b = cubes[j];
+          const dx = b.x-a.x, dy = b.y-a.y, dz = b.z-a.z;
+          const dist2 = dx*dx + dy*dy + dz*dz;
+          const minD = a.size + b.size;
+          if (dist2 < minD*minD && dist2 > 0) {
+            const dist = Math.sqrt(dist2);
+            const nx = dx/dist, ny = dy/dist, nz = dz/dist;
+            const ov = (minD - dist) * 0.5;
+            a.x -= nx*ov; a.y -= ny*ov; a.z -= nz*ov;
+            b.x += nx*ov; b.y += ny*ov; b.z += nz*ov;
+            const rvx = a.vx-b.vx, rvy = a.vy-b.vy, rvz = a.vz-b.vz;
+            const dot = rvx*nx + rvy*ny + rvz*nz;
+            if (dot > 0) {
+              a.vx -= dot*nx; a.vy -= dot*ny; a.vz -= dot*nz;
+              b.vx += dot*nx; b.vy += dot*ny; b.vz += dot*nz;
+              const tvx = rvx-dot*nx, tvy = rvy-dot*ny, tvz = rvz-dot*nz;
+              const tv2 = tvx*tvx + tvy*tvy + tvz*tvz;
+              if (tv2 > 0.01) {
+                const Jf = FRICTION * dot / Math.sqrt(tv2);
+                const tx = nz*tvy - ny*tvz, ty = nx*tvz - nz*tvx;
+                const fa = Jf * 2.5 / a.size, fb = Jf * 2.5 / b.size;
+                a.wx = Math.max(-MAX_SPIN, Math.min(MAX_SPIN, a.wx + tx*fa));
+                a.wy = Math.max(-MAX_SPIN, Math.min(MAX_SPIN, a.wy + ty*fa));
+                b.wx = Math.max(-MAX_SPIN, Math.min(MAX_SPIN, b.wx + tx*fb));
+                b.wy = Math.max(-MAX_SPIN, Math.min(MAX_SPIN, b.wy + ty*fb));
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // ── Resize ───────────────────────────────────────────────────────────────
+    const px = new Float32Array(8), py = new Float32Array(8);
+
+    function resize() {
+      W = window.innerWidth; H = window.innerHeight;
+      D = Math.min(W, H) * 3; FOCAL = Math.min(W, H) * 1.1;
+      canvas.width  = W * dpr; canvas.height = H * dpr;
+      canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      updateFloorGeom();
+      gl.useProgram(texProg);
+      gl.uniform1f(uTexW, W); gl.uniform1f(uTexH, H); gl.uniform1f(uTexF, FOCAL);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // ── Draw loop ────────────────────────────────────────────────────────────
+    function draw() {
+      // Physics
+      for (const c of cubes) {
+        c.x += c.vx; c.y += c.vy; c.z += c.vz;
+        if (c.x < c.size)     { c.x = c.size;     c.vx *= -1; }
+        if (c.x > W - c.size) { c.x = W - c.size; c.vx *= -1; }
+        if (c.y < c.size)     { c.y = c.size;     c.vy *= -1; }
+        if (c.y > H - c.size) { c.y = H - c.size; c.vy *= -1; }
+        if (c.z < c.size)     { c.z = c.size;     c.vz *= -1; }
+        if (c.z > D - c.size) { c.z = D - c.size; c.vz *= -1; }
+        c.ax += c.wx; c.ay += c.wy;
+        c.wx *= SPIN_DAMP; c.wy *= SPIN_DAMP;
+      }
+      resolveCollisions();
+
+      gl.clear(gl.COLOR_BUFFER_BIT);
+
+      // 1 — Floor text (texture shader, world-space verts → GPU perspective)
+      gl.useProgram(texProg);
+      gl.bindBuffer(gl.ARRAY_BUFFER, floorBuf);
+      gl.enableVertexAttribArray(0);
+      gl.enableVertexAttribArray(1);
+      gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 5*4, 0);
+      gl.vertexAttribPointer(1, 2, gl.FLOAT, false, 5*4, 3*4);
+      gl.bindTexture(gl.TEXTURE_2D, floorTex);
+      gl.uniform1i(gl.getUniformLocation(texProg, 'uTex'), 0);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+
+      // 2 — Wireframes (line shader, CPU-projected clip-space verts)
+      gl.useProgram(lineProg);
+      gl.disableVertexAttribArray(1); // texProg's aUV slot — not used by lineProg
+
+      // Bounding box
+      let vi = 0;
+      const corners = [[0,0,0],[W,0,0],[W,H,0],[0,H,0],[0,0,D],[W,0,D],[W,H,D],[0,H,D]];
+      for (const [a, b] of CUBE_E) {
+        const [ax,ay,az] = corners[a], [bx,by,bz] = corners[b];
+        boxVerts[vi++] = clipX(ax,az); boxVerts[vi++] = clipY(ay,az);
+        boxVerts[vi++] = clipX(bx,bz); boxVerts[vi++] = clipY(by,bz);
+      }
+      gl.bindBuffer(gl.ARRAY_BUFFER, boxBuf);
+      gl.bufferData(gl.ARRAY_BUFFER, boxVerts, gl.DYNAMIC_DRAW);
+      gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+      gl.uniform4f(uLineColor, 1, 1, 1, 0.2);
+      gl.drawArrays(gl.LINES, 0, BOX_VCOUNT);
+
+      // Cubes
+      vi = 0;
+      for (const c of cubes) {
+        const ax = c.ax, ay = c.ay;
+        for (let i = 0; i < 8; i++) {
+          tmp[0] = CUBE_V[i][0]; tmp[1] = CUBE_V[i][1]; tmp[2] = CUBE_V[i][2];
+          rotX(tmp, ax); rotY(tmp, ay);
+          px[i] = clipX(c.x + tmp[0]*c.size, c.z + tmp[2]*c.size);
+          py[i] = clipY(c.y + tmp[1]*c.size, c.z + tmp[2]*c.size);
+        }
+        for (const [a, b] of CUBE_E) {
+          cubeVerts[vi++] = px[a]; cubeVerts[vi++] = py[a];
+          cubeVerts[vi++] = px[b]; cubeVerts[vi++] = py[b];
+        }
+      }
+      gl.bindBuffer(gl.ARRAY_BUFFER, cubeBuf);
+      gl.bufferData(gl.ARRAY_BUFFER, cubeVerts, gl.DYNAMIC_DRAW);
+      gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+      gl.uniform4f(uLineColor, 1, 1, 1, 1);
+      gl.drawArrays(gl.LINES, 0, cubes.length * EDGES * 2);
+
+      requestAnimationFrame(draw);
+    }
+
+    gl.clearColor(0, 0, 0, 0);
+    draw();
+  </script>
+</body>
+</html>
