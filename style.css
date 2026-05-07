@@ -401,6 +401,110 @@ iframe {
     }
 }
 
+#parties {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.party {
+    background: #222;
+    color: white;
+    padding: 32px 40px;
+    max-width: 520px;
+    width: 100%;
+    text-align: left;
+}
+
+.party h3 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    color: #f7931a;
+}
+
+.party-date {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 4px;
+    color: white;
+}
+
+.party-meta {
+    font-size: 14px;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    color: rgba(255,255,255,0.6);
+}
+
+.party-location {
+    font-size: 16px;
+    margin: 0 0 24px;
+}
+
+.party-location a,
+.party-location a:visited {
+    color: #f7931a;
+}
+
+.party-tickets {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.party-ticket {
+    border: 2px solid rgba(255,255,255,0.2);
+    padding: 12px 18px;
+    flex: 1;
+    min-width: 140px;
+}
+
+.party-ticket__price {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    color: #f7931a;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.party-ticket__info {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.6);
+}
+
+.party-cta {
+    display: inline-block;
+    background: #f7931a;
+    color: #222 !important;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 14px 28px;
+    text-decoration: none;
+}
+
+.party-cta:hover {
+    background: white;
+    color: #f7931a !important;
+}
+
 .business-card-page {
     --bc-color-bg: #f7931a;
     --bc-color-paper-hi: #fffdf9;
