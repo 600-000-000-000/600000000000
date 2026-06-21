@@ -68,9 +68,15 @@
             "nostr": "darren@600.wtf"
         },
         {
+            "name": "mhb",
+            "role": "CRO",
+            "img": "img/mhb.jpeg",
+            "nostr": "mhb@600.wtf"
+        },
+        {
             "name": "snick",
             "role": "CWO",
-            "img": "img/600.png",
+            "img": "img/snick.jpeg",
             "nostr": "snick@600.wtf"
         }
     ]
