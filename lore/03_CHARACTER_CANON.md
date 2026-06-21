@@ -120,6 +120,18 @@ Core visual: donkey on mountain summit, orange Bitcoin flag, binary sky.
 Full-body direction: 2D mascot can stay donkey. For game/VRM, use adult humanoid pathfinder
 with donkey companion and orange flag.
 
+### rootzoll - CDJ
+
+Archetype: DJ Honeybadger
+
+Core visual: honeybadger-coded DJ/operator, yellow safety helmet with wordless decals, black
+ear protection/headphones, glasses, sunny blue-sky worksite energy, record and record case.
+
+Full-body direction: adult humanoid honeybadger-coded DJ in yellow helmet with wordless decals,
+black headphones, glasses, utility jacket, one vinyl record in hand, record case at the side,
+warm cypherpunk worksite-meets-club energy, traditional craft/tool cues, fantasy road-crew
+presence, cute manga/toon readability.
+
 ### jedai - CIAO
 
 Archetype: Cypherpunk Strategist
@@ -177,7 +189,6 @@ Do not generate unique avatars until identity descriptions exist.
 
 | Name | Nickname | Role | Status | Generate unique avatar |
 |---|---|---|---|---|
-| rootzoll | | CDJ | active_placeholder | false |
 | nc | | CCC | active_placeholder | false |
 | longy | | CSO | active_placeholder | false |
 | essex | aaron of essex | CPO | active_placeholder | false |

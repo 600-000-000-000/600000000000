@@ -243,6 +243,28 @@ Preserve: donkey identity, mountain summit, orange flag, binary sky.
 
 Avoid: losing flag/summit cue, realistic donkey style, non-humanoid VRM output.
 
+### rootzoll
+
+- Website role: CDJ
+- Website image: `img/rootzoll.png`
+- Status: active
+- Generate: yes
+
+Image details extracted: smiling operator with yellow safety helmet, wordless decals on helmet,
+black ear protection/headphones, glasses, outdoor blue-sky worksite light, practical jacket.
+User-specified canon: DJ honeybadger with yellow helmet, vinyl record, and record case.
+
+Full-body standard: adult humanoid honeybadger-coded DJ/operator with yellow helmet using only
+wordless decals, black headphones, glasses, utility jacket, one vinyl record in hand, record
+case at the side, warm worksite-meets-club posture, cypherpunk field-tech details, traditional
+craft/tool cues, fantasy road-crew presence, cute manga/toon readability.
+
+Preserve: yellow helmet, headphones, glasses, smiling worksite energy, DJ record and record
+case, honeybadger coding.
+
+Avoid: any readable text, readable helmet decals, brand logos, generic construction worker only,
+record labels with text, replacing the humanoid body with a four-legged animal.
+
 ### jedai
 
 - Website role: CIAO
@@ -339,7 +361,6 @@ descriptions are provided.
 
 | Name | Nickname | Role | Image | Status | Generate unique avatar |
 |---|---|---|---|---|---|
-| rootzoll | | CDJ | `img/600.png` | active_placeholder | false |
 | nc | | CCC | `img/600.png` | active_placeholder | false |
 | longy | | CSO | `img/600.png` | active_placeholder | false |
 | essex | aaron of essex | CPO | `img/600.png` | active_placeholder | false |

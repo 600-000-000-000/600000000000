@@ -54,6 +54,7 @@ The stone is small, round, dense, and secondary unless requested otherwise.
 - tobo - Connector / Envoy
 - BlackCoffee - Shadow Operator
 - darren - Pathfinder
+- rootzoll - DJ Honeybadger
 - jedai - CIAO Strategist
 - Gadaj - Chief Kurwa Officer
 - mhb - Ritual Culture Carrier
@@ -63,7 +64,6 @@ The stone is small, round, dense, and secondary unless requested otherwise.
 
 Do not invent unique avatar identities yet:
 
-- rootzoll
 - nc
 - longy
 - essex

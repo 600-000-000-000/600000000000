@@ -147,6 +147,18 @@
       "avoid": ["losing flag/summit cue", "realistic donkey style", "non-humanoid VRM output"]
     },
     {
+      "name": "rootzoll",
+      "role": "CDJ",
+      "image": "img/rootzoll.png",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Smiling operator with yellow safety helmet, wordless decals on helmet, black ear protection/headphones, glasses, outdoor blue-sky worksite light, practical jacket. User-specified canon: DJ honeybadger with yellow helmet, vinyl record, and record case.",
+      "full_body_standard": "Adult humanoid honeybadger-coded DJ/operator with yellow helmet using only wordless decals, black headphones, glasses, utility jacket, one vinyl record in hand, record case at the side, warm worksite-meets-club posture, cypherpunk field-tech details, traditional craft/tool cues, fantasy road-crew presence, cute manga/toon readability.",
+      "preserve": ["yellow helmet", "headphones", "glasses", "smiling worksite energy", "DJ record and record case", "honeybadger coding"],
+      "avoid": ["any readable text", "readable helmet decals", "brand logos", "generic construction worker only", "record labels with text", "four-legged animal body"]
+    },
+    {
       "name": "jedai",
       "role": "CIAO",
       "image": "img/jedai.png",
@@ -199,7 +211,6 @@
     }
   ],
   "active_placeholders": [
-    {"name": "rootzoll", "role": "CDJ", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "nc", "role": "CCC", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "longy", "role": "CSO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "essex", "nickname": "aaron of essex", "role": "CPO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
