@@ -1,15 +1,33 @@
-# 02 — Avatar Recreation Standard
+# 02 - Avatar Recreation Standard
 
-We do not remake avatars randomly.
-We recreate them on a standard basis so the crew still looks like one world.
+We do not remake avatars randomly. We recreate them on a standard basis so the crew still looks
+like one world.
+
+Official active names come from:
+
+```text
+https://600.wtf/members.json
+```
+
+For current image-derived details, inactive flags, and full-body directions, use:
+
+- `09_AVATAR_CHARACTER_REFERENCE.md`
+- `avatar_character_catalog.json`
 
 ## Objective
 
-Given an existing avatar or concept image, we recreate a cleaner, sharper, more canonical 600B version without losing the member's identity.
+Given an existing avatar or concept image, recreate a cleaner, sharper, more canonical 600B
+version without losing the member's identity.
 
-## Output target
+## Status Rules
 
-Default avatar output:
+- `active`: listed on the live website and has a unique avatar reference.
+- `active_placeholder`: listed on the live website but uses `img/600.png`; do not generate a
+  unique avatar until identity details exist.
+- `inactive`: local image exists, but the name is not on the live website roster; do not
+  generate.
+
+## 2D Avatar Output
 
 - 1:1 square master
 - optimized for circular crop
@@ -20,65 +38,85 @@ Default avatar output:
 
 Recommended export sizes:
 
-- master: 2048 × 2048
-- web: 1024 × 1024
-- small fallback: 512 × 512
+- master: 2048 x 2048
+- web: 1024 x 1024
+- small fallback: 512 x 512
 
-## Circle-safe composition
+## Full-Body Output
 
-We assume the website crops to a circle.
-So we keep:
+- adult character, head to toe visible
+- clean silhouette suitable for later humanoid rigging
+- original avatar cue preserved before adding extra lore
+- neutral standing pose, calm hero pose, or one readable signature gesture
+- 600B palette and object language visible but not cluttered
+- cypherpunk, traditional/old-world craft, fantasy, cute manga/toon style blend
+- no readable text anywhere on the avatar image
 
-- face / helmet / main symbol inside the central 70–75%
+For animal-coded avatars, use a riggable humanoid game body with the animal identity as mask,
+head styling, outfit, companion, or mascot layer unless the request is explicitly 2D mascot art.
+
+## Circle-Safe Composition
+
+The website crops avatars to a circle. Keep:
+
+- face, helmet, or main symbol inside the central 70-75 percent
 - no critical details at the corners
 - background detail visible but not required for recognition
 
-## Canon avatar recipe
+## Canon Avatar Recipe
 
 Each avatar should contain these layers:
 
-### 1. Identity layer
+### 1. Identity Layer
+
 What makes this character unmistakably theirs?
 
 Examples:
 
-- monk silhouette
+- hooded signal bearer
+- architectural dome/grid
+- engineer monk
 - astronaut helmet
-- wizard beard
-- raccoon face
-- cowboy hat
-- winged energy form
-- dark knight armor
-- donkey flag bearer
+- Bullbear guardian armor
+- sunglasses and orange halo
+- dark coffee operator armor
+- donkey/pathfinder flag
+- honeybadger or badger styling
 
-### 2. Role layer
-What do they do in the council?
+### 2. Role Layer
 
-Examples:
+What do they do in the current website roster?
 
-- architect
-- signal amplifier
-- pathfinder
-- shadow operator
-- chaos engineer
+Use the role label from `members.json`, but do not write it into the image.
 
-### 3. 600B layer
+### 3. 600B Layer
+
 What ties them to the universe?
 
 Examples:
 
-- sacred number in correct format
+- wordless orange disk or abstract stacked glyph
 - small round stone
 - orange glow
-- bitcoin medallion
-- ember / lightning energy
-- conference / Madeira / storm / workshop cues
+- wordless medallion
+- ember/lightning energy
+- workshop, conference, party, or Palace cue
 
-## Hard visual rules
+## Hard Visual Rules
 
-### The number
+Avatar images must contain no readable text at all:
 
-When the sacred number is visible, it is always:
+- no names
+- no handles
+- no role labels
+- no cap or clothing labels
+- no readable signs
+- no readable numbers
+- no written 600B marks
+
+Use wordless symbols, abstract glyphs, silhouettes, costumes, posture, objects, and color instead.
+
+For non-avatar posters/story scenes, when the sacred number is visible, it is always:
 
 ```text
 600
@@ -87,113 +125,66 @@ When the sacred number is visible, it is always:
 000
 ```
 
-### The stone
-
-When we use the stone in an avatar, it is:
+When the stone appears, it is:
 
 - small
 - round
 - readable
-- secondary to the character face unless the role demands otherwise
+- secondary to the character face unless explicitly requested
 
-### Palette
+Team images follow the same no-readable-text avatar rule for people.
 
-Primary palette:
-
-- orange
-- gold
-- ember white
-- black
-- charcoal
-- volcanic brown
-
-Accent palette when needed:
-
-- electric blue
-- cyan
-- muted steel
-
-## Background rules
-
-Backgrounds should support identity, not drown it.
-
-Good backgrounds:
-
-- storm sky
-- forge glow
-- workshop
-- conference haze
-- volcanic cliff
-- library of smoke and light
-- cyberpunk control room
-
-Bad backgrounds:
-
-- random AI fantasy mush
-- busy crowd scenes for small avatars
-- flat empty gradients with no 600B character
-
-## Facial / figure rules
-
-We keep people visibly adult.
-We keep them strong, iconic, and readable.
-We do not let the model drift into off-brand youthfulness or random face swaps.
-
-## Prompt structure
-
-Use this structure every time:
+## Prompt Structure
 
 ```text
-Create a 1:1 circular-crop-safe 600B council avatar.
-Character: [name]
-Role: [role]
-Core identity: [archetype]
-Key object: [stone / mug / staff / laptop / orb / flag]
-Background: [Madeira / forge / workshop / storm / conference]
-Palette: orange, gold, black, ember
-Style: cinematic, mythic, memetic realism
-Hard rule: if the sacred number appears, write it exactly as
-
-600
-000
-000
-000
-
-Keep face and icon centered for circular crop.
+Create a full-body 600B avatar for [character].
+Status: [active / active_placeholder / inactive].
+Generate only if status permits it.
+Role: [role from live members.json].
+Core identity: [from avatar_character_catalog.json].
+Key object: [object].
+Pose: [neutral standing / hero stance / signature gesture].
+Background: [workshop / stage / plaza / storm / archive / mountain / party].
+Style: preserve the original cue, but make it cypherpunk, traditional, fantasy, cute manga/toon.
+Palette: orange, gold, black, ember, plus character-specific accent.
+No readable text anywhere: no names, handles, role labels, cap labels, signs, readable numbers,
+or written 600B marks. Use wordless symbols instead.
 ```
 
-## Quality gate
+## Quality Gate
 
-We only ship an avatar if all are true:
+Ship only if all are true:
 
+- member is active in the live website roster
+- placeholder members have identity details before unique generation
+- inactive local images are not generated as current members
 - instantly readable at 128 px
 - still feels like the original member concept
 - unmistakably 600B
+- full-body version is riggable and not cluttered
 - no broken hands, eyes, or nonsense anatomy
+- no readable text anywhere on the avatar
 - no wrong number formatting
 - no oversized sacred stone unless requested
 
-## File naming standard
+## File Naming Standard
 
 Use:
 
-`avatar-[member]-v[major].[minor].png`
+```text
+avatar-[member]-[variant]-v[major].[minor].png
+```
 
 Examples:
 
-- `avatar-dni-v1.0.png`
-- `avatar-blackcoffee-v2.1.png`
-- `avatar-bullbear-v1.0.png`
+- `avatar-dni-core-v1.0.png`
+- `avatar-blackcoffee-fullbody-v1.0.png`
+- `avatar-snick-vrm-concept-v1.0.png`
 
-## Variant labels
+Variant labels:
 
-If needed:
-
-- `core` — default canonical avatar
-- `alt` — stylistic variant still in canon
-- `event` — conference or poster-specific variant
-- `meme` — intentionally playful variant
-
-Example:
-
-`avatar-racoodni-core-v1.2.png`
+- `core` - default canonical avatar
+- `fullbody` - full-body standard view
+- `vrm-concept` - ready for 3D/VRM pipeline
+- `event` - event-specific variant
+- `meme` - controlled playful variant

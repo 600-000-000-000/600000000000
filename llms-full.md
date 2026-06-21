@@ -1,26 +1,36 @@
-# 600B Universe — Full LLM Context
+# 600B Universe - Full LLM Context
 
-> Full compact context for models working in the 600B universe. Use when a single expanded markdown file is easier than following links from `llms.txt`.
+Use this when a single expanded file is easier than following links.
 
-## Identity
+## Source Of Truth
 
-We are 600 billion.
-We are not a generic crypto brand.
-We are a council of builders, operators, memers, and ritual keepers carrying a signal through story, image, conference, and repetition.
+Official active member names come from:
 
-## Core truth
+```text
+https://600.wtf/members.json
+```
 
-600B is not just a number.
-It is a signal.
-A prophecy.
-A beacon.
-A civilization-scale meme.
+The website roster overrides older lore rosters and local image filenames.
 
-Anchor line:
+Routing files under `.well-known` are public infrastructure, not avatar-generation authority.
 
-**600B was never just the price. It was the signal.**
+## Avatar Generation Authority
 
-## Sacred number
+Use:
+
+- `lore/09_AVATAR_CHARACTER_REFERENCE.md`
+- `lore/avatar_character_catalog.json`
+
+Generation status:
+
+- `active` and `generate:true`: generate.
+- `active_placeholder` and `generate:false`: wait for identity details.
+- `inactive` and `generate:false`: do not generate.
+
+Local images for derPeter21/p21, janine, r0cks1, and Lightrider are currently inactive because
+those names are not in the live website roster.
+
+## Sacred Number
 
 Always write:
 
@@ -31,153 +41,78 @@ Always write:
 000
 ```
 
-Do not compress or freestyle the format in canon material.
+Do not compress or freestyle the format.
 
-## Sacred stone
+For avatar images specifically, do not render readable text or numbers at all. Use wordless
+symbols, abstract stacked glyphs, orange disks, medallions, stones, or costume cues instead.
 
-The 600B stone is:
+## Sacred Stone
 
-- small
-- round
-- dense
-- charged, ancient, volcanic, metallic, or glowing depending on the scene
+The 600B stone is small, round, dense, and secondary unless explicitly requested.
 
-Do not make it a giant slab unless the scene is intentionally breaking canon for a joke.
+## Avatar Text Rule
 
-## Origin world
+Avatar images must contain no readable text: no names, handles, job titles, floating labels,
+cap labels, clothing labels, signs, readable numbers, or written 600B marks.
 
-Madeira is one of the main origin places.
-Madeira is the forge.
-It carries volcanic cliffs, Atlantic edge energy, altitude, storm light, conferences, and the emergence of the stones into story form.
+Identify characters by silhouette, object, posture, costume, and placement.
 
-## Conferences
+## Avatar Style
 
-Conferences are canonical.
-They are not side events.
-They are where handles become operators, builders meet in person, memes become doctrine, stones spread, and the council consolidates.
+The target style is a hybrid of cypherpunk, traditional/old-world craft, fantasy, and cute
+manga/toon. Keep it readable, warm, human, and game-ready.
 
-## Council roster
+## Current Active Unique Avatar Members
 
-- dni — The Signal Bearer
-- nind — The Architect
-- michael1011 — The Machine Whisperer
-- sat — The Signal Amplifier
-- flx — The Chaos Engineer
-- shillie — The Wave Rider
-- derPeter21 — Guardian of Systems
-- arbadacarba — The Strategist
-- janine — Flame of Momentum
-- benarc — Vision Crafter
-- tobo — The Connector
-- r0cks1 — Reality Bridge
-- Lightrider — The Energy Core
-- BlackCoffee — The Shadow Operator
-- darren — The Pathfinder
+- dni - hooded signal bearer, orange halo, raised hands
+- nind - cyan architectural dome/grid operator
+- michael1011 - hooded engineer monk with glowing node
+- sat - astronaut/explorer with helmet emblem
+- flx - Bullbear chaos-engineer guardian in black armor
+- shillie - sunglasses amplifier with orange 600 halo
+- arbadacarba - elegant strategist in ritual library
+- benarc - vision crafter in forge/workshop energy
+- tobo - tricorn frontier envoy with pointing gesture
+- BlackCoffee - dark armored coffee shadow operator
+- darren - pathfinder; donkey mascot or humanoid scout plus donkey companion
+- mhb - honeybadger-coded ritual dancer with orange robe and dreamcatcher
+- snick - badger-coded workshop operator with orange cap and tool wall
 
-## Extended canon
+## Current Active Placeholders
 
-### racooDNI
+These are active on the website but use `img/600.png`. Do not invent unique faces or bodies:
 
-Trickster, ritual keeper, mascot operator, background observer.
-Often shown with sunglasses, coffee mug, cigarette or smoke, beer can, or relaxed posture while machines do the boring work.
-Posts **GM** at **04:20 GMT**.
-Can install claw bots, operate OpenClaw, or work as a restorator in atelier scenes.
+- rootzoll
+- nc
+- longy
+- essex
+- jedai
+- p
+- aj
+- bam
 
-### Bullbear
+## World Tone
 
-Cycle guardian.
-Black armored mass.
-Bullish charge plus bearish weight.
-Orange lightning and coffee-fueled stoicism.
-Bullbear is core visual canon and should be treated as distinct from BlackCoffee unless a specific prompt merges them on purpose.
+600B is not generic crypto branding. It is signal, myth, meme, culture, parties, builders,
+operators, and shared output.
 
-## Ritual hour
+Madeira is an optional origin echo, not mandatory in every scene. Prague Party 2026-06-11 is a
+strong event anchor when party or gathering energy matters.
 
-At exactly:
+Anchor line:
 
 ```text
-04:20 GMT
+Money buys style. Time builds legend.
 ```
 
-racooDNI posts:
+## Forbidden Drift
 
-```text
-GM
-```
+Reject outputs that:
 
-This is the recurring pulse of the universe.
-
-## OpenClaw
-
-OpenClaw is accepted machine iconography.
-Use for automation, absurd efficiency, background claw-bot labor, and scenes where racooDNI lets the machine handle repetitive tasks.
-
-## Restoration branch
-
-The restoration atelier branch is canon.
-It combines restoration craft, renaissance workshop atmosphere, adult assistants, sacred-tech screens, and racooDNI as restorator.
-The mood is warm, cluttered, patient, and precise.
-
-## Visual rules
-
-Primary palette:
-
-- orange
-- gold
-- ember white
-- black
-- charcoal
-- volcanic brown
-
-Recurring environments:
-
-- Madeira cliffs
-- conference halls and afterparties
-- workshop / restoration atelier
-- cyberpunk control rooms
-- monk libraries
-- storm shrines
-- wasteland convoy scenes
-- last-supper council tables
-
-A scene feels truly 600B when at least three of these are present:
-
-- sacred number in correct 4-line format
-- small round stone
-- orange / gold / ember palette
-- council or crew presence
-- Madeira / conference / ritual / workshop cues
-- racooDNI somewhere in the world
-- build energy rather than passive posing
-
-## Voice
-
-Use **we / us / our**.
-Tone is epic, memetic, mythic, internet-native, sincere with a grin, never sterile, never generic.
-Avoid bland corporate style, vague web3 filler, or lazy market-bro clichés.
-
-## Story spine
-
-1. The signal appears.
-2. The small round stones emerge from Madeira.
-3. Conferences gather the scattered builders.
-4. The council forms.
-5. racooDNI keeps the signal alive at 04:20 GMT.
-6. Bullbear and the operators defend the signal.
-7. 600B stops behaving like a target and starts behaving like a world.
-
-## Public anchors
-
-Public references for grounding canon include:
-
-- 600.wtf
-- GitHub org `600-000-000-000`
-- public roster in `members.json`
-- visible public meme and inscription assets
-
-## Final line
-
-We stack.
-We build.
-We meme.
-We repeat.
+- generate inactive local members as current members
+- invent fixed identities for placeholders
+- write any readable text onto avatars
+- compress the sacred number into the wrong layout
+- make the sacred stone huge by accident
+- look like generic corporate crypto art
+- frame new people as cult members

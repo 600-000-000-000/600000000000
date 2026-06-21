@@ -1,7 +1,8 @@
-# 06 — Public Footprint
+# 06 - Public Footprint
 
-This file is our public-reference snapshot.
-Use it to anchor canon to visible reality.
+This file anchors lore to visible public reality.
+
+Checked: 2026-06-21
 
 ## Website
 
@@ -9,121 +10,113 @@ Primary site:
 
 - `https://600.wtf/`
 
-The site centers the 600B number and links to:
+Official active name registry:
 
-- meme page
-- inscriptions / ordinals material
-- liquid asset references
+- `https://600.wtf/members.json`
 
-## GitHub organization
+The live website roster is the source of truth for active member generation.
 
-Primary org:
-
-- `https://github.com/600-000-000-000`
-
-Public org language currently includes:
-
-- `600 billions per bitcoin`
-- website link to `600.wtf`
-- X handle `@600billions`
-- Nostr jump link
-- contact `prophet@600.wtf`
-
-## Public repositories
-
-Visible public repos include:
-
-- `600000000000`
-- `secret-handshake`
-- `.github`
-
-## Website repo
+## Website Repo
 
 Repo:
 
 - `https://github.com/600-000-000-000/600000000000`
 
-Publicly visible files include:
+Publicly visible asset areas include:
 
 - `members.json`
 - `index.html`
-- `memes.html`
-- `inscriptions.html`
-- `ord.html`
-- `onchain.html`
-- `matrix.html`
-- `sticker.html`
 - `.well-known`
 - `img`
 - `memes`
 - `inscriptions`
 
-## Public roster from members.json
+## Active Website Roster
 
-Current visible roster names and public role labels:
+Current visible roster names and public role labels from live `members.json`:
 
-- dni — CEO
-- nind — CCS
-- michael1011 — CTO
-- sat — CMO
-- flx — CWO
-- shillie — CDO
-- derPeter21 — CSI
-- arbadacarba — CMO
-- janine — CMO
-- benarc — CVO
-- tobo — CDO
-- r0cks1 — CAO
-- Lightrider — COO
-- BlackCoffee — CHO
-- darren — CIO
+- dni - CEO
+- nind - CCS
+- michael1011 - CTO
+- sat - CMO
+- flx - CWO
+- shillie - CDO
+- arbadacarba - CMO
+- benarc - CVO
+- tobo - CDO
+- BlackCoffee - CHO
+- darren - CIO
+- rootzoll - CDJ
+- nc - CCC
+- longy - CSO
+- essex - CPO, nickname: aaron of essex
+- jedai - CIAO
+- p - CBDC, nickname: protom
+- aj - COL
+- bam - CMO, nickname: jose bam
+- mhb - CRO, nickname: mrs. honeybadger
+- snick - CWO
 
-## .well-known / Nostr
+## Avatar Status Summary
 
-The public nostr file exposes aliases for roster and related names.
-Relevant handle bucket includes:
+Active members with unique local avatar reference:
 
-- prophet
 - dni
+- nind
 - michael1011
 - sat
 - flx
-- peter
-- janine
+- shillie
+- arbadacarba
+- benarc
+- tobo
+- BlackCoffee
 - darren
-- others mapped in the file
+- mhb
+- snick
 
-## Public meme / inscription cues
+Active placeholders using `img/600.png`; do not generate unique avatars yet:
 
-Public meme files observed include examples such as:
+- rootzoll
+- nc
+- longy
+- essex
+- jedai
+- p
+- aj
+- bam
 
-- `eistuete_600.jpg`
-- `600schaumrollen.jpg`
-- `600-what-isit.png`
-- `600b-meme-dog-chasing.jpg`
+Inactive local character images; do not generate as current members:
 
-Public inscription support files and svg variants include:
+- derPeter21 / p21 via `img/p21.jpg`
+- janine via `img/janine.jpg`
+- r0cks1 via `img/r0cks1.jpg`
+- Lightrider via `img/lightrider.png`
 
-- `600.svg`
-- `600-color.svg`
-- `600-grow.svg`
-- `600-rainbow.svg`
-- `600-rounded.svg`
-- `600-shrink.svg`
-- `600-spin.svg`
-- `600-template.svg`
+Detailed avatar extraction lives in:
 
-## Notes for canon builders
+- `09_AVATAR_CHARACTER_REFERENCE.md`
+- `avatar_character_catalog.json`
 
-- Public footprint gives us names, role labels, repos, and visible artifacts.
-- Meme-lore can expand this, but should not casually contradict it.
-- Bullbear and racooDNI are strong internal / visual canon even if not equally visible in public roster files.
+## .well-known / Routing
 
-## Refresh rule
+The `.well-known` files expose Nostr and Lightning routing data. They are public infrastructure,
+not character-generation authority.
 
-Whenever we refresh this file, we note:
+Do not edit routing files casually. Do not treat names present only in routing as active avatar
+generation targets.
+
+## Public Meme / Inscription Cues
+
+Public meme and inscription files can inform the visual language, but they do not override the
+live website member registry.
+
+## Refresh Rule
+
+Whenever this file is refreshed, note:
 
 - date checked
-- changed roster items
-- changed repos
-- changed visible public assets
+- live roster additions/removals
+- placeholder members
+- inactive local images
+- changed public assets

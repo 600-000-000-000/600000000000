@@ -1,191 +1,186 @@
-# 03 — Character Canon
+# 03 - Character Canon
 
-This file is our working roster and visual canon.
-Where public role titles exist, we keep them.
-Where meme-lore expands them, we formalize it.
+Official active roster source: `https://600.wtf/members.json`
 
-## Council roster
+For image-derived details and full-body generation standards, use
+`09_AVATAR_CHARACTER_REFERENCE.md` and `avatar_character_catalog.json`.
 
-### dni — CEO
-**Archetype:** The Signal Bearer
+## Status Rules
 
-Visual cues:
+- `active`: listed on the live website and has a unique avatar reference.
+- `active_placeholder`: listed on the live website but uses `img/600.png`; do not generate a
+  unique avatar until identity details exist.
+- `inactive`: local image exists, but the name is not on the live website roster; do not
+  generate.
 
-- radiant prophet or ritual operator
-- sacred stone or orb with correct number format
-- central, calm, inevitable energy
-- orange halo / storm backdrop
+The `.well-known` files are routing infrastructure, not character-generation authority.
 
-### nind — CCS
-**Archetype:** The Architect
+## Active Members With Unique Avatar References
 
-Visual cues:
+### dni - CEO
 
-- systems builder
-- geometric or structural environment
-- precision, depth, balance
-- blue/orange technical contrast is acceptable
+Archetype: Signal Bearer
 
-### michael1011 — CTO
-**Archetype:** The Machine Whisperer
+Core visual: hooded ritual operator, orange 600 halo, raised hands, warm signal light.
 
-Visual cues:
+Full-body direction: adult humanoid signal bearer in dark robe or long coat, calm centered
+posture, small round stone or orb as secondary object.
 
-- hooded engineer monk
-- automation / node / machine energy
-- controlled orange power source
-- sacred-tech workshop
+Aliases/personas: dni, prophet, Bitcoin Jesus, racooDNI. Use these as the same identity cluster,
+not separate people.
 
-### sat — CMO
-**Archetype:** The Signal Amplifier
+### nind - CCS
 
-Visual cues:
+Archetype: Architect
 
-- astronaut / helmet / broadcast figure
-- icon of propagation
-- visible emblem / medallion / signal gear
+Core visual: cyan circular architecture, dome/grid, technical depth, anonymous builder presence.
 
-### flx — CWO
-**Archetype:** The Chaos Engineer
+Full-body direction: adult architect/operator in clean dark utility clothing, framed by cyan
+geometric dome or blueprint-light structure.
 
-Visual cues:
+### michael1011 - CTO
 
-- absurdist monster / open-mouth chaos / comic distortion
-- weird environments still tied to 600B
-- unstable but lovable signal energy
+Archetype: Machine Whisperer
 
-### shillie — CDO
-**Archetype:** The Wave Rider
+Core visual: hooded engineer monk, glowing node, sacred-tech workshop, warm circular chamber.
 
-Visual cues:
+Full-body direction: adult hooded engineer monk, seated or standing near a glowing node with
+subtle machine/cable geometry.
 
-- laser shades / public-facing glow
-- momentum posture
-- orange column or urban flare
+### sat - CMO
 
-### derPeter21 — CSI
-**Archetype:** Guardian of Systems
+Archetype: Signal Amplifier
 
-Visual cues:
+Core visual: astronaut/explorer suit, glowing Bitcoin helmet or emblem, public plaza.
 
-- pilgrim / pathfinder / mountain guardian
-- standard, torch, or raised stone
-- Madeira-scale background works well
+Full-body direction: adult astronaut/explorer in clean bulky suit, standing in conference or
+mission-gate environment.
 
-### arbadacarba — CMO
-**Archetype:** The Strategist
+### flx - CWO
 
-Visual cues:
+Archetype: Chaos Engineer / Bullbear
 
-- ritual library / council sorcerer
-- calm centered stance
-- controlled knowledge fire
+Core visual: Bullbear guardian, black armor, horns or bear-bull crest, orange lightning, coffee
+or workshop cue.
 
-### janine — CMO
-**Archetype:** Flame of Momentum
+Full-body direction: adult humanoid Bullbear chaos-engineer guardian with readable riggable
+silhouette. Bullbear is an alias/persona of flx here, not a separate generated member.
 
-Visual cues:
+### shillie - CDO
 
-- movement, flowing fabric, ember-gold light
-- active energy rather than static pose
-- radiant field force
+Archetype: Wave Rider / Amplifier
 
-### benarc — CVO
-**Archetype:** Vision Crafter
+Core visual: sunglasses, raised hands, wordless orange signal disk/halo, urban event energy.
 
-Visual cues:
+Full-body direction: adult amplifier/operator with sunglasses, open-hand pose, streetwear or
+stage jacket, warm party-stage light.
 
-- forge mage / creation energy
-- shaping object, idea, or signal
-- dramatic directional light
+### arbadacarba - CMO
 
-### tobo — CDO
-**Archetype:** The Connector
+Archetype: Strategist
 
-Visual cues:
+Core visual: elegant robed figure, ritual library or hall, glowing 600 knowledge orb.
 
-- founder / envoy / laser-eyed statesman / frontier diplomat
-- historical-meets-future vibe
+Full-body direction: adult strategist in dark robe or tailored ritual coat, composed stance in
+library/council archive.
 
-### r0cks1 — CAO
-**Archetype:** Reality Bridge
+### benarc - CVO
 
-Visual cues:
+Archetype: Vision Crafter
 
-- ascended feminine force
-- solar aura
-- elegant but powerful stance
+Core visual: forge/workshop energy, raised tool, glowing artifact or 600 shield.
 
-### Lightrider — COO
-**Archetype:** The Energy Core
+Full-body direction: adult creator in forge-workshop clothing, shaping a glowing emblem or
+artifact.
 
-Visual cues:
+### tobo - CDO
 
-- winged lightning form
-- explosive motion
-- radiant orb in hand or chest
+Archetype: Connector / Envoy
 
-### BlackCoffee — CHO
-**Archetype:** The Shadow Operator
+Core visual: tricorn hat, old-world coat, sunglasses or laser-eye cue, pointing gesture.
 
-Visual cues:
+Full-body direction: adult frontier envoy in old-world coat and tricorn silhouette, welcoming
+or pointing gesture, warm civic backdrop.
 
-- dark knight / storm armor
-- coffee, lightning, discipline
-- quiet intensity
+### BlackCoffee - CHO
 
-### darren — CIO
-**Archetype:** The Pathfinder
+Archetype: Shadow Operator
 
-Visual cues:
+Core visual: black armor/heavy coat, coffee mug, storm, lightning, quiet discipline.
 
-- explorer / flag / donkey / high ground
-- frontier humor allowed
-- practical myth energy
+Full-body direction: adult armored operator in charcoal/black with coffee mug as signature
+object.
 
-## Extended canon
+### darren - CIO
 
-### racooDNI
-**Archetype:** Trickster, Ritual Keeper, Mascot Operator
+Archetype: Pathfinder
 
-Visual cues:
+Core visual: donkey on mountain summit, orange Bitcoin flag, binary sky.
 
-- raccoon
-- sunglasses often
-- 600B cap often
-- coffee mug
-- cigarette or smoke when fitting the gag
-- beer can when fitting the scene
-- lounging while automation works
+Full-body direction: 2D mascot can stay donkey. For game/VRM, use adult humanoid pathfinder
+with donkey companion and orange flag.
 
-Canonical functions:
+### mhb - CRO
 
-- posts GM at 04:20 GMT
-- maintains meme continuity
-- appears in background scenes as observer or operator
-- can pilot OpenClaw or install claw bots
-- can be a restorator in workshop scenes
+Nickname: mrs. honeybadger
 
-### Bullbear
-**Archetype:** The Cycle Guardian
+Archetype: Ritual Culture Carrier
 
-Visual cues:
+Core visual: honeybadger-coded cute manga/toon character, long blonde hair, orange robe,
+dreamcatcher, wordless orange medallion, warm teal/gold bokeh.
 
-- black armor
-- bear-bull hybrid energy or knight form
-- bullish charge + bearish mass
-- orange lightning
-- coffee-fueled stoicism
+Full-body direction: adult humanoid honeybadger-coded ritual dancer or culture carrier with
+dreamcatcher/charm object.
 
-Notes:
+### snick - CWO
 
-Bullbear is core visual canon even if not always visible in public roster files.
-Treat Bullbear as distinct from BlackCoffee unless a deliberate merge is requested for a specific meme.
+Archetype: Workshop Operator
 
-## Character interaction rules
+Core visual: badger-coded cute manga/toon character, plain orange cap, relaxed eyes,
+chain/wordless medallion, tool wall, plants, warm workshop/grow-room.
 
-- The council can be solemn, but never lifeless.
-- racooDNI can interrupt sacred scenes with casual behavior.
-- Bullbear adds mass, force, and danger.
-- Lightrider raises the charge level of any composition.
-- Madeira or conference callbacks increase canonical weight.
+Full-body direction: adult humanoid badger-coded builder/operator with cap, tool wall, medallion,
+and relaxed confident posture.
+
+## Active Placeholder Members
+
+These members are active because they are listed on the website, but they use `img/600.png`.
+Do not generate unique avatars until identity descriptions exist.
+
+| Name | Nickname | Role | Status | Generate unique avatar |
+|---|---|---|---|---|
+| rootzoll | | CDJ | active_placeholder | false |
+| nc | | CCC | active_placeholder | false |
+| longy | | CSO | active_placeholder | false |
+| essex | aaron of essex | CPO | active_placeholder | false |
+| jedai | | CIAO | active_placeholder | false |
+| p | protom | CBDC | active_placeholder | false |
+| aj | | COL | active_placeholder | false |
+| bam | jose bam | CMO | active_placeholder | false |
+
+Temporary fallback only: anonymous adult builder silhouette with wordless orange medallion, no
+locked face, no locked outfit, no implied personal traits.
+
+## Inactive Local Character Images
+
+These local images are not active website members. They must not be generated as current members.
+
+| Local file | Former/likely name | Status | Generate |
+|---|---|---|---|
+| `img/p21.jpg` | derPeter21 / p21 | inactive | false |
+| `img/janine.jpg` | janine | inactive | false |
+| `img/r0cks1.jpg` | r0cks1 | inactive | false |
+| `img/lightrider.png` | Lightrider | inactive | false |
+
+They can be archived as visual history or reactivated later only if the live website roster adds
+them again.
+
+## Interaction Rules
+
+- Team images must not write names, handles, or job titles onto people.
+- Avatar images must contain no readable text at all.
+- Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
+- Use silhouettes, objects, posture, costume, and placement for recognition.
+- Active placeholder members should appear only as generic silhouettes or 600 symbols until
+  identity details exist.
+- Inactive local images are not generated into current team images.

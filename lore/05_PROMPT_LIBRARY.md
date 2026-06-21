@@ -1,15 +1,17 @@
-# 05 — Prompt Library
+# 05 - Prompt Library
 
-These are reusable prompt blocks.
-Swap the character or scene, keep the canon.
+These are reusable prompt blocks. Swap the character or scene, keep the canon.
 
-## Universal 600B add-on
-
-Append this to most prompts:
+## Universal 600B Add-On
 
 ```text
-600B universe, cinematic mythic meme realism, orange and gold ember light, black metal, volcanic atmosphere, sacred tech, highly readable composition, canonical 600B style.
-If the sacred number appears, write it exactly as:
+600B universe, cinematic mythic meme realism, orange and gold ember light, black metal,
+sacred tech, highly readable composition, canonical 600B style.
+Use only active members from https://600.wtf/members.json.
+Do not generate inactive local character images as current members.
+Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
+For avatars, render no readable text at all. Use wordless symbols and abstract glyphs.
+For non-avatar scenes, if the sacred number appears, write it exactly as:
 
 600
 000
@@ -19,81 +21,44 @@ If the sacred number appears, write it exactly as:
 If the sacred stone appears, it must be small and round.
 ```
 
-## Avatar prompt template
+## Full-Body Avatar Prompt
 
 ```text
-Create a 1:1 circular-crop-safe council avatar for [character].
-Role: [role].
-Archetype: [archetype].
+Create a full-body 600B avatar for [character].
+Use lore/avatar_character_catalog.json.
+Status: [active / active_placeholder / inactive].
+Generate only if status permits it.
+Role: [role from live members.json].
+Core identity: [image-derived identity cues].
 Key object: [object].
-Background: [background].
-Expression: [expression].
-Style: cinematic, mythic, memetic realism.
-Orange, gold, ember, black palette.
-Face and key icon centered for circular crop.
-If the sacred number appears, write it exactly as:
-
-600
-000
-000
-000
+Pose: [neutral standing / hero stance / signature gesture].
+Background: [workshop / stage / plaza / storm / archive / mountain / party].
+Style: preserve the original cue, but make it cypherpunk, traditional, fantasy, cute manga/toon.
+Palette: orange, gold, black, ember, plus character-specific accent.
+No readable text anywhere: no names, handles, role labels, cap labels, signs, readable numbers,
+or written 600B marks. Use wordless symbols instead.
 ```
 
-## Group poster prompt template
+## 1:1 Avatar Prompt
 
 ```text
-Create an epic 600B crew poster featuring the council and extended canon.
-Center the strongest symbolic figures first.
-Include racooDNI somewhere in the composition.
-Include Bullbear as a mass/force anchor.
-Environment: [Madeira / workshop / wasteland / conference / storm shrine].
-Keep the sacred number in correct 4-line format if shown.
-Use orange and ember light with black steel and volcanic atmosphere.
+Create a 1:1 circular-crop-safe 600B avatar for [character].
+Use the source image and avatar catalog entry.
+Keep face, helmet, mask, or main symbol inside the central 70-75 percent.
+Preserve the original avatar's strongest cue.
+Style: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
+No readable text anywhere. Use wordless symbols instead.
 ```
 
-## Conference scene prompt
+## Group Poster Prompt
 
 ```text
-Create a cinematic 600B conference scene on Madeira.
-Builders, operators, and memers gather in warm afterglow light.
-The small round 600B stone passes hand to hand.
-Conference signage, subtle Bitcoin cues, and volcanic island atmosphere.
-The sacred number appears only in this exact format:
-
-600
-000
-000
-000
-```
-
-## Storyboard panel prompt
-
-```text
-Create a storyboard panel in the 600B universe.
-Panel title: [title].
-Story beat: [beat].
-Environment: [environment].
-Key character(s): [characters].
-Include one strong symbolic object.
-Keep layout readable and cinematic.
-The 600B stone must be small and round if shown.
-The sacred number must appear exactly as:
-
-600
-000
-000
-000
-```
-
-## Last supper prompt
-
-```text
-Create an epic 600B council table scene inspired by a last-supper composition.
-The crew gathers around a long table in a sacred-tech environment.
-The small round glowing 600B stone sits at the center of the table.
-racooDNI is present in a key central or disruptive role.
-Include council members as distinct archetypes.
-Orange firelight, cyber-monastic detail, mythic realism.
+Create an epic 600B crew poster using only active members from the live website roster.
+Do not include inactive local images as current members.
+Do not invent unique identities for placeholder members.
+Identify characters by silhouette, object, posture, costume, and placement.
+No readable text on people or avatar-like portraits.
+Use orange and ember light with black steel and warm culture energy.
 The sacred number appears only as:
 
 600
@@ -102,45 +67,33 @@ The sacred number appears only as:
 000
 ```
 
-## Restoration atelier prompt
+## Prague Party Prompt
 
 ```text
-Create a warm 600B restoration atelier scene.
-racooDNI works as a restorator on a classical feminine sculpture while automation handles background tasks.
-Adult workshop assistants support the work.
-The room feels like renaissance atelier meets hacker lab.
-Small tools, warm clutter, sacred-tech screens, ember dust.
-Only subtle 600B branding.
-If the number appears, use:
-
-600
-000
-000
-000
+Create a cinematic 600B Prague Party scene set on 2026-06-11.
+Builders, operators, artists, partygoers, and bitcoiners gather in warm live-stage light.
+Partygoers feel like future players: fans becoming bitcoiners, bitcoiners becoming builders.
+Use one clear 600B signal object.
+Do not write names, handles, or role labels onto people.
 ```
 
-## GM ritual prompt
+## Palace Game Prompt
+
+```text
+Create a stylized 600B Palace of Culture game scene.
+The world is built from locked time: private plot, growing tree, companion animal, warm golden
+palace in the distance.
+Use toon-low-poly readability, gold and cream light, deep teal accents, one coral spark, calm
+motion, and no combat.
+Money buys style. Time builds legend.
+```
+
+## GM Ritual Prompt
 
 ```text
 Create a meme-ready 600B ritual scene at 04:20 GMT.
-racooDNI posts GM while OpenClaw or a claw-bot handles automation.
-Coffee, smoke, relaxed posture, controlled chaos.
-Use clear signage for 04:20 GMT.
+racooDNI posts GM while generic automation tools handle background tasks.
+Coffee, relaxed posture, controlled chaos, warm workbench light.
 Preserve 600B palette and signal energy.
-```
-
-## Mad Max / wasteland prompt
-
-```text
-Create a 600B wasteland convoy scene inspired by post-apocalyptic road myth.
-The whole crew appears as hardened operators and signal warriors.
-Bullbear is present as armored mass.
-racooDNI is present as trickster mascot.
-The stone remains small and round even in wasteland mode.
-The sacred number, if visible, must be:
-
-600
-000
-000
-000
+Do not use named machine lore unless explicitly requested.
 ```
