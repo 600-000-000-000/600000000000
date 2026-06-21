@@ -68,6 +68,12 @@
             "nostr": "darren@600.wtf"
         },
         {
+            "name": "longy",
+            "role": "CSO",
+            "img": "img/600.png",
+            "nostr": "longy@600.wtf"
+        },
+        {
             "name": "essex",
             "nickname": "aaron of essex",
             "role": "CPO",
