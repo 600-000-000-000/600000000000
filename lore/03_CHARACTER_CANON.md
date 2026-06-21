@@ -7,7 +7,8 @@ For image-derived details and full-body generation standards, use
 
 ## Status Rules
 
-- `active`: listed on the live website and has a unique avatar reference.
+- `active`: listed on the live website and has a unique avatar reference or explicit
+  user-provided identity details.
 - `active_placeholder`: listed on the live website but uses `img/600.png`; do not generate a
   unique avatar until identity details exist.
 - `inactive`: local image exists, but the name is not on the live website roster; do not
@@ -19,33 +20,38 @@ The `.well-known` files are routing infrastructure, not character-generation aut
 
 ### dni - CEO
 
-Archetype: Signal Bearer
+Archetype: Bitcoin Jesus / Signal Bearer
 
-Core visual: hooded ritual operator, orange 600 halo, raised hands, warm signal light.
+Core visual: hooded Bitcoin Jesus meme prophet, orange 600 halo, raised hands, warm signal
+light, Birkenstock-style sandals.
 
 Full-body direction: adult humanoid signal bearer in dark robe or long coat, calm centered
-posture, small round stone or orb as secondary object.
+posture, Birkenstock-style sandals without visible brand marks, small round stone or orb as
+secondary object.
 
 Aliases/personas: dni, prophet, Bitcoin Jesus, racooDNI. Use these as the same identity cluster,
 not separate people.
 
 ### nind - CCS
 
-Archetype: Architect
+Archetype: Indian Rose/Cake Architect
 
-Core visual: cyan circular architecture, dome/grid, technical depth, anonymous builder presence.
+Core visual: Indian architect/operator with cyan circular architecture, dome/grid, technical
+depth, roses, cake-craft energy, and OG Pepe/frog-meme fan charm.
 
 Full-body direction: adult architect/operator in clean dark utility clothing, framed by cyan
-geometric dome or blueprint-light structure.
+geometric dome or blueprint-light structure, carrying wordless roses, cake-box or pastry-tool
+props, and a small wordless green frog charm as meme-culture cue.
 
 ### michael1011 - CTO
 
-Archetype: Machine Whisperer
+Archetype: OG Node Runner / Machine Whisperer
 
-Core visual: hooded engineer monk, glowing node, sacred-tech workshop, warm circular chamber.
+Core visual: OG coder who runs the node, hooded engineer monk, glowing full-node orb,
+sacred-tech workshop, warm circular chamber.
 
 Full-body direction: adult hooded engineer monk, seated or standing near a glowing node with
-subtle machine/cable geometry.
+subtle machine/cable geometry, small server/node box, and wordless terminal-light props.
 
 ### sat - CMO
 
@@ -58,13 +64,17 @@ mission-gate environment.
 
 ### flx - CWO
 
-Archetype: Chaos Engineer / Bullbear
+Title: Head of Culture / Curator of 600 Billion
+
+Archetype: Chaos Engineer / Bullbear / Culture Curator
 
 Core visual: Bullbear guardian, black armor, horns or bear-bull crest, orange lightning, coffee
-or workshop cue.
+or workshop cue, absurdist/degen meme-culture energy, traditional craft grounding.
 
 Full-body direction: adult humanoid Bullbear chaos-engineer guardian with readable riggable
-silhouette. Bullbear is an alias/persona of flx here, not a separate generated member.
+silhouette, curator/operator posture, ritual-cultural props, traditional material details, and
+absurdist 600B meme energy. Bullbear is an alias/persona of flx here, not a separate generated
+member.
 
 ### shillie - CDO
 
@@ -120,6 +130,60 @@ Core visual: donkey on mountain summit, orange Bitcoin flag, binary sky.
 Full-body direction: 2D mascot can stay donkey. For game/VRM, use adult humanoid pathfinder
 with donkey companion and orange flag.
 
+### rootzoll - CDJ
+
+Archetype: DJ Honeybadger
+
+Core visual: honeybadger-coded DJ/operator, yellow safety helmet with wordless decals, black
+ear protection/headphones, glasses, sunny blue-sky worksite energy, record and record case.
+
+Full-body direction: adult humanoid honeybadger-coded DJ in yellow helmet with wordless decals,
+black headphones, glasses, utility jacket, one vinyl record in hand, record case at the side,
+warm cypherpunk worksite-meets-club energy, traditional craft/tool cues, fantasy road-crew
+presence, cute manga/toon readability.
+
+### nc - CCC
+
+Title: Chief Culture Curator
+
+Archetype: Smooth Rap Curator
+
+Core visual: smooth rapper/curator with sunglasses, cap, microphone, orange bandana, white shirt,
+dark stage background, warm performance light.
+
+Full-body direction: adult humanoid rap curator in cap and sunglasses, orange bandana, loose white
+shirt or stage jacket, handheld wordless microphone, relaxed confident performance pose,
+cypherpunk club lighting, traditional stage-craft details, fantasy bard energy, cute manga/toon
+readability.
+
+### jedai - CIAO
+
+Archetype: Cypherpunk Strategist
+
+Core visual: dark strategist seated in command posture, sunglasses, black coat/scarf, warm
+golden aura, chessboard, bear force on one side, eagle vision on the other.
+
+Full-body direction: adult humanoid cypherpunk strategist in dark tailored coat, scarf, and
+sunglasses, with wordless gold halo geometry, chess-piece object language, bear/eagle aura
+companions or heraldic silhouettes, traditional old-world craft details, fantasy authority, and
+cute manga/toon readability.
+
+### Gadaj - CKO
+
+Nickname: GDJ
+
+Title: Chief Kurwa Officer
+
+Archetype: Rain-Yard Boar Guardian
+
+Core visual: boar-coded powerhouse, red headband, huge muscular torso, rain-soaked industrial
+yard, brick wall, dark forest line, orange belt/wordless emblem cue.
+
+Full-body direction: adult humanoid boar-coded guardian with massive but riggable proportions,
+red headband, rain-slick fur/armor texture, industrial courtyard and forest silhouette, orange
+wordless belt medallion, traditional warrior stance, cypherpunk grit, fantasy brute presence,
+and cute manga/toon readability.
+
 ### mhb - CRO
 
 Nickname: mrs. honeybadger
@@ -142,21 +206,114 @@ chain/wordless medallion, tool wall, plants, warm workshop/grow-room.
 Full-body direction: adult humanoid badger-coded builder/operator with cap, tool wall, medallion,
 and relaxed confident posture.
 
+### bam - CMO
+
+Nickname: jose bam
+
+Title: Chief Meme Officer / Chief Mustache Officer
+
+Archetype: Mustache Meme Maestro
+
+Core visual: charismatic Mexican-inspired meme officer with a big mustache, orange sombrero,
+dark sunglasses, cool grin, festival-serape accents, and wordless meme talisman or card props.
+
+Full-body direction: adult humanoid meme maestro with big mustache, orange sombrero without
+readable decoration, sunglasses, warm poncho/serape or jacket accents, wordless meme-card deck
+or talisman pouch, confident festival-host posture, cypherpunk party details, traditional craft
+texture, fantasy trickster energy, and cute manga/toon readability.
+
+Avoid: caricature, mockery, readable text, written memes, flag text, brand logos, or reducing the
+character to a flat national stereotype.
+
+### essex - CPO
+
+Nickname: aaron of essex
+
+Title: Chief Punk Officer
+
+Archetype: UK Punk Surfer
+
+Core visual: UK punk stage performer with a bit of hippie-surfer ease, microphone, loose dark
+shirt, pale trousers, warm stage light, band/drum setting, relaxed rebellious posture.
+
+Full-body direction: adult humanoid UK punk officer with rough stage hair, dark loose shirt or
+patched jacket, pale trousers, beach-worn surfer details, small hippie charm or woven bracelet,
+wordless microphone, band-stage stance, cypherpunk gig lighting, traditional punk DIY texture,
+fantasy bard energy, and cute manga/toon readability.
+
+Avoid: readable logos, readable stage marks, written 600B badges, flag text, generic royal/guard
+UK costume, or losing the punk/hippie/surfer blend.
+
+### madmunky - CPO
+
+Title: Chief Polish Officer
+
+Archetype: DJ Monkey Trickster
+
+Core visual: wild DJ monkey/trickster with zottelige hair or dreadlock-like silhouette, full
+beard, mischievous grin, green jacket, cigarette-like prop, and heavyweight beat-dropper energy.
+
+Full-body direction: adult humanoid monkey-coded DJ with shaggy hair, full beard, green jacket,
+DJ headphones, turntable or compact controller, vinyl crate, playful chaos props, confident
+low-angle swagger, cypherpunk club lighting, traditional street-craft texture, fantasy trickster
+energy, and cute manga/toon readability.
+
+Avoid: readable text, readable Polish symbols or flag labels, brand logos, mockery, flat national
+stereotype, realistic animal body for VRM, or making the cigarette the main identity.
+
+### p - CBDC
+
+Nickname: protom
+
+Archetype: Grinning Badger Wizard
+
+Core visual: funny wonderland-cat-inspired honeybadger wizard with a tall top hat, huge signature
+grin, mischievous eyes, robe or coat, and surreal magical props.
+
+Full-body direction: adult humanoid honeybadger wizard with grinning cat energy, oversized
+signature grin, tall wordless top hat, striped or patchwork robe, small glowing potion or orb,
+crooked staff, playful portal/smoke shapes, cypherpunk occult details, traditional storybook
+craft, fantasy wizard style, and cute manga/toon readability.
+
+Avoid: copying a specific Disney Alice design, readable hat cards, written labels, creepy horror
+mouth, realistic animal body for VRM, or losing the grin as the signature silhouette.
+
+### longy - CSO
+
+External reference: `https://iris.to/npub19ppwxjrqckwl4n2a7j960fjsvhn8vrggcd0h092nmq7zcgcskjfsywp04j`
+
+Archetype: Punk Street Guitar Signal
+
+Core visual: street musician with guitar, punk attitude, cypherpunk busker energy, practical
+streetwear, worn instrument case, cables, stickers rendered as wordless shapes only.
+
+Full-body direction: adult humanoid street guitarist with acoustic or electric guitar, patched
+street jacket, rugged boots, small amp or open guitar case, cypherpunk signal glow, punk DIY
+texture, urban busking posture, traditional folk-musician warmth, fantasy bard energy, and cute
+manga/toon readability.
+
+Avoid: readable stickers, readable guitar labels, readable signs, brand logos, generic rock-star
+posing without street-musician warmth, or hiding the guitar silhouette.
+
+### aj - COL
+
+Archetype: Indian Hip-Hop Reggae Cypherpunk Operator
+
+Core visual: Indian woman with hip-hop and reggae sound-system energy, cypherpunk streetwear,
+confident stance, music-culture accessories, warm color accents, and clean manga/toon readability.
+
+Full-body direction: adult Indian woman operator with hip-hop/reggae stage posture, headphones or
+mic, layered streetwear, orange/green/gold accent cloth or scarf without flag text, braided or
+flowing hair, sound-system speaker or rhythm prop, cypherpunk neon details, traditional textile
+texture, fantasy sound-mage energy, and cute manga/toon readability.
+
+Avoid: caricature, mockery, religious costume shortcuts, readable text, flag labels, brand logos,
+or reducing the character to a flat national stereotype.
+
 ## Active Placeholder Members
 
-These members are active because they are listed on the website, but they use `img/600.png`.
-Do not generate unique avatars until identity descriptions exist.
-
-| Name | Nickname | Role | Status | Generate unique avatar |
-|---|---|---|---|---|
-| rootzoll | | CDJ | active_placeholder | false |
-| nc | | CCC | active_placeholder | false |
-| longy | | CSO | active_placeholder | false |
-| essex | aaron of essex | CPO | active_placeholder | false |
-| jedai | | CIAO | active_placeholder | false |
-| p | protom | CBDC | active_placeholder | false |
-| aj | | COL | active_placeholder | false |
-| bam | jose bam | CMO | active_placeholder | false |
+None currently. Every local branch member has either a local image reference or explicit
+user-provided identity details.
 
 Temporary fallback only: anonymous adult builder silhouette with wordless orange medallion, no
 locked face, no locked outfit, no implied personal traits.

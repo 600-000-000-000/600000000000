@@ -11,7 +11,7 @@ world.
 - Local character images not listed on the live website roster are inactive and must not be
   generated as current members.
 - Active placeholders using `img/600.png` need identity details before unique avatars are
-  generated.
+  generated. If identity details are explicitly provided, use `source=user_description`.
 - Avatar images must contain no readable text at all: no names, handles, roles, cap labels,
   clothing labels, signs, readable numbers, or written 600B marks.
 - Use wordless symbols instead: orange disks, stacked abstract glyphs, medallions, stone/orb

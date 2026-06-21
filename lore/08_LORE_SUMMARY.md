@@ -43,32 +43,34 @@ The stone is small, round, dense, and secondary unless requested otherwise.
 
 ## Active Unique Avatar Roster
 
-- dni - Signal Bearer
-- nind - Architect
-- michael1011 - Machine Whisperer
+- dni - Bitcoin Jesus / Signal Bearer
+- nind - Indian Rose/Cake Architect
+- michael1011 - OG Node Runner
 - sat - Signal Amplifier
-- flx - Chaos Engineer / Bullbear
+- flx - Head of Culture / 600B Curator / Bullbear
 - shillie - Wave Rider / Amplifier
 - arbadacarba - Strategist
 - benarc - Vision Crafter
 - tobo - Connector / Envoy
 - BlackCoffee - Shadow Operator
 - darren - Pathfinder
+- rootzoll - DJ Honeybadger
+- nc - Chief Culture Curator
+- longy - Punk/Cypherpunk Street Guitarist
+- essex / aaron of essex - Chief Punk Officer
+- madmunky - Chief Polish Officer / DJ Monkey Trickster
+- p / protom - CBDC Grinning Badger Wizard
+- aj - Indian Hip-Hop Reggae Cypherpunk Operator
+- jedai - CIAO Strategist
+- Gadaj - Chief Kurwa Officer
+- bam / jose bam - Chief Meme Officer / Chief Mustache Officer
 - mhb - Ritual Culture Carrier
 - snick - Workshop Operator
 
 ## Active Placeholders
 
-Do not invent unique avatar identities yet:
-
-- rootzoll
-- nc
-- longy
-- essex
-- jedai
-- p
-- aj
-- bam
+None currently. Every local branch member has either a local image reference or explicit
+user-provided identity details.
 
 ## Inactive Local Character Images
 

@@ -21,7 +21,8 @@ version without losing the member's identity.
 
 ## Status Rules
 
-- `active`: listed on the live website and has a unique avatar reference.
+- `active`: listed on the live website and has a unique avatar reference or explicit
+  user-provided identity details.
 - `active_placeholder`: listed on the live website but uses `img/600.png`; do not generate a
   unique avatar until identity details exist.
 - `inactive`: local image exists, but the name is not on the live website roster; do not

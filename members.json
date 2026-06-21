@@ -70,13 +70,13 @@
         {
             "name": "rootzoll",
             "role": "CDJ",
-            "img": "img/600.png",
+            "img": "img/rootzoll.png",
             "nostr": "rootzoll@600.wtf"
         },
         {
             "name": "nc",
             "role": "CCC",
-            "img": "img/600.png",
+            "img": "img/nc.png",
             "nostr": "nc@600.wtf"
         },
         {
@@ -89,14 +89,27 @@
             "name": "essex",
             "nickname": "aaron of essex",
             "role": "CPO",
-            "img": "img/600.png",
+            "img": "img/essex.png",
             "nostr": "essex@600.wtf"
+        },
+        {
+            "name": "madmunky",
+            "role": "CPO",
+            "img": "img/madmunky.png",
+            "nostr": "madmunky@600.wtf"
         },
         {
             "name": "jedai",
             "role": "CIAO",
-            "img": "img/600.png",
+            "img": "img/jedai.png",
             "nostr": "jedai@600.wtf"
+        },
+        {
+            "name": "Gadaj",
+            "nickname": "GDJ",
+            "role": "CKO",
+            "img": "img/gadaj.png",
+            "nostr": "gadaj@600.wtf"
         },
         {
             "name": "p",
