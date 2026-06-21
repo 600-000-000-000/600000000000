@@ -1,0 +1,197 @@
+{
+  "version": "0.1.0",
+  "checked_at": "2026-06-21",
+  "name_registry_source": "https://600.wtf/members.json",
+  "image_directory": "img",
+  "rules": {
+    "active_source": "live website members.json",
+    "inactive_rule": "Local character images that are not on the live website roster are inactive and must not be generated.",
+    "placeholder_rule": "Active members using img/600.png are active placeholders. Do not generate unique avatars until identity details exist.",
+    "team_image_rule": "Do not write names, handles, roles, or labels onto people.",
+    "number_rule": "If visible, the sacred number must be stacked as 600/000/000/000.",
+    "full_body_rule": "Generate adult full-body, head-to-toe, riggable humanoid characters unless explicitly making 2D mascot art."
+  },
+  "active_members": [
+    {
+      "name": "dni",
+      "role": "CEO",
+      "image": "img/dni2.jpg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": ["img/dni.jpg"],
+      "image_details": "Dark hooded mystic/operator, glowing orange stacked 600 disk behind head, raised hands, palm lights, chest light, warm ritual-tech atmosphere.",
+      "full_body_standard": "Adult humanoid signal bearer in dark robe or long coat, centered and calm, hands open, small round stone or orb near chest or feet, orange halo behind head.",
+      "preserve": ["hooded silhouette", "orange halo", "raised hands", "mystic operator mood"],
+      "avoid": ["literal church-preacher costume", "visible name label", "giant stone", "random crown"]
+    },
+    {
+      "name": "nind",
+      "role": "CCS",
+      "image": "img/nind.jpg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Abstract cyan/black architectural dome or grid viewed from below, tunnel depth, human presence implied.",
+      "full_body_standard": "Adult humanoid architect/operator in clean dark utility clothing, framed by cyan dome geometry, bridge grid, or blueprint-light structure.",
+      "preserve": ["cyan dome", "circular architecture", "grid/tunnel depth", "technical mood"],
+      "avoid": ["generic wizard", "busy city crowd", "losing dome/grid cue"]
+    },
+    {
+      "name": "michael1011",
+      "role": "CTO",
+      "image": "img/m2.png",
+      "status": "active",
+      "generate": true,
+      "alternate_images": ["img/michael1011.jpg"],
+      "image_details": "Hooded seated engineer monk in warm circular chamber, glowing orange floor node, triangle/sigil cue, technical halo.",
+      "full_body_standard": "Adult hooded engineer monk, seated or standing in workshop stance, hands near glowing node, subtle cables and machine geometry.",
+      "preserve": ["hood", "seated monk energy", "glowing node", "sacred-tech workshop"],
+      "avoid": ["generic hacker hoodie", "robot villain", "unreadable black-on-black body"]
+    },
+    {
+      "name": "sat",
+      "role": "CMO",
+      "image": "img/sat2.jpg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": ["img/sat.jpg"],
+      "image_details": "Astronaut/explorer in old city or plaza, bulky suit, glowing Bitcoin emblem as helmet face/visor, warm orange-gold light.",
+      "full_body_standard": "Adult astronaut/explorer in clean bulky suit, helmet or chest emblem as main icon, standing in public square, conference plaza, or mission gate.",
+      "preserve": ["astronaut suit", "helmet emblem", "public explorer stance", "orange-gold palette"],
+      "avoid": ["NASA copy", "floating name text", "price-chart background"]
+    },
+    {
+      "name": "flx",
+      "role": "CWO",
+      "image": "img/flx.jpg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Dense Bullbear chaos collage: armored bear/bull guardian, horns, glowing eyes, black armor, coffee mug, orange lightning, volcanic chaos, market debris, racooDNI side gag.",
+      "full_body_standard": "Simplified adult humanoid Bullbear chaos-engineer guardian with black armor, horned/bear-mask helmet or crest, heavy boots, coffee/tool cue, orange lightning cracks.",
+      "preserve": ["Bullbear mass", "black armor", "orange lightning", "coffee/workshop cue"],
+      "avoid": ["visible FLX label", "gore", "too many background symbols", "separate Bullbear identity"]
+    },
+    {
+      "name": "shillie",
+      "role": "CDO",
+      "image": "img/quillie2.jpg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": ["img/quillie.jpg"],
+      "image_details": "Public-facing operator with sunglasses, raised hands, orange stacked 600 disk as face/halo, warm urban/event backdrop.",
+      "full_body_standard": "Adult amplifier/operator with sunglasses, open-hand pose, streetwear or stage jacket, orange disk/halo behind head or chest emblem, party-stage or city venue light.",
+      "preserve": ["sunglasses", "orange 600 disk", "raised hands", "urban event energy"],
+      "avoid": ["visible name label", "generic influencer look", "losing sunglasses/halo cue"]
+    },
+    {
+      "name": "arbadacarba",
+      "role": "CMO",
+      "image": "img/arbadacarba.jpg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Elegant robed strategist in grand ritual library or hall, full-body stance, arms open, glowing stacked 600 orb, gold/brown atmosphere.",
+      "full_body_standard": "Adult strategist in dark robe or tailored ritual coat, centered in library or council archive, one glowing orb or book-light behind, composed posture.",
+      "preserve": ["library/hall", "open arms", "dark elegant robe", "glowing knowledge orb"],
+      "avoid": ["chaotic spell spam", "generic fantasy sorcerer only", "unreadable face"]
+    },
+    {
+      "name": "benarc",
+      "role": "CVO",
+      "image": "img/benarc.jpg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Dynamic vision crafter/forge figure, raised tool or blade-like object, dramatic orange light, glowing 600 shield/orb, workshop action.",
+      "full_body_standard": "Adult creator in forge-workshop clothing, one hand lifting tool, brush, or hammer, other hand shaping glowing emblem or artifact.",
+      "preserve": ["forge light", "dynamic diagonal pose", "artifact creation", "glowing emblem"],
+      "avoid": ["combat warrior as default", "giant weapon focus", "random fantasy armor"]
+    },
+    {
+      "name": "tobo",
+      "role": "CDO",
+      "image": "img/tobo.jpg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Frontier diplomat/statesman with tricorn hat, sunglasses or laser-eye glow, old-world coat, pointing hand, warm gold background.",
+      "full_body_standard": "Adult envoy in old-world coat and tricorn silhouette, confident pointing or welcoming gesture, warm civic backdrop, subtle Bitcoin/600B signal object.",
+      "preserve": ["tricorn hat", "old-world coat", "sunglasses/laser-eye cue", "pointing gesture"],
+      "avoid": ["historical parody only", "visible name label", "too much costume clutter"]
+    },
+    {
+      "name": "BlackCoffee",
+      "role": "CHO",
+      "image": "img/blackcoffee600bn.jpg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Dark armored shadow operator/knight under storm sky, coffee mug, lightning, glowing stacked 600 disk behind, quiet intense pose.",
+      "full_body_standard": "Adult armored operator in black or charcoal armor/heavy coat, coffee mug as signature object, storm light behind, disciplined low-motion posture.",
+      "preserve": ["black armor", "coffee mug", "storm", "quiet discipline"],
+      "avoid": ["villain face", "horror gore", "blue noir palette overpowering orange signal"]
+    },
+    {
+      "name": "darren",
+      "role": "CIO",
+      "image": "img/darren.png",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Cartoon donkey on mountain peak, orange Bitcoin flag, snowy peaks, blue binary sky, clear meme simplicity.",
+      "full_body_standard": "2D mascot can remain donkey. For game/VRM, use adult humanoid pathfinder with explorer clothes, donkey companion, and orange flag.",
+      "preserve": ["donkey identity", "mountain summit", "orange flag", "binary sky"],
+      "avoid": ["losing flag/summit cue", "realistic donkey style", "non-humanoid VRM output"]
+    },
+    {
+      "name": "mhb",
+      "nickname": "mrs. honeybadger",
+      "role": "CRO",
+      "image": "img/mhb.jpeg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Toon honeybadger-coded feminine character, long blonde hair, orange boho robe with cream trim, dreamcatcher, bracelets/necklaces, orange 600 medallion, warm teal/gold bokeh.",
+      "full_body_standard": "Adult humanoid honeybadger-coded ritual dancer or culture carrier, long blonde hair, orange robe, cream trim, dreamcatcher/charm object, warm teal/gold background.",
+      "preserve": ["honeybadger coding", "long blonde hair", "orange robe", "dreamcatcher", "toon line art"],
+      "avoid": ["realistic animal body for VRM", "generic fantasy elf", "losing robe/dreamcatcher cue"]
+    },
+    {
+      "name": "snick",
+      "role": "CWO",
+      "image": "img/snick.jpeg",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Toon badger-coded workshop operator, orange cap, relaxed eyes, smoke, gold chain, orange 600 medallion, tool wall, jars, plants, warm indoor workshop/grow-room.",
+      "full_body_standard": "Adult humanoid badger-coded builder/operator, orange cap, workbench/tool wall, chain or medallion, relaxed confident posture.",
+      "preserve": ["badger coding", "orange cap", "tool wall", "plants", "chain/medallion", "relaxed workshop mood"],
+      "avoid": ["cap name text", "realistic animal anatomy for VRM", "overemphasizing smoke", "clutter hiding silhouette"]
+    }
+  ],
+  "active_placeholders": [
+    {"name": "rootzoll", "role": "CDJ", "image": "img/600.png", "status": "active_placeholder", "generate": false},
+    {"name": "nc", "role": "CCC", "image": "img/600.png", "status": "active_placeholder", "generate": false},
+    {"name": "longy", "role": "CSO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
+    {"name": "essex", "nickname": "aaron of essex", "role": "CPO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
+    {"name": "jedai", "role": "CIAO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
+    {"name": "p", "nickname": "protom", "role": "CBDC", "image": "img/600.png", "status": "active_placeholder", "generate": false},
+    {"name": "aj", "role": "COL", "image": "img/600.png", "status": "active_placeholder", "generate": false},
+    {"name": "bam", "nickname": "jose bam", "role": "CMO", "image": "img/600.png", "status": "active_placeholder", "generate": false}
+  ],
+  "inactive_local_character_images": [
+    {"file": "img/p21.jpg", "former_or_likely_name": "derPeter21 / p21", "status": "inactive", "generate": false},
+    {"file": "img/janine.jpg", "former_or_likely_name": "janine", "status": "inactive", "generate": false},
+    {"file": "img/r0cks1.jpg", "former_or_likely_name": "r0cks1", "status": "inactive", "generate": false},
+    {"file": "img/lightrider.png", "former_or_likely_name": "Lightrider", "status": "inactive", "generate": false}
+  ],
+  "non_member_assets": [
+    {"file": "img/oink.jpg", "handling": "mascot/companion reference only"},
+    {"file": "img/shrooms.jpg", "handling": "symbol/asset only"},
+    {"file": "img/600.png", "handling": "active placeholder symbol"},
+    {"file": "img/600-old.png", "handling": "old symbol asset"},
+    {"file": "img/600_small.png", "handling": "small symbol asset"},
+    {"file": "img/favicon.ico", "handling": "site icon"}
+  ]
+}
