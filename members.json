@@ -66,6 +66,12 @@
             "role": "CIO",
             "img": "img/darren.png",
             "nostr": "darren@600.wtf"
+        },
+        {
+            "name": "snick",
+            "role": "CWO",
+            "img": "img/600.png",
+            "nostr": "snick@600.wtf"
         }
     ]
 }
