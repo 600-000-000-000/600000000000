@@ -62,13 +62,15 @@ Identify characters by silhouette, object, posture, costume, and placement.
 The target style is a hybrid of cypherpunk, traditional/old-world craft, fantasy, and cute
 manga/toon. Keep it readable, warm, human, and game-ready.
 
-## Current Active Unique Avatar Members
+## Current Active Generatable Avatar Members
 
-- dni - hooded signal bearer, orange halo, raised hands
-- nind - cyan architectural dome/grid operator
-- michael1011 - hooded engineer monk with glowing node
+These entries can generate from local image references or explicit user-provided identity details.
+
+- dni - Bitcoin Jesus / signal prophet with orange halo, raised hands, and Birkenstock-style sandals
+- nind - Indian architect/operator, rose seller, cake maker, OG Pepe/frog meme fan
+- michael1011 - OG coder and node runner; hooded engineer monk with glowing node
 - sat - astronaut/explorer with helmet emblem
-- flx - Bullbear chaos-engineer guardian in black armor
+- flx - head of culture and 600B curator; Bullbear chaos-engineer with absurdist traditional meme energy
 - shillie - sunglasses amplifier with orange 600 halo
 - arbadacarba - elegant strategist in ritual library
 - benarc - vision crafter in forge/workshop energy
@@ -77,20 +79,20 @@ manga/toon. Keep it readable, warm, human, and game-ready.
 - darren - pathfinder; donkey mascot or humanoid scout plus donkey companion
 - rootzoll - DJ honeybadger with yellow helmet, headphones, record, and record case
 - nc - Chief Culture Curator, smooth rapper with sunglasses, mic, cap, and orange bandana
+- longy - street musician with guitar, punk/cypherpunk busker energy
+- essex / aaron of essex - Chief Punk Officer; UK punk performer with hippie surfer ease, mic, stage energy, and no readable logo/text
+- p / protom - CBDC; grinning honeybadger wizard with tall hat, wonderland-cat mischief, and signature wide grin
+- aj - Indian woman with hip-hop, reggae, and cypherpunk sound-system energy
 - jedai - cypherpunk strategist with bear/eagle aura and chess-table command pose
 - Gadaj - Chief Kurwa Officer, boar-coded rain-yard bruiser with red headband
+- bam / jose bam - Chief Meme Officer and Chief Mustache Officer; Mexican-inspired meme maestro with big mustache, orange sombrero, sunglasses, and wordless meme props
 - mhb - honeybadger-coded ritual dancer with orange robe and dreamcatcher
 - snick - badger-coded workshop operator with orange cap and tool wall
 
 ## Current Active Placeholders
 
-These are active on the website but use `img/600.png`. Do not invent unique faces or bodies:
-
-- longy
-- essex
-- p
-- aj
-- bam
+None currently. Every local branch member has either a local image reference or explicit
+user-provided identity details.
 
 ## World Tone
 

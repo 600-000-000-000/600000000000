@@ -60,7 +60,7 @@ Current visible roster names and public role labels from live `members.json`:
 
 ## Avatar Status Summary
 
-Active members with unique local avatar reference:
+Active members with usable avatar generation reference:
 
 - dni
 - nind
@@ -75,18 +75,20 @@ Active members with unique local avatar reference:
 - darren
 - rootzoll
 - nc
+- longy
+- essex
+- p
+- aj
 - jedai
 - Gadaj
+- bam
 - mhb
 - snick
 
 Active placeholders using `img/600.png`; do not generate unique avatars yet:
 
-- longy
-- essex
-- p
-- aj
-- bam
+None currently. Every local branch member has either a local image reference or explicit
+user-provided identity details.
 
 Inactive local character images; do not generate as current members:
 

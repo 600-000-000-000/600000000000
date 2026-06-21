@@ -15,8 +15,8 @@ for avatar regeneration, story images, RPG characters, and later VRM work.
 - A local image does not create an active member by itself.
 - If a character image exists locally but its name is not on the website roster, mark it
   `inactive` and do not generate it.
-- If an active website member uses `img/600.png`, treat it as an active placeholder. Do not
-  invent a unique face or body until identity details exist.
+- If an active website member uses `img/600.png`, treat it as an active placeholder unless
+  explicit user-provided identity details exist. Do not invent a unique face or body.
 - Routing files such as `.well-known/nostr.json` are not name authority for generation.
 
 ## Generation Rules
@@ -47,20 +47,24 @@ for avatar regeneration, story images, RPG characters, and later VRM work.
 - Website role: CEO
 - Website image: `img/dni2.jpg`
 - Other local reference: `img/dni.jpg`
+- Aliases/personas: dni, prophet, Bitcoin Jesus, racooDNI
 - Status: active
 - Generate: yes
 
 Image details extracted: dark hooded mystic/operator, glowing orange signal disk behind
 the head, raised hands with orange lights, chest light, black/brown robe, warm ritual-tech
-atmosphere.
+atmosphere. User-specified canon: Bitcoin Jesus with Birkenstock-style sandals.
 
 Full-body standard: adult humanoid signal bearer in dark robe or long coat, centered and calm,
 hands open as if conducting the signal, small round stone or orb near chest or feet, wordless
-orange halo behind the head. Keep a mysterious but readable face.
+orange halo behind the head, Birkenstock-style sandals without visible brand marks. Keep a
+mysterious but readable face and a meme-prophet stance.
 
-Preserve: hooded silhouette, orange halo, raised hands, mystic operator mood.
+Preserve: hooded silhouette, orange halo, raised hands, Bitcoin Jesus meme-prophet identity,
+Birkenstock-style sandals, mystic operator mood.
 
-Avoid: literal church-preacher costume, any readable text, giant stone, random crown.
+Avoid: institutional church-preacher costume, any readable text, sandal brand logos, giant stone,
+random crown, making aliases/personas into separate characters.
 
 ### nind
 
@@ -71,14 +75,18 @@ Avoid: literal church-preacher costume, any readable text, giant stone, random c
 
 Image details extracted: abstract architectural avatar, cyan and black circular glass dome or
 grid viewed from below, tunnel/dome depth, human presence implied but not portrait-forward.
+User-specified canon: Indian, sells roses, big in cakes, OG Pepe/frog meme fan.
 
 Full-body standard: adult humanoid architect/operator in clean dark utility clothing, framed by
 a cyan geometric dome, bridge grid, or blueprint-light structure. Keep the figure precise,
-technical, and understated.
+technical, and understated. Add wordless roses, cake-box or pastry-tool props, and a small
+wordless green frog charm as OG meme-culture cue.
 
-Preserve: cyan dome, circular architecture, grid/tunnel depth, anonymous builder mood.
+Preserve: Indian identity, cyan dome, circular architecture, grid/tunnel depth, rose seller cue,
+cake-craft cue, OG Pepe/frog meme fan charm, anonymous builder mood.
 
-Avoid: generic wizard, random city crowd, losing the dome/grid cue.
+Avoid: any readable text, frog meme copy with text, brand logos, caricature, generic wizard,
+random city crowd, losing the dome/grid cue.
 
 ### michael1011
 
@@ -90,14 +98,17 @@ Avoid: generic wizard, random city crowd, losing the dome/grid cue.
 
 Image details extracted: hooded seated engineer monk in warm circular chamber, glowing orange
 node or stone on the floor, triangle/sigil cue, soft technical halo, dark robe.
+User-specified canon: OG coder who runs the node.
 
 Full-body standard: adult hooded engineer monk, seated or standing in workshop stance, hands
-near a glowing node, subtle cables and machine geometry. Palette stays warm brown, orange, and
-charcoal.
+near a glowing node, subtle cables and machine geometry, small server/node box, wordless
+terminal-light props. Palette stays warm brown, orange, and charcoal.
 
-Preserve: hood, seated-monk energy, glowing node, sacred-tech workshop.
+Preserve: hood, seated-monk energy, glowing node, full-node operator identity, OG coder focus,
+sacred-tech workshop.
 
-Avoid: generic hacker hoodie, robot villain, unreadable black-on-black body.
+Avoid: readable code or terminal text, generic hacker hoodie, robot villain, unreadable
+black-on-black body.
 
 ### sat
 
@@ -121,21 +132,26 @@ Avoid: NASA copy, any readable text, price-chart background.
 
 - Website role: CWO
 - Website image: `img/flx.jpg`
+- Titles: Head of Culture; Curator of 600 Billion
 - Status: active
 - Generate: yes
 
 Image details extracted: dense Bullbear chaos collage, central armored bear/bull guardian,
 horns, glowing orange eyes, black armor, coffee mug and signal props in the source, volcanic lightning,
 market-symbol debris, racooDNI side gag, high-energy orange/black palette.
+User-specified canon: head of culture and curator of 600 billion with absurdist/degen meme
+energy and traditional grounding.
 
 Full-body standard: simplify into one adult humanoid Bullbear chaos-engineer guardian: black
 armor, horned/bear-mask helmet or crest, heavy boots, coffee or tool cue, orange lightning
-cracks. Keep force and humor but remove clutter for rigging/readability.
+cracks, curator/operator posture, ritual-cultural props, traditional material details. Keep force
+and humor but remove clutter for rigging/readability.
 
-Preserve: Bullbear mass, black armor, orange lightning, coffee/workshop cue.
+Preserve: Bullbear mass, black armor, orange lightning, coffee/workshop cue, head-of-culture
+identity, 600B curator role, absurdist traditional meme energy.
 
-Avoid: any readable text, gore, too many background symbols, treating Bullbear as a separate
-person from flx.
+Avoid: any readable text, gore, too many background symbols, ableist framing, treating Bullbear
+as a separate person from flx.
 
 ### shillie
 
@@ -376,19 +392,131 @@ Preserve: badger coding, orange cap, tool wall, plants, chain/medallion, relaxed
 Avoid: any cap text, realistic animal anatomy for VRM, overemphasizing smoke, clutter hiding
 the silhouette.
 
+### bam
+
+- Website role: CMO
+- Nickname: jose bam
+- Titles: Chief Meme Officer; Chief Mustache Officer
+- Website image: `img/600.png`
+- Source: user-provided identity description
+- Status: active
+- Generate: yes
+
+Image details extracted: no unique local character image yet; current website image is the shared
+`img/600.png` placeholder. User-specified canon: Mexican guy / Mexican-inspired meme officer with
+big mustache, orange sombrero, sunglasses, and extra cool meme energy.
+
+Full-body standard: adult humanoid meme maestro with big mustache, orange sombrero with no
+readable decoration, dark sunglasses, warm poncho/serape or jacket accents, wordless meme-card
+deck or talisman pouch, confident festival-host posture, cypherpunk party details, traditional
+craft texture, fantasy trickster energy, and cute manga/toon readability.
+
+Preserve: big mustache, orange sombrero, sunglasses, Chief Meme Officer energy, Chief Mustache
+Officer joke, Mexican-inspired festival warmth, wordless meme props.
+
+Avoid: any readable text, written memes, cap/hat labels, brand logos, flag text, caricature,
+mockery, or reducing the character to a flat national stereotype.
+
+### essex
+
+- Website role: CPO
+- Nickname: aaron of essex
+- Title: Chief Punk Officer
+- Website image: `img/essex.png`
+- Status: active
+- Generate: yes
+
+Image details extracted: live stage performer leaning into a microphone, loose dark shirt, pale
+trousers, warm orange/yellow stage light, drum kit behind him, microphone stands, punk gig
+setting. Source image includes visible round 600-style mark and small lower-corner logo/text-like
+artifact; these must not be reproduced.
+
+Full-body standard: adult humanoid UK punk officer with rough stage hair, dark loose shirt or
+patched jacket, pale trousers, beach-worn surfer details, small hippie charm or woven bracelet,
+wordless microphone, band-stage stance, cypherpunk gig lighting, traditional punk DIY texture,
+fantasy bard energy, and cute manga/toon readability.
+
+Preserve: UK punk performer energy, microphone, stage/band setting, warm gig light,
+hippie-surfer ease, relaxed rebellious posture.
+
+Avoid: any readable text, visible 600 mark, logo artifacts, readable drum or stage labels, flag
+text, generic royal/guard UK costume, or losing the punk/hippie/surfer blend.
+
+### p
+
+- Website role: CBDC
+- Nickname: protom
+- Website image: `img/600.png`
+- Source: user-provided identity description
+- Status: active
+- Generate: yes
+
+Image details extracted: no unique local character image yet; current website image is the shared
+`img/600.png` placeholder. User-specified canon: funny grinning cat from Alice-style wonderland
+mixed with honeybadger, tall top hat, wizard style, and a signature grin mouth.
+
+Full-body standard: adult humanoid honeybadger wizard with wonderland-cat mischief, oversized
+signature grin, tall wordless top hat, striped or patchwork robe, small glowing potion or orb,
+crooked staff, playful portal/smoke shapes, cypherpunk occult details, traditional storybook
+craft, fantasy wizard style, and cute manga/toon readability.
+
+Preserve: signature wide grin, top hat, wizard silhouette, honeybadger coding, playful
+wonderland-cat mischief, funny magical oddness.
+
+Avoid: copying a specific Disney Alice design, readable hat cards, written labels, visible text,
+creepy horror mouth, realistic animal body for VRM, or losing the grin as the signature silhouette.
+
+### longy
+
+- Website role: CSO
+- Website image: `img/600.png`
+- External reference: `https://iris.to/npub19ppwxjrqckwl4n2a7j960fjsvhn8vrggcd0h092nmq7zcgcskjfsywp04j`
+- Source: user-provided identity description
+- Status: active
+- Generate: yes
+
+Image details extracted: no unique local character image yet; current website image is the shared
+`img/600.png` placeholder. User-specified canon: street musician with guitar, punk attitude, and
+cypherpunk energy.
+
+Full-body standard: adult humanoid street guitarist with acoustic or electric guitar, patched
+street jacket, rugged boots, small amp or open guitar case, cypherpunk signal glow, punk DIY
+texture, urban busking posture, traditional folk-musician warmth, fantasy bard energy, and cute
+manga/toon readability.
+
+Preserve: street musician identity, guitar silhouette, punk attitude, cypherpunk signal energy,
+busker posture, grounded human warmth.
+
+Avoid: any readable text, readable stickers, readable guitar labels, readable signs, brand logos,
+generic rock-star posing without street-musician warmth, or hiding the guitar silhouette.
+
+### aj
+
+- Website role: COL
+- Website image: `img/600.png`
+- Source: user-provided identity description
+- Status: active
+- Generate: yes
+
+Image details extracted: no unique local character image yet; current website image is the shared
+`img/600.png` placeholder. User-specified canon: Indian woman with hip-hop, reggae, and
+cypherpunk vibes.
+
+Full-body standard: adult Indian woman operator with hip-hop/reggae stage posture, headphones or
+mic, layered streetwear, orange/green/gold accent cloth or scarf without flag text, braided or
+flowing hair, sound-system speaker or rhythm prop, cypherpunk neon details, traditional textile
+texture, fantasy sound-mage energy, and cute manga/toon readability.
+
+Preserve: Indian woman identity, hip-hop/reggae sound-system energy, cypherpunk streetwear,
+confident stance, warm music-culture charisma.
+
+Avoid: any readable text, flag labels, brand logos, caricature, mockery, religious costume
+shortcuts, or reducing the character to a flat national stereotype.
+
 ## Active Website Members With Placeholder Image
 
-These members are active because they are on the website. They use `img/600.png`, so no unique
-avatar details can be extracted yet. Do not generate unique full-body avatars until identity
-descriptions are provided.
-
-| Name | Nickname | Role | Image | Status | Generate unique avatar |
-|---|---|---|---|---|---|
-| longy | | CSO | `img/600.png` | active_placeholder | false |
-| essex | aaron of essex | CPO | `img/600.png` | active_placeholder | false |
-| p | protom | CBDC | `img/600.png` | active_placeholder | false |
-| aj | | COL | `img/600.png` | active_placeholder | false |
-| bam | jose bam | CMO | `img/600.png` | active_placeholder | false |
+None currently. Every local branch member has either a local image reference or explicit
+user-provided identity details.
 
 Temporary fallback, if a placeholder visual is required: adult humanoid builder silhouette with
 wordless orange medallion, no locked face, no locked outfit, no implied personal traits.
