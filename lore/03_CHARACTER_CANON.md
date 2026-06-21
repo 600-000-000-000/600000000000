@@ -132,6 +132,22 @@ sunglasses, with wordless gold halo geometry, chess-piece object language, bear/
 companions or heraldic silhouettes, traditional old-world craft details, fantasy authority, and
 cute manga/toon readability.
 
+### Gadaj - CKO
+
+Nickname: GDJ
+
+Title: Chief Kurwa Officer
+
+Archetype: Rain-Yard Boar Guardian
+
+Core visual: boar-coded powerhouse, red headband, huge muscular torso, rain-soaked industrial
+yard, brick wall, dark forest line, orange belt/wordless emblem cue.
+
+Full-body direction: adult humanoid boar-coded guardian with massive but riggable proportions,
+red headband, rain-slick fur/armor texture, industrial courtyard and forest silhouette, orange
+wordless belt medallion, traditional warrior stance, cypherpunk grit, fantasy brute presence,
+and cute manga/toon readability.
+
 ### mhb - CRO
 
 Nickname: mrs. honeybadger

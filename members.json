@@ -99,6 +99,13 @@
             "nostr": "jedai@600.wtf"
         },
         {
+            "name": "Gadaj",
+            "nickname": "GDJ",
+            "role": "CKO",
+            "img": "img/gadaj.png",
+            "nostr": "gadaj@600.wtf"
+        },
+        {
             "name": "p",
             "nickname": "protom",
             "role": "CBDC",

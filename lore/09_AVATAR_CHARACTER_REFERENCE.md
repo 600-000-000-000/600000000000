@@ -267,6 +267,31 @@ golden halo, bear/eagle power balance.
 Avoid: any readable text, real brand marks, readable chess labels, over-realistic corporate
 portrait, making bear or eagle replace the humanoid avatar body.
 
+### Gadaj
+
+- Website role: CKO
+- Nickname: GDJ
+- Title: Chief Kurwa Officer
+- Website image: `img/gadaj.png`
+- Status: active
+- Generate: yes
+
+Image details extracted: boar-coded muscular guardian standing in heavy rain, red headband,
+large tusks and snout, huge flexed arms, wet dark fur/armor-like body texture, orange belt with
+wordless emblem cue, brick industrial building behind, forest silhouette, cold grey-blue rain
+atmosphere.
+
+Full-body standard: adult humanoid boar-coded rain-yard guardian with massive but riggable
+proportions, red headband, broad shoulders, orange wordless belt medallion, industrial
+courtyard and dark forest backdrop, traditional warrior stance, cypherpunk grit, fantasy brute
+presence, and cute manga/toon readability.
+
+Preserve: boar head/snout/tusks, red headband, rain, industrial yard, huge guardian build,
+orange belt cue.
+
+Avoid: any readable text, readable belt symbols, realistic-only animal anatomy for VRM,
+oversexualized bodybuilder framing, replacing the humanoid body with a four-legged boar.
+
 ### mhb
 
 - Website role: CRO

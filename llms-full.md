@@ -76,6 +76,7 @@ manga/toon. Keep it readable, warm, human, and game-ready.
 - BlackCoffee - dark armored coffee shadow operator
 - darren - pathfinder; donkey mascot or humanoid scout plus donkey companion
 - jedai - cypherpunk strategist with bear/eagle aura and chess-table command pose
+- Gadaj - Chief Kurwa Officer, boar-coded rain-yard bruiser with red headband
 - mhb - honeybadger-coded ritual dancer with orange robe and dreamcatcher
 - snick - badger-coded workshop operator with orange cap and tool wall
 

@@ -159,6 +159,20 @@
       "avoid": ["any readable text", "real brand marks", "readable chess labels", "over-realistic corporate portrait", "bear or eagle replacing the humanoid avatar body"]
     },
     {
+      "name": "Gadaj",
+      "nickname": "GDJ",
+      "title": "Chief Kurwa Officer",
+      "role": "CKO",
+      "image": "img/gadaj.png",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Boar-coded muscular guardian standing in heavy rain, red headband, large tusks and snout, huge flexed arms, wet dark fur/armor-like body texture, orange belt with wordless emblem cue, brick industrial building behind, forest silhouette, cold grey-blue rain atmosphere.",
+      "full_body_standard": "Adult humanoid boar-coded rain-yard guardian with massive but riggable proportions, red headband, broad shoulders, orange wordless belt medallion, industrial courtyard and dark forest backdrop, traditional warrior stance, cypherpunk grit, fantasy brute presence, cute manga/toon readability.",
+      "preserve": ["boar head/snout/tusks", "red headband", "rain", "industrial yard", "huge guardian build", "orange belt cue"],
+      "avoid": ["any readable text", "readable belt symbols", "realistic-only animal anatomy for VRM", "oversexualized bodybuilder framing", "four-legged boar body"]
+    },
+    {
       "name": "mhb",
       "nickname": "mrs. honeybadger",
       "role": "CRO",

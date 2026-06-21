@@ -55,6 +55,7 @@ The stone is small, round, dense, and secondary unless requested otherwise.
 - BlackCoffee - Shadow Operator
 - darren - Pathfinder
 - jedai - CIAO Strategist
+- Gadaj - Chief Kurwa Officer
 - mhb - Ritual Culture Carrier
 - snick - Workshop Operator
 

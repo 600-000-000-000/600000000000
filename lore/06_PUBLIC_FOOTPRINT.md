@@ -51,6 +51,7 @@ Current visible roster names and public role labels from live `members.json`:
 - longy - CSO
 - essex - CPO, nickname: aaron of essex
 - jedai - CIAO
+- Gadaj - CKO, nickname: GDJ
 - p - CBDC, nickname: protom
 - aj - COL
 - bam - CMO, nickname: jose bam
@@ -73,6 +74,7 @@ Active members with unique local avatar reference:
 - BlackCoffee
 - darren
 - jedai
+- Gadaj
 - mhb
 - snick
 
