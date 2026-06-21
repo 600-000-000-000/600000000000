@@ -70,7 +70,7 @@ silhouette. Bullbear is an alias/persona of flx here, not a separate generated m
 
 Archetype: Wave Rider / Amplifier
 
-Core visual: sunglasses, raised hands, orange 600 disk/halo, urban event energy.
+Core visual: sunglasses, raised hands, wordless orange signal disk/halo, urban event energy.
 
 Full-body direction: adult amplifier/operator with sunglasses, open-hand pose, streetwear or
 stage jacket, warm party-stage light.
@@ -126,8 +126,8 @@ Nickname: mrs. honeybadger
 
 Archetype: Ritual Culture Carrier
 
-Core visual: honeybadger-coded toon character, long blonde hair, orange robe, dreamcatcher,
-600 medallion, warm teal/gold bokeh.
+Core visual: honeybadger-coded cute manga/toon character, long blonde hair, orange robe,
+dreamcatcher, wordless orange medallion, warm teal/gold bokeh.
 
 Full-body direction: adult humanoid honeybadger-coded ritual dancer or culture carrier with
 dreamcatcher/charm object.
@@ -136,8 +136,8 @@ dreamcatcher/charm object.
 
 Archetype: Workshop Operator
 
-Core visual: badger-coded toon character, orange cap, relaxed eyes, chain/600 medallion, tool
-wall, plants, warm workshop/grow-room.
+Core visual: badger-coded cute manga/toon character, plain orange cap, relaxed eyes,
+chain/wordless medallion, tool wall, plants, warm workshop/grow-room.
 
 Full-body direction: adult humanoid badger-coded builder/operator with cap, tool wall, medallion,
 and relaxed confident posture.
@@ -158,8 +158,8 @@ Do not generate unique avatars until identity descriptions exist.
 | aj | | COL | active_placeholder | false |
 | bam | jose bam | CMO | active_placeholder | false |
 
-Temporary fallback only: anonymous adult builder silhouette with orange 600 medallion, no locked
-face, no locked outfit, no implied personal traits.
+Temporary fallback only: anonymous adult builder silhouette with wordless orange medallion, no
+locked face, no locked outfit, no implied personal traits.
 
 ## Inactive Local Character Images
 
@@ -178,6 +178,8 @@ them again.
 ## Interaction Rules
 
 - Team images must not write names, handles, or job titles onto people.
+- Avatar images must contain no readable text at all.
+- Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
 - Use silhouettes, objects, posture, costume, and placement for recognition.
 - Active placeholder members should appear only as generic silhouettes or 600 symbols until
   identity details exist.

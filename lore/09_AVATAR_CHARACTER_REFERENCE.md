@@ -26,8 +26,12 @@ for avatar regeneration, story images, RPG characters, and later VRM work.
 - Keep a clean silhouette that can later become a rigged humanoid avatar.
 - For animal-coded avatars, keep the animal identity as mask, head styling, outfit, companion,
   or mascot layer unless the request is explicitly 2D mascot art.
-- Do not write names, handles, roles, or labels onto people.
-- If the sacred number appears, it must use this exact stacked layout:
+- Style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
+- Avatar images must contain no readable text at all: no names, handles, roles, cap labels,
+  clothing labels, signs, readable numbers, or written 600B marks.
+- Use wordless symbols instead: orange disks, abstract stacked glyphs, medallions, stones,
+  orbs, costumes, silhouettes, objects, and posture.
+- For non-avatar scenes only, if the sacred number appears, it must use this exact stacked layout:
 
 ```text
 600
@@ -46,17 +50,17 @@ for avatar regeneration, story images, RPG characters, and later VRM work.
 - Status: active
 - Generate: yes
 
-Image details extracted: dark hooded mystic/operator, glowing orange stacked 600 disk behind
+Image details extracted: dark hooded mystic/operator, glowing orange signal disk behind
 the head, raised hands with orange lights, chest light, black/brown robe, warm ritual-tech
 atmosphere.
 
 Full-body standard: adult humanoid signal bearer in dark robe or long coat, centered and calm,
-hands open as if conducting the signal, small round stone or orb near chest or feet, orange
-halo behind the head. Keep a mysterious but readable face.
+hands open as if conducting the signal, small round stone or orb near chest or feet, wordless
+orange halo behind the head. Keep a mysterious but readable face.
 
 Preserve: hooded silhouette, orange halo, raised hands, mystic operator mood.
 
-Avoid: literal church-preacher costume, visible name label, giant stone, random crown.
+Avoid: literal church-preacher costume, any readable text, giant stone, random crown.
 
 ### nind
 
@@ -106,12 +110,12 @@ Avoid: generic hacker hoodie, robot villain, unreadable black-on-black body.
 Image details extracted: astronaut/explorer in an old city or plaza, bulky suit, glowing
 Bitcoin emblem as helmet face/visor, warm orange-gold light.
 
-Full-body standard: adult astronaut/explorer in clean bulky suit, helmet or chest emblem as
-main icon, standing in public square, conference plaza, or mission-gate environment.
+Full-body standard: adult astronaut/explorer in clean bulky suit, wordless helmet or chest
+emblem as main icon, standing in public square, conference plaza, or mission-gate environment.
 
 Preserve: astronaut suit, helmet emblem, public explorer stance, orange-gold palette.
 
-Avoid: NASA copy, floating name text, price-chart background.
+Avoid: NASA copy, any readable text, price-chart background.
 
 ### flx
 
@@ -121,7 +125,7 @@ Avoid: NASA copy, floating name text, price-chart background.
 - Generate: yes
 
 Image details extracted: dense Bullbear chaos collage, central armored bear/bull guardian,
-horns, glowing orange eyes, black armor, coffee mug with stacked 600, volcanic lightning,
+horns, glowing orange eyes, black armor, coffee mug and signal props in the source, volcanic lightning,
 market-symbol debris, racooDNI side gag, high-energy orange/black palette.
 
 Full-body standard: simplify into one adult humanoid Bullbear chaos-engineer guardian: black
@@ -130,7 +134,7 @@ cracks. Keep force and humor but remove clutter for rigging/readability.
 
 Preserve: Bullbear mass, black armor, orange lightning, coffee/workshop cue.
 
-Avoid: visible `FLX` label, gore, too many background symbols, treating Bullbear as a separate
+Avoid: any readable text, gore, too many background symbols, treating Bullbear as a separate
 person from flx.
 
 ### shillie
@@ -141,16 +145,16 @@ person from flx.
 - Status: active
 - Generate: yes
 
-Image details extracted: public-facing operator with sunglasses, raised hands, orange stacked
-600 disk as face/halo, warm urban/event backdrop, black/orange contrast.
+Image details extracted: public-facing operator with sunglasses, raised hands, orange signal
+disk as face/halo, warm urban/event backdrop, black/orange contrast.
 
 Full-body standard: adult amplifier/operator with sunglasses, confident open-hand pose,
-streetwear or stage jacket, orange disk/halo behind head or chest emblem, party-stage or city
-venue light.
+streetwear or stage jacket, wordless orange disk/halo behind head or chest emblem, party-stage
+or city venue light.
 
-Preserve: sunglasses, orange 600 disk, raised hands, urban event energy.
+Preserve: sunglasses, orange signal disk, raised hands, urban event energy.
 
-Avoid: visible name label, generic influencer look, losing sunglasses/halo cue.
+Avoid: any readable text, generic influencer look, losing sunglasses/halo cue.
 
 ### arbadacarba
 
@@ -160,7 +164,7 @@ Avoid: visible name label, generic influencer look, losing sunglasses/halo cue.
 - Generate: yes
 
 Image details extracted: elegant robed strategist in a grand ritual library or hall, full-body
-stance, arms open, glowing stacked 600 orb behind or above, gold/brown atmosphere.
+stance, arms open, glowing signal orb behind or above, gold/brown atmosphere.
 
 Full-body standard: adult strategist in dark robe or tailored ritual coat, centered in library
 or council archive, one glowing orb or book-light behind, composed and deliberate posture.
@@ -180,8 +184,8 @@ Image details extracted: dynamic vision crafter/forge figure, raised tool or bla
 dramatic orange light, glowing 600 shield/orb, workshop/forge action.
 
 Full-body standard: adult creator in forge-workshop clothing, one hand lifting a tool, brush,
-or hammer, other hand shaping a glowing emblem or artifact. Keep diagonal action but make body
-clean and riggable.
+or hammer, other hand shaping a wordless glowing emblem or artifact. Keep diagonal action but
+make body clean and riggable.
 
 Preserve: forge light, dynamic diagonal pose, artifact creation, glowing emblem.
 
@@ -195,14 +199,14 @@ Avoid: combat warrior as default, giant weapon focus, random fantasy armor.
 - Generate: yes
 
 Image details extracted: frontier diplomat/statesman wearing tricorn hat, sunglasses or
-laser-eye glow, old-world coat, pointing hand, warm gold background, side 600 disk.
+laser-eye glow, old-world coat, pointing hand, warm gold background, side signal disk.
 
 Full-body standard: adult envoy in old-world coat and tricorn silhouette, confident pointing or
 welcoming gesture, warm civic backdrop, subtle Bitcoin/600B signal object.
 
 Preserve: tricorn hat, old-world coat, sunglasses/laser-eye cue, pointing gesture.
 
-Avoid: historical parody only, visible name label, too much costume clutter.
+Avoid: historical parody only, readable labels, too much costume clutter.
 
 ### BlackCoffee
 
@@ -212,10 +216,10 @@ Avoid: historical parody only, visible name label, too much costume clutter.
 - Generate: yes
 
 Image details extracted: dark armored shadow operator/knight under storm sky, coffee mug,
-lightning, glowing stacked 600 disk behind, quiet intense pose.
+lightning, glowing signal disk behind, quiet intense pose.
 
-Full-body standard: adult armored operator in black or charcoal armor/heavy coat, coffee mug as
-signature object, storm light behind, disciplined low-motion posture.
+Full-body standard: adult armored operator in black or charcoal armor/heavy coat, wordless
+coffee mug as signature object, storm light behind, disciplined low-motion posture.
 
 Preserve: black armor, coffee mug, storm, quiet discipline.
 
@@ -247,15 +251,15 @@ Avoid: losing flag/summit cue, realistic donkey style, non-humanoid VRM output.
 - Status: active
 - Generate: yes
 
-Image details extracted: toon honeybadger-coded feminine character, long blonde hair, orange
-boho robe with cream trim, dreamcatcher, bracelets/necklaces, orange 600 medallion, warm
+Image details extracted: cute manga/toon honeybadger-coded feminine character, long blonde hair,
+orange boho robe with cream trim, dreamcatcher, bracelets/necklaces, wordless orange medallion, warm
 teal/gold bokeh, joyful ritual movement.
 
 Full-body standard: adult humanoid honeybadger-coded ritual dancer or culture carrier, long
 blonde hair, orange robe, cream trim, dreamcatcher/charm object, warm teal/gold background.
-Keep toon line-art style.
+Keep cute manga/toon line-art style with cypherpunk and traditional craft details.
 
-Preserve: honeybadger coding, long blonde hair, orange robe, dreamcatcher, toon line art.
+Preserve: honeybadger coding, long blonde hair, orange robe, dreamcatcher, cute manga/toon line art.
 
 Avoid: realistic animal body for VRM, generic fantasy elf, losing robe/dreamcatcher cue.
 
@@ -266,16 +270,16 @@ Avoid: realistic animal body for VRM, generic fantasy elf, losing robe/dreamcatc
 - Status: active
 - Generate: yes
 
-Image details extracted: toon badger-coded workshop operator, orange cap, relaxed eyes, smoke,
-gold chain, orange 600 medallion, tool wall, jars, plants, warm indoor workshop/grow-room.
+Image details extracted: cute manga/toon badger-coded workshop operator, plain orange cap,
+relaxed eyes, smoke, gold chain, wordless orange medallion, tool wall, jars, plants, warm indoor workshop/grow-room.
 
-Full-body standard: adult humanoid badger-coded builder/operator, orange cap, workbench/tool
-wall, chain or medallion, relaxed confident posture. For game output, keep the badger identity
-as head styling/mask on a riggable humanoid.
+Full-body standard: adult humanoid badger-coded builder/operator, plain orange cap with no
+letters, workbench/tool wall, chain or wordless medallion, relaxed confident posture. For game
+output, keep the badger identity as head styling/mask on a riggable humanoid.
 
 Preserve: badger coding, orange cap, tool wall, plants, chain/medallion, relaxed workshop mood.
 
-Avoid: cap name text, realistic animal anatomy for VRM, overemphasizing smoke, clutter hiding
+Avoid: any cap text, realistic animal anatomy for VRM, overemphasizing smoke, clutter hiding
 the silhouette.
 
 ## Active Website Members With Placeholder Image
@@ -296,7 +300,7 @@ descriptions are provided.
 | bam | jose bam | CMO | `img/600.png` | active_placeholder | false |
 
 Temporary fallback, if a placeholder visual is required: adult humanoid builder silhouette with
-orange 600 medallion, no locked face, no locked outfit, no implied personal traits.
+wordless orange medallion, no locked face, no locked outfit, no implied personal traits.
 
 ## Inactive Local Character Images
 

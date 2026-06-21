@@ -43,14 +43,24 @@ Always write:
 
 Do not compress or freestyle the format.
 
+For avatar images specifically, do not render readable text or numbers at all. Use wordless
+symbols, abstract stacked glyphs, orange disks, medallions, stones, or costume cues instead.
+
 ## Sacred Stone
 
 The 600B stone is small, round, dense, and secondary unless explicitly requested.
 
-## Team Image Rule
+## Avatar Text Rule
 
-Team images must not write names, handles, job titles, or floating labels onto people. Identify
-characters by silhouette, object, posture, costume, and placement.
+Avatar images must contain no readable text: no names, handles, job titles, floating labels,
+cap labels, clothing labels, signs, readable numbers, or written 600B marks.
+
+Identify characters by silhouette, object, posture, costume, and placement.
+
+## Avatar Style
+
+The target style is a hybrid of cypherpunk, traditional/old-world craft, fantasy, and cute
+manga/toon. Keep it readable, warm, human, and game-ready.
 
 ## Current Active Unique Avatar Members
 
@@ -101,7 +111,7 @@ Reject outputs that:
 
 - generate inactive local members as current members
 - invent fixed identities for placeholders
-- write names or roles onto people
+- write any readable text onto avatars
 - compress the sacred number into the wrong layout
 - make the sacred stone huge by accident
 - look like generic corporate crypto art

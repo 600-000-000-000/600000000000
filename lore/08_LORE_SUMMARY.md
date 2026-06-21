@@ -35,6 +35,8 @@ The number is always written exactly like this:
 
 Never improvise the line breaks.
 
+For avatar images, do not render readable text or numbers at all. Use wordless symbols instead.
+
 ## Sacred Stone
 
 The stone is small, round, dense, and secondary unless requested otherwise.
@@ -84,7 +86,10 @@ Use builder/operator/player language. Avoid cult framing.
 Madeira is an optional origin echo, not a mandatory scene default. Prague Party 2026-06-11 is a
 strong event anchor for gathering, party, and culture scenes.
 
-Team images must not write names, handles, or job titles onto people.
+Avatar images must not contain readable text. No names, handles, roles, cap labels, clothing
+labels, signs, readable numbers, or written 600B marks.
+
+Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
 
 ## Anchor
 

@@ -12,9 +12,13 @@ world.
   generated as current members.
 - Active placeholders using `img/600.png` need identity details before unique avatars are
   generated.
-- Team images must not write names, handles, or job titles onto people.
+- Avatar images must contain no readable text at all: no names, handles, roles, cap labels,
+  clothing labels, signs, readable numbers, or written 600B marks.
+- Use wordless symbols instead: orange disks, stacked abstract glyphs, medallions, stone/orb
+  shapes, silhouettes, costumes, objects, posture, and palette.
+- Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
 - The sacred stone is small and round.
-- If the sacred number appears, write it exactly like this:
+- In non-avatar posters/story scenes, if the sacred number appears, write it exactly like this:
 
 ```text
 600

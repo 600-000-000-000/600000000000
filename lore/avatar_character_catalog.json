@@ -7,8 +7,10 @@
     "active_source": "live website members.json",
     "inactive_rule": "Local character images that are not on the live website roster are inactive and must not be generated.",
     "placeholder_rule": "Active members using img/600.png are active placeholders. Do not generate unique avatars until identity details exist.",
-    "team_image_rule": "Do not write names, handles, roles, or labels onto people.",
-    "number_rule": "If visible, the sacred number must be stacked as 600/000/000/000.",
+    "avatar_text_rule": "Avatar images must contain no readable text: no names, handles, roles, cap labels, clothing labels, signs, readable numbers, or written 600B marks.",
+    "symbol_rule": "Use wordless symbols instead: orange disks, abstract stacked glyphs, medallions, stones, orbs, costumes, silhouettes, objects, and posture.",
+    "number_rule": "The sacred number may appear in non-avatar scenes only, stacked as 600/000/000/000.",
+    "style_rule": "Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.",
     "full_body_rule": "Generate adult full-body, head-to-toe, riggable humanoid characters unless explicitly making 2D mascot art."
   },
   "active_members": [
@@ -19,10 +21,10 @@
       "status": "active",
       "generate": true,
       "alternate_images": ["img/dni.jpg"],
-      "image_details": "Dark hooded mystic/operator, glowing orange stacked 600 disk behind head, raised hands, palm lights, chest light, warm ritual-tech atmosphere.",
-      "full_body_standard": "Adult humanoid signal bearer in dark robe or long coat, centered and calm, hands open, small round stone or orb near chest or feet, orange halo behind head.",
+      "image_details": "Dark hooded mystic/operator, glowing orange source disk behind head, raised hands, palm lights, chest light, warm ritual-tech atmosphere.",
+      "full_body_standard": "Adult humanoid signal bearer in dark robe or long coat, centered and calm, hands open, small round stone or orb near chest or feet, wordless orange halo behind head, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["hooded silhouette", "orange halo", "raised hands", "mystic operator mood"],
-      "avoid": ["literal church-preacher costume", "visible name label", "giant stone", "random crown"]
+      "avoid": ["literal church-preacher costume", "any readable text", "giant stone", "random crown"]
     },
     {
       "name": "nind",
@@ -32,7 +34,7 @@
       "generate": true,
       "alternate_images": [],
       "image_details": "Abstract cyan/black architectural dome or grid viewed from below, tunnel depth, human presence implied.",
-      "full_body_standard": "Adult humanoid architect/operator in clean dark utility clothing, framed by cyan dome geometry, bridge grid, or blueprint-light structure.",
+      "full_body_standard": "Adult humanoid architect/operator in clean dark utility clothing, framed by cyan dome geometry, bridge grid, or blueprint-light structure, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["cyan dome", "circular architecture", "grid/tunnel depth", "technical mood"],
       "avoid": ["generic wizard", "busy city crowd", "losing dome/grid cue"]
     },
@@ -44,7 +46,7 @@
       "generate": true,
       "alternate_images": ["img/michael1011.jpg"],
       "image_details": "Hooded seated engineer monk in warm circular chamber, glowing orange floor node, triangle/sigil cue, technical halo.",
-      "full_body_standard": "Adult hooded engineer monk, seated or standing in workshop stance, hands near glowing node, subtle cables and machine geometry.",
+      "full_body_standard": "Adult hooded engineer monk, seated or standing in workshop stance, hands near glowing node, subtle cables and machine geometry, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["hood", "seated monk energy", "glowing node", "sacred-tech workshop"],
       "avoid": ["generic hacker hoodie", "robot villain", "unreadable black-on-black body"]
     },
@@ -56,9 +58,9 @@
       "generate": true,
       "alternate_images": ["img/sat.jpg"],
       "image_details": "Astronaut/explorer in old city or plaza, bulky suit, glowing Bitcoin emblem as helmet face/visor, warm orange-gold light.",
-      "full_body_standard": "Adult astronaut/explorer in clean bulky suit, helmet or chest emblem as main icon, standing in public square, conference plaza, or mission gate.",
+      "full_body_standard": "Adult astronaut/explorer in clean bulky suit, wordless helmet or chest emblem as main icon, standing in public square, conference plaza, or mission gate, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["astronaut suit", "helmet emblem", "public explorer stance", "orange-gold palette"],
-      "avoid": ["NASA copy", "floating name text", "price-chart background"]
+      "avoid": ["NASA copy", "any readable text", "price-chart background"]
     },
     {
       "name": "flx",
@@ -68,9 +70,9 @@
       "generate": true,
       "alternate_images": [],
       "image_details": "Dense Bullbear chaos collage: armored bear/bull guardian, horns, glowing eyes, black armor, coffee mug, orange lightning, volcanic chaos, market debris, racooDNI side gag.",
-      "full_body_standard": "Simplified adult humanoid Bullbear chaos-engineer guardian with black armor, horned/bear-mask helmet or crest, heavy boots, coffee/tool cue, orange lightning cracks.",
+      "full_body_standard": "Simplified adult humanoid Bullbear chaos-engineer guardian with black armor, horned/bear-mask helmet or crest, heavy boots, wordless coffee/tool cue, orange lightning cracks, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["Bullbear mass", "black armor", "orange lightning", "coffee/workshop cue"],
-      "avoid": ["visible FLX label", "gore", "too many background symbols", "separate Bullbear identity"]
+      "avoid": ["any readable text", "gore", "too many background symbols", "separate Bullbear identity"]
     },
     {
       "name": "shillie",
@@ -79,10 +81,10 @@
       "status": "active",
       "generate": true,
       "alternate_images": ["img/quillie.jpg"],
-      "image_details": "Public-facing operator with sunglasses, raised hands, orange stacked 600 disk as face/halo, warm urban/event backdrop.",
-      "full_body_standard": "Adult amplifier/operator with sunglasses, open-hand pose, streetwear or stage jacket, orange disk/halo behind head or chest emblem, party-stage or city venue light.",
-      "preserve": ["sunglasses", "orange 600 disk", "raised hands", "urban event energy"],
-      "avoid": ["visible name label", "generic influencer look", "losing sunglasses/halo cue"]
+      "image_details": "Public-facing operator with sunglasses, raised hands, orange signal disk as face/halo, warm urban/event backdrop.",
+      "full_body_standard": "Adult amplifier/operator with sunglasses, open-hand pose, streetwear or stage jacket, wordless orange disk/halo behind head or chest emblem, party-stage or city venue light, cypherpunk traditional fantasy cute manga/toon style.",
+      "preserve": ["sunglasses", "orange signal disk", "raised hands", "urban event energy"],
+      "avoid": ["any readable text", "generic influencer look", "losing sunglasses/halo cue"]
     },
     {
       "name": "arbadacarba",
@@ -91,8 +93,8 @@
       "status": "active",
       "generate": true,
       "alternate_images": [],
-      "image_details": "Elegant robed strategist in grand ritual library or hall, full-body stance, arms open, glowing stacked 600 orb, gold/brown atmosphere.",
-      "full_body_standard": "Adult strategist in dark robe or tailored ritual coat, centered in library or council archive, one glowing orb or book-light behind, composed posture.",
+      "image_details": "Elegant robed strategist in grand ritual library or hall, full-body stance, arms open, glowing signal orb, gold/brown atmosphere.",
+      "full_body_standard": "Adult strategist in dark robe or tailored ritual coat, centered in library or council archive, one wordless glowing orb or book-light behind, composed posture, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["library/hall", "open arms", "dark elegant robe", "glowing knowledge orb"],
       "avoid": ["chaotic spell spam", "generic fantasy sorcerer only", "unreadable face"]
     },
@@ -103,8 +105,8 @@
       "status": "active",
       "generate": true,
       "alternate_images": [],
-      "image_details": "Dynamic vision crafter/forge figure, raised tool or blade-like object, dramatic orange light, glowing 600 shield/orb, workshop action.",
-      "full_body_standard": "Adult creator in forge-workshop clothing, one hand lifting tool, brush, or hammer, other hand shaping glowing emblem or artifact.",
+      "image_details": "Dynamic vision crafter/forge figure, raised tool or blade-like object, dramatic orange light, glowing shield/orb, workshop action.",
+      "full_body_standard": "Adult creator in forge-workshop clothing, one hand lifting tool, brush, or hammer, other hand shaping wordless glowing emblem or artifact, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["forge light", "dynamic diagonal pose", "artifact creation", "glowing emblem"],
       "avoid": ["combat warrior as default", "giant weapon focus", "random fantasy armor"]
     },
@@ -116,9 +118,9 @@
       "generate": true,
       "alternate_images": [],
       "image_details": "Frontier diplomat/statesman with tricorn hat, sunglasses or laser-eye glow, old-world coat, pointing hand, warm gold background.",
-      "full_body_standard": "Adult envoy in old-world coat and tricorn silhouette, confident pointing or welcoming gesture, warm civic backdrop, subtle Bitcoin/600B signal object.",
+      "full_body_standard": "Adult envoy in old-world coat and tricorn silhouette, confident pointing or welcoming gesture, warm civic backdrop, subtle wordless signal object, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["tricorn hat", "old-world coat", "sunglasses/laser-eye cue", "pointing gesture"],
-      "avoid": ["historical parody only", "visible name label", "too much costume clutter"]
+      "avoid": ["historical parody only", "any readable text", "too much costume clutter"]
     },
     {
       "name": "BlackCoffee",
@@ -127,8 +129,8 @@
       "status": "active",
       "generate": true,
       "alternate_images": [],
-      "image_details": "Dark armored shadow operator/knight under storm sky, coffee mug, lightning, glowing stacked 600 disk behind, quiet intense pose.",
-      "full_body_standard": "Adult armored operator in black or charcoal armor/heavy coat, coffee mug as signature object, storm light behind, disciplined low-motion posture.",
+      "image_details": "Dark armored shadow operator/knight under storm sky, coffee mug, lightning, glowing signal disk behind, quiet intense pose.",
+      "full_body_standard": "Adult armored operator in black or charcoal armor/heavy coat, wordless coffee mug as signature object, storm light behind, disciplined low-motion posture, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["black armor", "coffee mug", "storm", "quiet discipline"],
       "avoid": ["villain face", "horror gore", "blue noir palette overpowering orange signal"]
     },
@@ -140,7 +142,7 @@
       "generate": true,
       "alternate_images": [],
       "image_details": "Cartoon donkey on mountain peak, orange Bitcoin flag, snowy peaks, blue binary sky, clear meme simplicity.",
-      "full_body_standard": "2D mascot can remain donkey. For game/VRM, use adult humanoid pathfinder with explorer clothes, donkey companion, and orange flag.",
+      "full_body_standard": "2D mascot can remain donkey. For game/VRM, use adult humanoid pathfinder with explorer clothes, donkey companion, and plain orange wordless flag, cypherpunk traditional fantasy cute manga/toon style.",
       "preserve": ["donkey identity", "mountain summit", "orange flag", "binary sky"],
       "avoid": ["losing flag/summit cue", "realistic donkey style", "non-humanoid VRM output"]
     },
@@ -152,9 +154,9 @@
       "status": "active",
       "generate": true,
       "alternate_images": [],
-      "image_details": "Toon honeybadger-coded feminine character, long blonde hair, orange boho robe with cream trim, dreamcatcher, bracelets/necklaces, orange 600 medallion, warm teal/gold bokeh.",
-      "full_body_standard": "Adult humanoid honeybadger-coded ritual dancer or culture carrier, long blonde hair, orange robe, cream trim, dreamcatcher/charm object, warm teal/gold background.",
-      "preserve": ["honeybadger coding", "long blonde hair", "orange robe", "dreamcatcher", "toon line art"],
+      "image_details": "Toon honeybadger-coded feminine character, long blonde hair, orange boho robe with cream trim, dreamcatcher, bracelets/necklaces, orange medallion, warm teal/gold bokeh.",
+      "full_body_standard": "Adult humanoid honeybadger-coded ritual dancer or culture carrier, long blonde hair, orange robe, cream trim, dreamcatcher/charm object, warm teal/gold background, cypherpunk traditional fantasy cute manga/toon style.",
+      "preserve": ["honeybadger coding", "long blonde hair", "orange robe", "dreamcatcher", "cute manga/toon line art"],
       "avoid": ["realistic animal body for VRM", "generic fantasy elf", "losing robe/dreamcatcher cue"]
     },
     {
@@ -164,10 +166,10 @@
       "status": "active",
       "generate": true,
       "alternate_images": [],
-      "image_details": "Toon badger-coded workshop operator, orange cap, relaxed eyes, smoke, gold chain, orange 600 medallion, tool wall, jars, plants, warm indoor workshop/grow-room.",
-      "full_body_standard": "Adult humanoid badger-coded builder/operator, orange cap, workbench/tool wall, chain or medallion, relaxed confident posture.",
-      "preserve": ["badger coding", "orange cap", "tool wall", "plants", "chain/medallion", "relaxed workshop mood"],
-      "avoid": ["cap name text", "realistic animal anatomy for VRM", "overemphasizing smoke", "clutter hiding silhouette"]
+      "image_details": "Toon badger-coded workshop operator, orange cap, relaxed eyes, smoke, gold chain, orange medallion, tool wall, jars, plants, warm indoor workshop/grow-room.",
+      "full_body_standard": "Adult humanoid badger-coded builder/operator, plain orange cap with no letters, workbench/tool wall, chain or wordless medallion, relaxed confident posture, cypherpunk traditional fantasy cute manga/toon style.",
+      "preserve": ["badger coding", "plain orange cap", "tool wall", "plants", "chain/wordless medallion", "relaxed workshop mood"],
+      "avoid": ["any cap text", "realistic animal anatomy for VRM", "overemphasizing smoke", "clutter hiding silhouette"]
     }
   ],
   "active_placeholders": [

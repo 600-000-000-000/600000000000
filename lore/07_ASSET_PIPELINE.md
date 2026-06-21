@@ -56,7 +56,8 @@ Before generating, confirm:
 - Does the stone appear?
 - If yes, is it small and round?
 - Is the scene recognizably 600B?
-- Are names, handles, and job titles absent from the image?
+- For avatar images, is all readable text absent?
+- Does the avatar style mix cypherpunk, traditional craft, fantasy, and cute manga/toon?
 
 ### 4. Character Check
 
@@ -101,7 +102,8 @@ Reject if:
 
 - member is inactive
 - placeholder member gets invented fixed identity
-- wrong number layout
+- readable text appears on an avatar
+- wrong number layout in a non-avatar scene
 - giant wrong-shaped stone
 - visible names/handles/roles on people
 - random off-brand color palette
@@ -141,5 +143,6 @@ An image is releasable when:
 - it is readable on first glance
 - it rewards second glance with details
 - it feels like our world
-- it respects the sacred number and sacred stone rules
+- avatar outputs contain no readable text
+- it respects the sacred number and sacred stone rules for non-avatar scenes
 - it adds signal, not just pixels

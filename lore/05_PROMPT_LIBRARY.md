@@ -9,8 +9,9 @@ These are reusable prompt blocks. Swap the character or scene, keep the canon.
 sacred tech, highly readable composition, canonical 600B style.
 Use only active members from https://600.wtf/members.json.
 Do not generate inactive local character images as current members.
-Do not write names, handles, or role labels onto people.
-If the sacred number appears, write it exactly as:
+Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
+For avatars, render no readable text at all. Use wordless symbols and abstract glyphs.
+For non-avatar scenes, if the sacred number appears, write it exactly as:
 
 600
 000
@@ -32,15 +33,10 @@ Core identity: [image-derived identity cues].
 Key object: [object].
 Pose: [neutral standing / hero stance / signature gesture].
 Background: [workshop / stage / plaza / storm / archive / mountain / party].
-Style: preserve the original avatar style, cleaner and full-body.
+Style: preserve the original cue, but make it cypherpunk, traditional, fantasy, cute manga/toon.
 Palette: orange, gold, black, ember, plus character-specific accent.
-Do not write names, handles, or role labels into the image.
-If the sacred number appears, write it exactly as:
-
-600
-000
-000
-000
+No readable text anywhere: no names, handles, role labels, cap labels, signs, readable numbers,
+or written 600B marks. Use wordless symbols instead.
 ```
 
 ## 1:1 Avatar Prompt
@@ -50,7 +46,8 @@ Create a 1:1 circular-crop-safe 600B avatar for [character].
 Use the source image and avatar catalog entry.
 Keep face, helmet, mask, or main symbol inside the central 70-75 percent.
 Preserve the original avatar's strongest cue.
-Do not write names, handles, or role labels into the image.
+Style: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
+No readable text anywhere. Use wordless symbols instead.
 ```
 
 ## Group Poster Prompt
@@ -60,7 +57,7 @@ Create an epic 600B crew poster using only active members from the live website 
 Do not include inactive local images as current members.
 Do not invent unique identities for placeholder members.
 Identify characters by silhouette, object, posture, costume, and placement.
-No names, handles, or job titles written onto people.
+No readable text on people or avatar-like portraits.
 Use orange and ember light with black steel and warm culture energy.
 The sacred number appears only as:
 

@@ -49,7 +49,10 @@ The sacred number is always:
 
 The sacred stone is small and round.
 
-Team images must not write names, handles, or job titles onto people.
+Avatar images must contain no readable text at all. Use wordless symbols, costumes, objects,
+silhouettes, posture, and palette instead.
+
+Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
 
 ## How To Use This Pack
 
