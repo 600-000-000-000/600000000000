@@ -68,6 +68,12 @@
             "nostr": "darren@600.wtf"
         },
         {
+            "name": "p",
+            "role": "CBDC",
+            "img": "img/600.png",
+            "nostr": "p@600.wtf"
+        },
+        {
             "name": "aj",
             "role": "COL",
             "img": "img/600.png",
