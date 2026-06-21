@@ -76,6 +76,7 @@ manga/toon. Keep it readable, warm, human, and game-ready.
 - BlackCoffee - dark armored coffee shadow operator
 - darren - pathfinder; donkey mascot or humanoid scout plus donkey companion
 - rootzoll - DJ honeybadger with yellow helmet, headphones, record, and record case
+- nc - Chief Culture Curator, smooth rapper with sunglasses, mic, cap, and orange bandana
 - jedai - cypherpunk strategist with bear/eagle aura and chess-table command pose
 - Gadaj - Chief Kurwa Officer, boar-coded rain-yard bruiser with red headband
 - mhb - honeybadger-coded ritual dancer with orange robe and dreamcatcher
@@ -85,7 +86,6 @@ manga/toon. Keep it readable, warm, human, and game-ready.
 
 These are active on the website but use `img/600.png`. Do not invent unique faces or bodies:
 
-- nc
 - longy
 - essex
 - p

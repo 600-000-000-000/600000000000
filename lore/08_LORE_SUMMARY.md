@@ -55,6 +55,7 @@ The stone is small, round, dense, and secondary unless requested otherwise.
 - BlackCoffee - Shadow Operator
 - darren - Pathfinder
 - rootzoll - DJ Honeybadger
+- nc - Chief Culture Curator
 - jedai - CIAO Strategist
 - Gadaj - Chief Kurwa Officer
 - mhb - Ritual Culture Carrier
@@ -64,7 +65,6 @@ The stone is small, round, dense, and secondary unless requested otherwise.
 
 Do not invent unique avatar identities yet:
 
-- nc
 - longy
 - essex
 - p

@@ -74,6 +74,7 @@ Active members with unique local avatar reference:
 - BlackCoffee
 - darren
 - rootzoll
+- nc
 - jedai
 - Gadaj
 - mhb
@@ -81,7 +82,6 @@ Active members with unique local avatar reference:
 
 Active placeholders using `img/600.png`; do not generate unique avatars yet:
 
-- nc
 - longy
 - essex
 - p

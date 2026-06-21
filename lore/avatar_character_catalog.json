@@ -159,6 +159,19 @@
       "avoid": ["any readable text", "readable helmet decals", "brand logos", "generic construction worker only", "record labels with text", "four-legged animal body"]
     },
     {
+      "name": "nc",
+      "title": "Chief Culture Curator",
+      "role": "CCC",
+      "image": "img/nc.png",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Smooth rapper/performer in a dark stage setting, cap, large dark sunglasses, handheld microphone, orange bandana around neck, white shirt, wrist accessory, warm low-key performance light. Source screenshot includes subtitle/video UI text that must not be reproduced.",
+      "full_body_standard": "Adult humanoid rap curator with cap, sunglasses, orange bandana, loose white shirt or stage jacket, wordless handheld microphone, relaxed confident performance pose, cypherpunk club light, traditional stage-craft details, fantasy bard/culture-curator energy, cute manga/toon readability.",
+      "preserve": ["sunglasses", "cap", "microphone", "orange bandana", "smooth rapper posture", "dark stage mood"],
+      "avoid": ["any readable text", "subtitles", "video UI", "watermark", "brand logos", "readable microphone or cap labels", "generic rapper stereotype without culture-curator warmth"]
+    },
+    {
       "name": "jedai",
       "role": "CIAO",
       "image": "img/jedai.png",
@@ -211,7 +224,6 @@
     }
   ],
   "active_placeholders": [
-    {"name": "nc", "role": "CCC", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "longy", "role": "CSO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "essex", "nickname": "aaron of essex", "role": "CPO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "p", "nickname": "protom", "role": "CBDC", "image": "img/600.png", "status": "active_placeholder", "generate": false},

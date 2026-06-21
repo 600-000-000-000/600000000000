@@ -132,6 +132,20 @@ black headphones, glasses, utility jacket, one vinyl record in hand, record case
 warm cypherpunk worksite-meets-club energy, traditional craft/tool cues, fantasy road-crew
 presence, cute manga/toon readability.
 
+### nc - CCC
+
+Title: Chief Culture Curator
+
+Archetype: Smooth Rap Curator
+
+Core visual: smooth rapper/curator with sunglasses, cap, microphone, orange bandana, white shirt,
+dark stage background, warm performance light.
+
+Full-body direction: adult humanoid rap curator in cap and sunglasses, orange bandana, loose white
+shirt or stage jacket, handheld wordless microphone, relaxed confident performance pose,
+cypherpunk club lighting, traditional stage-craft details, fantasy bard energy, cute manga/toon
+readability.
+
 ### jedai - CIAO
 
 Archetype: Cypherpunk Strategist
@@ -189,7 +203,6 @@ Do not generate unique avatars until identity descriptions exist.
 
 | Name | Nickname | Role | Status | Generate unique avatar |
 |---|---|---|---|---|
-| nc | | CCC | active_placeholder | false |
 | longy | | CSO | active_placeholder | false |
 | essex | aaron of essex | CPO | active_placeholder | false |
 | p | protom | CBDC | active_placeholder | false |

@@ -265,6 +265,29 @@ case, honeybadger coding.
 Avoid: any readable text, readable helmet decals, brand logos, generic construction worker only,
 record labels with text, replacing the humanoid body with a four-legged animal.
 
+### nc
+
+- Website role: CCC
+- Title: Chief Culture Curator
+- Website image: `img/nc.png`
+- Status: active
+- Generate: yes
+
+Image details extracted: smooth rapper/performer in dark stage setting, cap, large dark
+sunglasses, handheld microphone, orange bandana around neck, white shirt, wrist accessory, warm
+low-key performance light. Source is a screenshot and contains subtitle/video UI text at the
+bottom, which must not be reproduced.
+
+Full-body standard: adult humanoid rap curator with cap, sunglasses, orange bandana, loose white
+shirt or stage jacket, wordless handheld microphone, relaxed confident performance pose,
+cypherpunk club light, traditional stage-craft details, fantasy bard/culture-curator energy, and
+cute manga/toon readability.
+
+Preserve: sunglasses, cap, microphone, orange bandana, smooth rapper posture, dark stage mood.
+
+Avoid: any readable text, subtitles, video UI, watermark, brand logos, readable microphone or cap
+labels, generic rapper stereotype without culture-curator warmth.
+
 ### jedai
 
 - Website role: CIAO
@@ -361,7 +384,6 @@ descriptions are provided.
 
 | Name | Nickname | Role | Image | Status | Generate unique avatar |
 |---|---|---|---|---|---|
-| nc | | CCC | `img/600.png` | active_placeholder | false |
 | longy | | CSO | `img/600.png` | active_placeholder | false |
 | essex | aaron of essex | CPO | `img/600.png` | active_placeholder | false |
 | p | protom | CBDC | `img/600.png` | active_placeholder | false |
