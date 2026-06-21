@@ -68,6 +68,12 @@
             "nostr": "darren@600.wtf"
         },
         {
+            "name": "jedai",
+            "role": "CIAO",
+            "img": "img/600.png",
+            "nostr": "jedai@600.wtf"
+        },
+        {
             "name": "p",
             "nickname": "protom",
             "role": "CBDC",
