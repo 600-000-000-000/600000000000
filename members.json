@@ -68,6 +68,12 @@
             "nostr": "darren@600.wtf"
         },
         {
+            "name": "nc",
+            "role": "CCC",
+            "img": "img/600.png",
+            "nostr": "nc@600.wtf"
+        },
+        {
             "name": "longy",
             "role": "CSO",
             "img": "img/600.png",
