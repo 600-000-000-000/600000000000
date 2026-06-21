@@ -58,6 +58,7 @@ The stone is small, round, dense, and secondary unless requested otherwise.
 - nc - Chief Culture Curator
 - longy - Punk/Cypherpunk Street Guitarist
 - essex / aaron of essex - Chief Punk Officer
+- madmunky - Chief Polish Officer / DJ Monkey Trickster
 - p / protom - CBDC Grinning Badger Wizard
 - aj - Indian Hip-Hop Reggae Cypherpunk Operator
 - jedai - CIAO Strategist

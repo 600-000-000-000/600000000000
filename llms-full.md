@@ -81,6 +81,7 @@ These entries can generate from local image references or explicit user-provided
 - nc - Chief Culture Curator, smooth rapper with sunglasses, mic, cap, and orange bandana
 - longy - street musician with guitar, punk/cypherpunk busker energy
 - essex / aaron of essex - Chief Punk Officer; UK punk performer with hippie surfer ease, mic, stage energy, and no readable logo/text
+- madmunky - Chief Polish Officer; DJ monkey trickster dropping the fattest beats and causing mischief
 - p / protom - CBDC; grinning honeybadger wizard with tall hat, wonderland-cat mischief, and signature wide grin
 - aj - Indian woman with hip-hop, reggae, and cypherpunk sound-system energy
 - jedai - cypherpunk strategist with bear/eagle aura and chess-table command pose

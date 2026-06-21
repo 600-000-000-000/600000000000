@@ -442,6 +442,30 @@ hippie-surfer ease, relaxed rebellious posture.
 Avoid: any readable text, visible 600 mark, logo artifacts, readable drum or stage labels, flag
 text, generic royal/guard UK costume, or losing the punk/hippie/surfer blend.
 
+### madmunky
+
+- Website role: CPO
+- Title: Chief Polish Officer
+- Website image: `img/madmunky.png`
+- Status: active
+- Generate: yes
+
+Image details extracted: low-angle portrait with shaggy hair / dreadlock-like silhouette, full
+dark beard, mischievous raised-brow expression, cigarette-like prop, green jacket, bright blurred
+urban/stone background. User-specified canon: DJ monkey who drops the fattest beats and always
+causes mischief.
+
+Full-body standard: adult humanoid monkey-coded DJ trickster with shaggy hair, full beard, green
+jacket, DJ headphones, turntable or compact controller, vinyl crate, playful chaos props,
+confident low-angle swagger, cypherpunk club lighting, traditional street-craft texture, fantasy
+trickster energy, and cute manga/toon readability.
+
+Preserve: DJ monkey identity, shaggy hair, beard, mischievous expression, green jacket, fat beat
+dropper energy, playful troublemaker mood.
+
+Avoid: any readable text, readable Polish symbols or flag labels, brand logos, mockery, flat
+national stereotype, realistic animal body for VRM, or making the cigarette the main identity.
+
 ### p
 
 - Website role: CBDC

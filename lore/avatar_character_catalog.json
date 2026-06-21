@@ -254,6 +254,19 @@
       "avoid": ["any readable text", "visible 600 mark", "logo artifacts", "readable drum or stage labels", "flag text", "generic royal or guard UK costume", "losing punk/hippie/surfer blend"]
     },
     {
+      "name": "madmunky",
+      "title": "Chief Polish Officer",
+      "role": "CPO",
+      "image": "img/madmunky.png",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Low-angle portrait with shaggy hair / dreadlock-like silhouette, full dark beard, mischievous raised-brow expression, cigarette-like prop, green jacket, bright blurred urban/stone background. User-specified canon: DJ monkey who drops the fattest beats and always causes mischief.",
+      "full_body_standard": "Adult humanoid monkey-coded DJ trickster with shaggy hair, full beard, green jacket, DJ headphones, turntable or compact controller, vinyl crate, playful chaos props, confident low-angle swagger, cypherpunk club lighting, traditional street-craft texture, fantasy trickster energy, cute manga/toon readability.",
+      "preserve": ["DJ monkey identity", "shaggy hair", "beard", "mischievous expression", "green jacket", "fat beat dropper energy", "playful troublemaker mood"],
+      "avoid": ["any readable text", "readable Polish symbols or flag labels", "brand logos", "mockery", "flat national stereotype", "realistic animal body for VRM", "cigarette as main identity"]
+    },
+    {
       "name": "p",
       "nickname": "protom",
       "role": "CBDC",

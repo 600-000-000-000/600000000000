@@ -244,6 +244,23 @@ fantasy bard energy, and cute manga/toon readability.
 Avoid: readable logos, readable stage marks, written 600B badges, flag text, generic royal/guard
 UK costume, or losing the punk/hippie/surfer blend.
 
+### madmunky - CPO
+
+Title: Chief Polish Officer
+
+Archetype: DJ Monkey Trickster
+
+Core visual: wild DJ monkey/trickster with zottelige hair or dreadlock-like silhouette, full
+beard, mischievous grin, green jacket, cigarette-like prop, and heavyweight beat-dropper energy.
+
+Full-body direction: adult humanoid monkey-coded DJ with shaggy hair, full beard, green jacket,
+DJ headphones, turntable or compact controller, vinyl crate, playful chaos props, confident
+low-angle swagger, cypherpunk club lighting, traditional street-craft texture, fantasy trickster
+energy, and cute manga/toon readability.
+
+Avoid: readable text, readable Polish symbols or flag labels, brand logos, mockery, flat national
+stereotype, realistic animal body for VRM, or making the cigarette the main identity.
+
 ### p - CBDC
 
 Nickname: protom

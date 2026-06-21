@@ -93,6 +93,12 @@
             "nostr": "essex@600.wtf"
         },
         {
+            "name": "madmunky",
+            "role": "CPO",
+            "img": "img/madmunky.png",
+            "nostr": "madmunky@600.wtf"
+        },
+        {
             "name": "jedai",
             "role": "CIAO",
             "img": "img/jedai.png",

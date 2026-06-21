@@ -50,6 +50,7 @@ Current visible roster names and public role labels from live `members.json`:
 - nc - CCC
 - longy - CSO
 - essex - CPO, nickname: aaron of essex
+- madmunky - CPO
 - jedai - CIAO
 - Gadaj - CKO, nickname: GDJ
 - p - CBDC, nickname: protom
@@ -77,6 +78,7 @@ Active members with usable avatar generation reference:
 - nc
 - longy
 - essex
+- madmunky
 - p
 - aj
 - jedai
