@@ -16,6 +16,7 @@ new assets on a standardized basis.
 - `07_ASSET_PIPELINE.md` - asset generation, review, versioning, release rules
 - `08_LORE_SUMMARY.md` - compact lore summary
 - `09_AVATAR_CHARACTER_REFERENCE.md` - image-derived avatar descriptions and full-body standards
+- `10_600_BILLION_SIGNAL_ENGINE_GPT.md` - Custom GPT spec for branded group image prompts
 - `avatar_character_catalog.json` - machine-readable avatar catalog
 
 ## Source Of Truth
@@ -67,6 +68,11 @@ If generating a poster, storyboard, or meme, start with:
 
 - `04_WORLD_CANON.md`
 - `05_PROMPT_LIBRARY.md`
+
+If building the Custom GPT for standardized group images, start with:
+
+- `10_600_BILLION_SIGNAL_ENGINE_GPT.md`
+- `avatar_character_catalog.json`
 
 If syncing docs with public reality, start with:
 
