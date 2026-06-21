@@ -12,13 +12,16 @@ world.
   generated as current members.
 - Active placeholders using `img/600.png` need identity details before unique avatars are
   generated. If identity details are explicitly provided, use `source=user_description`.
-- Avatar images must contain no readable text at all: no names, handles, roles, cap labels,
-  clothing labels, signs, readable numbers, or written 600B marks.
+- Avatar images must contain no readable text at all except the controlled website/business-card
+  avatar exception where the sacred number appears as a large stacked signal.
+- No names, handles, roles, cap labels, clothing labels, signs, logos, subtitles, watermarks, or
+  extra readable numbers on avatars.
 - Use wordless symbols instead: orange disks, stacked abstract glyphs, medallions, stone/orb
   shapes, silhouettes, costumes, objects, posture, and palette.
 - Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
 - The sacred stone is small and round.
-- In non-avatar posters/story scenes, if the sacred number appears, write it exactly like this:
+- In website/business-card avatars and non-avatar posters/story scenes, if the sacred number
+  appears, write it exactly like this:
 
 ```text
 600
@@ -26,6 +29,9 @@ world.
 000
 000
 ```
+
+For website/business-card 1:1 avatars, the sacred number should be relatively large in every
+avatar, roughly 18-28 percent of the image area, but it must not cover the face or signature object.
 
 ## Current Active Roster Logic
 

@@ -51,7 +51,8 @@ Recommended export sizes:
 - neutral standing pose, calm hero pose, or one readable signature gesture
 - 600B palette and object language visible but not cluttered
 - cypherpunk, traditional/old-world craft, fantasy, cute manga/toon style blend
-- no readable text anywhere on the avatar image
+- no readable text anywhere on the avatar image except the exact stacked sacred number in
+  website/business-card 1:1 avatars
 
 For animal-coded avatars, use a riggable humanoid game body with the animal identity as mask,
 head styling, outfit, companion, or mascot layer unless the request is explicitly 2D mascot art.
@@ -105,19 +106,21 @@ Examples:
 
 ## Hard Visual Rules
 
-Avatar images must contain no readable text at all:
+Avatar images must contain no readable text at all, except the controlled website/business-card
+1:1 avatar exception where the sacred number is required as a large stacked signal:
 
 - no names
 - no handles
 - no role labels
 - no cap or clothing labels
 - no readable signs
-- no readable numbers
-- no written 600B marks
+- no readable numbers except the stacked sacred number in the website/business-card avatar prompt
+- no written 600B marks except the exact stacked sacred number
 
 Use wordless symbols, abstract glyphs, silhouettes, costumes, posture, objects, and color instead.
 
-For non-avatar posters/story scenes, when the sacred number is visible, it is always:
+For website/business-card 1:1 avatars and non-avatar posters/story scenes, when the sacred number
+is visible, it is always:
 
 ```text
 600
@@ -125,6 +128,10 @@ For non-avatar posters/story scenes, when the sacred number is visible, it is al
 000
 000
 ```
+
+For website and business-card avatars, the sacred number should be relatively large: roughly
+18-28 percent of the image area as a background medallion, side halo, chest badge, or corner signal
+plate, without covering the face or signature object.
 
 When the stone appears, it is:
 
@@ -148,7 +155,8 @@ Pose: [neutral standing / hero stance / signature gesture].
 Background: [workshop / stage / plaza / storm / archive / mountain / party].
 Style: preserve the original cue, but make it cypherpunk, traditional, fantasy, cute manga/toon.
 Palette: orange, gold, black, ember, plus character-specific accent.
-No readable text anywhere: no names, handles, role labels, cap labels, signs, readable numbers,
+No readable text anywhere except the exact stacked sacred number when generating website or
+business-card avatars. No names, handles, role labels, cap labels, signs, extra readable numbers,
 or written 600B marks. Use wordless symbols instead.
 ```
 
@@ -164,7 +172,8 @@ Ship only if all are true:
 - unmistakably 600B
 - full-body version is riggable and not cluttered
 - no broken hands, eyes, or nonsense anatomy
-- no readable text anywhere on the avatar
+- no readable text anywhere on the avatar except the exact stacked sacred number in
+  website/business-card 1:1 avatars
 - no wrong number formatting
 - no oversized sacred stone unless requested
 
