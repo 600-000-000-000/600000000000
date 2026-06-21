@@ -14,7 +14,12 @@
     <meta property="og:image" content="https://600.wtf/img/600.png">
 </head>
 <body>
-    <h1>600 000 000 000</h1>
+    <div class="intro">
+        <div class="intro-stone-wrap">
+            <img src="img/sacred-stone.webp" alt="" class="intro-stone">
+        </div>
+        <h1>600 000 000 000</h1>
+    </div>
     <section id="team"></section>
     <section id="parties">
         <div class="party">
@@ -65,6 +70,12 @@
                     img.src = member.img;
                     headline.innerHTML = member.name;
                     subline.innerHTML = member.role;
+                    if (member.nickname) {
+                        let nickname = document.createElement("p");
+                        nickname.innerHTML = member.nickname;
+                        nickname.className = "team-nickname";
+                        headline.appendChild(nickname);
+                    }
                     div.appendChild(img);
                     div.appendChild(headline);
                     div.appendChild(subline);

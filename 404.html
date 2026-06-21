@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 — 600 000 000 000</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hero-404 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: center;
+        }
+
+        .hero-404 .intro-stone {
+            position: static;
+            width: clamp(133px, 21vw, 246px);
+            height: clamp(133px, 21vw, 246px);
+        }
+
+        .hero-404 h2,
+        .hero-404 p {
+            opacity: 0;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .hero-404 h2 { animation-delay: 1.2s; }
+        .hero-404 p  { animation-delay: 1.5s; }
+    </style>
+</head>
+<body>
+    <h1>600 000 000 000</h1>
+    <div class="hero-404">
+        <img src="img/sacred-stone.webp" alt="" class="intro-stone">
+        <h2>404</h2>
+        <p><a href="/">← back</a></p>
+    </div>
+</body>
+</html>
