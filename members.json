@@ -69,6 +69,7 @@
         },
         {
             "name": "p",
+            "nickname": "protom",
             "role": "CBDC",
             "img": "img/600.png",
             "nostr": "p@600.wtf"
@@ -81,12 +82,14 @@
         },
         {
             "name": "bam",
+            "nickname": "jose bam",
             "role": "CMO",
             "img": "img/600.png",
             "nostr": "bam@600.wtf"
         },
         {
             "name": "mhb",
+            "nickname": "mrs. honeybadger",
             "role": "CRO",
             "img": "img/mhb.jpeg",
             "nostr": "mhb@600.wtf"
