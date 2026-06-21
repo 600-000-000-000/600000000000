@@ -147,6 +147,18 @@
       "avoid": ["losing flag/summit cue", "realistic donkey style", "non-humanoid VRM output"]
     },
     {
+      "name": "jedai",
+      "role": "CIAO",
+      "image": "img/jedai.png",
+      "status": "active",
+      "generate": true,
+      "alternate_images": [],
+      "image_details": "Dark cypherpunk strategist seated in leather command chair, sunglasses, black coat and shirt, patterned scarf, cigar, watch, whiskey glass, chessboard with gold and black pieces, storm clouds, golden halo geometry, vertical lightning, bear force on the left, eagle vision on the right.",
+      "full_body_standard": "Adult humanoid cypherpunk strategist in dark tailored coat, scarf, and sunglasses, relaxed command posture, wordless strategy token or cigar-like prop, chess-piece object language, wordless golden halo geometry, bear/eagle aura companions or heraldic silhouettes, traditional old-world craft details, fantasy authority, cute manga/toon readability.",
+      "preserve": ["sunglasses", "dark coat/scarf", "seated strategist confidence", "chessboard strategy cue", "golden halo", "bear/eagle power balance"],
+      "avoid": ["any readable text", "real brand marks", "readable chess labels", "over-realistic corporate portrait", "bear or eagle replacing the humanoid avatar body"]
+    },
+    {
       "name": "mhb",
       "nickname": "mrs. honeybadger",
       "role": "CRO",
@@ -177,7 +189,6 @@
     {"name": "nc", "role": "CCC", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "longy", "role": "CSO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "essex", "nickname": "aaron of essex", "role": "CPO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
-    {"name": "jedai", "role": "CIAO", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "p", "nickname": "protom", "role": "CBDC", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "aj", "role": "COL", "image": "img/600.png", "status": "active_placeholder", "generate": false},
     {"name": "bam", "nickname": "jose bam", "role": "CMO", "image": "img/600.png", "status": "active_placeholder", "generate": false}

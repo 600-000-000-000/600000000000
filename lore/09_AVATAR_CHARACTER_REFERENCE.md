@@ -243,6 +243,30 @@ Preserve: donkey identity, mountain summit, orange flag, binary sky.
 
 Avoid: losing flag/summit cue, realistic donkey style, non-humanoid VRM output.
 
+### jedai
+
+- Website role: CIAO
+- Website image: `img/jedai.png`
+- Status: active
+- Generate: yes
+
+Image details extracted: dark cypherpunk strategist seated in a leather command chair,
+sunglasses, black shirt and coat, patterned scarf, cigar, watch, whiskey glass, chessboard with
+gold and black pieces, storm clouds, golden halo geometry, vertical lightning, bear force on
+the left, eagle vision on the right.
+
+Full-body standard: adult humanoid cypherpunk strategist in dark tailored coat, scarf, and
+sunglasses, relaxed command posture, one hand holding a wordless cigar-like prop or strategy
+token, chess-piece object language, wordless golden halo geometry, bear/eagle aura companions
+or heraldic silhouettes, traditional old-world craft details, fantasy authority, cute manga/toon
+readability.
+
+Preserve: sunglasses, dark coat/scarf, seated strategist confidence, chessboard strategy cue,
+golden halo, bear/eagle power balance.
+
+Avoid: any readable text, real brand marks, readable chess labels, over-realistic corporate
+portrait, making bear or eagle replace the humanoid avatar body.
+
 ### mhb
 
 - Website role: CRO
@@ -294,7 +318,6 @@ descriptions are provided.
 | nc | | CCC | `img/600.png` | active_placeholder | false |
 | longy | | CSO | `img/600.png` | active_placeholder | false |
 | essex | aaron of essex | CPO | `img/600.png` | active_placeholder | false |
-| jedai | | CIAO | `img/600.png` | active_placeholder | false |
 | p | protom | CBDC | `img/600.png` | active_placeholder | false |
 | aj | | COL | `img/600.png` | active_placeholder | false |
 | bam | jose bam | CMO | `img/600.png` | active_placeholder | false |

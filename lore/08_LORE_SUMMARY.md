@@ -54,6 +54,7 @@ The stone is small, round, dense, and secondary unless requested otherwise.
 - tobo - Connector / Envoy
 - BlackCoffee - Shadow Operator
 - darren - Pathfinder
+- jedai - CIAO Strategist
 - mhb - Ritual Culture Carrier
 - snick - Workshop Operator
 
@@ -65,7 +66,6 @@ Do not invent unique avatar identities yet:
 - nc
 - longy
 - essex
-- jedai
 - p
 - aj
 - bam

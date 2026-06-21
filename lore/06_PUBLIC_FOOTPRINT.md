@@ -72,6 +72,7 @@ Active members with unique local avatar reference:
 - tobo
 - BlackCoffee
 - darren
+- jedai
 - mhb
 - snick
 
@@ -81,7 +82,6 @@ Active placeholders using `img/600.png`; do not generate unique avatars yet:
 - nc
 - longy
 - essex
-- jedai
 - p
 - aj
 - bam

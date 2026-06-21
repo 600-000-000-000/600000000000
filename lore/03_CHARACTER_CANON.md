@@ -120,6 +120,18 @@ Core visual: donkey on mountain summit, orange Bitcoin flag, binary sky.
 Full-body direction: 2D mascot can stay donkey. For game/VRM, use adult humanoid pathfinder
 with donkey companion and orange flag.
 
+### jedai - CIAO
+
+Archetype: Cypherpunk Strategist
+
+Core visual: dark strategist seated in command posture, sunglasses, black coat/scarf, warm
+golden aura, chessboard, bear force on one side, eagle vision on the other.
+
+Full-body direction: adult humanoid cypherpunk strategist in dark tailored coat, scarf, and
+sunglasses, with wordless gold halo geometry, chess-piece object language, bear/eagle aura
+companions or heraldic silhouettes, traditional old-world craft details, fantasy authority, and
+cute manga/toon readability.
+
 ### mhb - CRO
 
 Nickname: mrs. honeybadger
@@ -153,7 +165,6 @@ Do not generate unique avatars until identity descriptions exist.
 | nc | | CCC | active_placeholder | false |
 | longy | | CSO | active_placeholder | false |
 | essex | aaron of essex | CPO | active_placeholder | false |
-| jedai | | CIAO | active_placeholder | false |
 | p | protom | CBDC | active_placeholder | false |
 | aj | | COL | active_placeholder | false |
 | bam | jose bam | CMO | active_placeholder | false |

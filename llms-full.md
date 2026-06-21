@@ -75,6 +75,7 @@ manga/toon. Keep it readable, warm, human, and game-ready.
 - tobo - tricorn frontier envoy with pointing gesture
 - BlackCoffee - dark armored coffee shadow operator
 - darren - pathfinder; donkey mascot or humanoid scout plus donkey companion
+- jedai - cypherpunk strategist with bear/eagle aura and chess-table command pose
 - mhb - honeybadger-coded ritual dancer with orange robe and dreamcatcher
 - snick - badger-coded workshop operator with orange cap and tool wall
 
@@ -86,7 +87,6 @@ These are active on the website but use `img/600.png`. Do not invent unique face
 - nc
 - longy
 - essex
-- jedai
 - p
 - aj
 - bam
