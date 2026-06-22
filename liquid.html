@@ -92,6 +92,56 @@
             color: white;
         }
 
+        .liquid-hero {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 32px 48px;
+            text-align: center;
+        }
+
+        .liquid-hero__eyebrow {
+            font-family: 'Anton', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin: 0 0 16px;
+        }
+
+        .liquid-hero__title {
+            font-family: 'Alfa Slab One', serif;
+            font-size: clamp(36px, 8vw, 72px);
+            line-height: 1;
+            color: #f7931a;
+            margin: 0 0 32px;
+        }
+
+        .liquid-hero__body {
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.75);
+            margin: 0 0 16px;
+        }
+
+        .liquid-hero__pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 32px;
+        }
+
+        .liquid-hero__pill {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+            font-family: 'Anton', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            padding: 8px 16px;
+        }
+
         .asset-stats {
             display: flex;
             gap: 24px;
@@ -122,7 +172,20 @@
     </style>
 </head>
 <body>
-    <h2>Liquid Assets</h2>
+    <div class="liquid-hero">
+        <p class="liquid-hero__eyebrow">Built on Bitcoin</p>
+        <h2 class="liquid-hero__title">The Liquid Network</h2>
+        <p class="liquid-hero__body">
+            Liquid is a Bitcoin sidechain enabling fast, confidential transactions and the issuance of digital assets. Settlements are final in around two minutes, transaction amounts are kept private, and assets are secured by a federation of exchanges and financial institutions.
+        </p>
+        <div class="liquid-hero__pills">
+            <span class="liquid-hero__pill">~2 min finality</span>
+            <span class="liquid-hero__pill">Confidential transactions</span>
+            <span class="liquid-hero__pill">Bitcoin-backed</span>
+            <span class="liquid-hero__pill">Federated sidechain</span>
+            <span class="liquid-hero__pill">Asset issuance</span>
+        </div>
+    </div>
     <section class="assets">
 
         <div class="asset">
@@ -141,7 +204,7 @@
             <p class="asset-id">bd1d3b1f10a3e1eb5ac2d332f118005f126f8c37fab490f8c8d84ddbd8c763c7</p>
             <div class="asset-links">
                 <a class="asset-link" href="https://liquid.network/assets/asset/bd1d3b1f10a3e1eb5ac2d332f118005f126f8c37fab490f8c8d84ddbd8c763c7" target="_blank">Explorer</a>
-                <a class="asset-link asset-link--secondary" href="https://sideswap.io/swap-token/" target="_blank">SideSwap</a>
+                <a class="asset-link asset-link--secondary" href="https://sideswap.io/swap-market/?base=bd1d3b1f10a3e1eb5ac2d332f118005f126f8c37fab490f8c8d84ddbd8c763c7&quote=6f0279e9ed041c3d710a9f57d0c02928416460c4b722ae3457a11eec381c526d" target="_blank">SideSwap</a>
             </div>
         </div>
 
@@ -161,7 +224,7 @@
             <p class="asset-id">b0375be1caeb8aedc732422b39d357b086af7c793f255eab0cbaf134706b5138</p>
             <div class="asset-links">
                 <a class="asset-link" href="https://liquid.network/assets/asset/b0375be1caeb8aedc732422b39d357b086af7c793f255eab0cbaf134706b5138" target="_blank">Explorer</a>
-                <a class="asset-link asset-link--secondary" href="https://sideswap.io/swap-token/" target="_blank">SideSwap</a>
+                <a class="asset-link asset-link--secondary" href="https://sideswap.io/swap-market/?base=b0375be1caeb8aedc732422b39d357b086af7c793f255eab0cbaf134706b5138&quote=6f0279e9ed041c3d710a9f57d0c02928416460c4b722ae3457a11eec381c526d" target="_blank">SideSwap</a>
             </div>
         </div>
 
@@ -181,7 +244,7 @@
             <p class="asset-id">be61661ecdd155085a103d90c4d190aaab33f1a1efab54476f0672c2c73cff9a</p>
             <div class="asset-links">
                 <a class="asset-link" href="https://liquid.network/assets/asset/be61661ecdd155085a103d90c4d190aaab33f1a1efab54476f0672c2c73cff9a" target="_blank">Explorer</a>
-                <a class="asset-link asset-link--secondary" href="https://sideswap.io/swap-token/" target="_blank">SideSwap</a>
+                <a class="asset-link asset-link--secondary" href="https://sideswap.io/swap-market/?base=be61661ecdd155085a103d90c4d190aaab33f1a1efab54476f0672c2c73cff9a&quote=6f0279e9ed041c3d710a9f57d0c02928416460c4b722ae3457a11eec381c526d" target="_blank">SideSwap</a>
             </div>
         </div>
 
