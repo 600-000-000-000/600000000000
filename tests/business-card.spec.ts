@@ -143,12 +143,21 @@ test("member clicks are ignored while export is already running", async ({ page 
   await page.goto("/business-cards.html");
 
   await page.evaluate(() => {
+    const testWindow = window as unknown as {
+      __exportSaveStarted: boolean;
+      __resolveExportSave?: () => void;
+      html2pdf: typeof window.html2pdf;
+    };
+
+    testWindow.__exportSaveStarted = false;
+
     const exporter = () => {
       const chain = {
         set: () => chain,
         from: () => chain,
         save: () => new Promise(resolve => {
-          window.setTimeout(resolve, 400);
+          testWindow.__exportSaveStarted = true;
+          testWindow.__resolveExportSave = resolve;
         })
       };
 
@@ -164,10 +173,18 @@ test("member clicks are ignored while export is already running", async ({ page 
   const secondMember = page.locator('[data-testid="member-item"]').nth(1);
   const exportPromise = page.getByTestId("export-button").click();
 
+  await expect.poll(async () => {
+    return page.evaluate(() => {
+      return (window as unknown as { __exportSaveStarted: boolean }).__exportSaveStarted;
+    });
+  }).toBe(true);
   await expect(page.getByTestId("export-button")).toHaveText("Exporting...");
   await secondMember.click({ force: true });
   await expect(livePreviewName).toHaveText(validMembers[0].name);
 
+  await page.evaluate(() => {
+    (window as unknown as { __resolveExportSave?: () => void }).__resolveExportSave?.();
+  });
   await exportPromise;
   await expect(page.getByTestId("export-button")).toHaveText("Export Selected PDF");
 });
