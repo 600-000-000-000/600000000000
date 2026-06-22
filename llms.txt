@@ -1,0 +1,48 @@
+# 600B Universe
+
+This is the LLM-facing overview for generators, editors, and agents working inside the 600B
+world.
+
+## Non-Negotiable Rules
+
+- Active member names come from `https://600.wtf/members.json`.
+- Avatar generation must use `lore/09_AVATAR_CHARACTER_REFERENCE.md` and
+  `lore/avatar_character_catalog.json`.
+- Local character images not listed on the live website roster are inactive and must not be
+  generated as current members.
+- Active placeholders using `img/600.png` need identity details before unique avatars are
+  generated. If identity details are explicitly provided, use `source=user_description`.
+- Avatar images must contain no readable text at all: no names, handles, roles, cap labels,
+  clothing labels, signs, readable numbers, or written 600B marks.
+- Use wordless symbols instead: orange disks, stacked abstract glyphs, medallions, stone/orb
+  shapes, silhouettes, costumes, objects, posture, and palette.
+- Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
+- The sacred stone is small and round.
+- In non-avatar posters/story scenes, if the sacred number appears, write it exactly like this:
+
+```text
+600
+000
+000
+000
+```
+
+## Current Active Roster Logic
+
+- `active` plus `generate:true`: generation allowed.
+- `active_placeholder` plus `generate:false`: do not invent identity details.
+- `inactive` plus `generate:false`: do not generate.
+
+## Start Here
+
+- [lore/README.md](./lore/README.md)
+- [lore/02_AVATAR_RECREATION_STANDARD.md](./lore/02_AVATAR_RECREATION_STANDARD.md)
+- [lore/03_CHARACTER_CANON.md](./lore/03_CHARACTER_CANON.md)
+- [lore/09_AVATAR_CHARACTER_REFERENCE.md](./lore/09_AVATAR_CHARACTER_REFERENCE.md)
+- [lore/avatar_character_catalog.json](./lore/avatar_character_catalog.json)
+- [lore/06_PUBLIC_FOOTPRINT.md](./lore/06_PUBLIC_FOOTPRINT.md)
+
+## Tone
+
+600B is signal, myth, meme, culture, and build energy. Use builder/operator/player language.
+Avoid generic corporate crypto art and avoid cult framing.

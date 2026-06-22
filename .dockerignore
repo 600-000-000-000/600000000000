@@ -1,0 +1,6 @@
+.git
+.sisyphus
+Makefile
+.dockerignore
+node_modules
+*.log

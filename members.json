@@ -66,6 +66,83 @@
             "role": "CIO",
             "img": "img/darren.png",
             "nostr": "darren@600.wtf"
+        },
+        {
+            "name": "rootzoll",
+            "role": "CDJ",
+            "img": "img/rootzoll.png",
+            "nostr": "rootzoll@600.wtf"
+        },
+        {
+            "name": "nc",
+            "role": "CCC",
+            "img": "img/nc.png",
+            "nostr": "nc@600.wtf"
+        },
+        {
+            "name": "longy",
+            "role": "CSO",
+            "img": "img/600.png",
+            "nostr": "longy@600.wtf"
+        },
+        {
+            "name": "essex",
+            "nickname": "aaron of essex",
+            "role": "CPO",
+            "img": "img/essex.png",
+            "nostr": "essex@600.wtf"
+        },
+        {
+            "name": "madmunky",
+            "role": "CPO",
+            "img": "img/madmunky.png",
+            "nostr": "madmunky@600.wtf"
+        },
+        {
+            "name": "jedai",
+            "role": "CIAO",
+            "img": "img/jedai.png",
+            "nostr": "jedai@600.wtf"
+        },
+        {
+            "name": "Gadaj",
+            "nickname": "GDJ",
+            "role": "CKO",
+            "img": "img/gadaj.png",
+            "nostr": "gadaj@600.wtf"
+        },
+        {
+            "name": "p",
+            "nickname": "protom",
+            "role": "CBDC",
+            "img": "img/600.png",
+            "nostr": "p@600.wtf"
+        },
+        {
+            "name": "aj",
+            "role": "COL",
+            "img": "img/600.png",
+            "nostr": "aj@600.wtf"
+        },
+        {
+            "name": "bam",
+            "nickname": "jose bam",
+            "role": "CMO",
+            "img": "img/600.png",
+            "nostr": "bam@600.wtf"
+        },
+        {
+            "name": "mhb",
+            "nickname": "mrs. honeybadger",
+            "role": "CRO",
+            "img": "img/mhb.jpeg",
+            "nostr": "mhb@600.wtf"
+        },
+        {
+            "name": "snick",
+            "role": "CWO",
+            "img": "img/snick.jpeg",
+            "nostr": "snick@600.wtf"
         }
     ]
 }

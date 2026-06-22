@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blocks</title>
+  <style>
+    @font-face {
+      font-family: 'Alfa Slab One';
+      font-style: normal;
+      font-weight: 400;
+      src: url('./AlfaSlabOne-Regular.ttf') format('truetype');
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #f7931a; overflow: hidden; }
+    canvas { display: block; }
+    #counter {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Anton', sans-serif;
+      font-size: 21px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.08em;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    #home {
+      position: fixed;
+      bottom: 20px;
+      right: 24px;
+      font-family: 'Alfa Slab One', serif;
+      font-size: 18px;
+      line-height: 1;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    #home:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <div id="counter">6 CUBES</div>
+  <a id="home" href="/">600<br>000<br>000<br>000</a>
+  <script>
+    const canvas = document.getElementById('c');
+    const gl = canvas.getContext('webgl', { alpha: true, antialias: true });
+    const dpr = window.devicePixelRatio || 1;
+
+    let W = window.innerWidth, H = window.innerHeight;
+    let D = Math.min(W, H) * 3;
+    let FOCAL = Math.min(W, H) * 1.1;
+
+    function resize() {
+      W = window.innerWidth; H = window.innerHeight;
+      D = Math.min(W, H) * 3; FOCAL = Math.min(W, H) * 1.1;
+      canvas.width  = W * dpr; canvas.height = H * dpr;
+      canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // ── Shaders ──────────────────────────────────────────────────────────────
+    function compile(type, src) {
+      const s = gl.createShader(type);
+      gl.shaderSource(s, src); gl.compileShader(s); return s;
+    }
+    const prog = gl.createProgram();
+    gl.attachShader(prog, compile(gl.VERTEX_SHADER,  `attribute vec2 aPos; void main(){gl_Position=vec4(aPos,0,1);}`));
+    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, `precision mediump float; uniform vec4 uColor; void main(){gl_FragColor=uColor;}`));
+    gl.bindAttribLocation(prog, 0, 'aPos');
+    gl.linkProgram(prog);
+    gl.useProgram(prog);
+
+    const uColor = gl.getUniformLocation(prog, 'uColor');
+    gl.enableVertexAttribArray(0);
+
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+    // ── Buffers ──────────────────────────────────────────────────────────────
+    const EDGES           = 12;
+    const BOX_VCOUNT      = EDGES * 2;
+    const FLOATS_PER_CUBE = EDGES * 2 * 2;
+
+    const boxVerts  = new Float32Array(BOX_VCOUNT * 2);
+    let   cubeVerts = new Float32Array(6 * FLOATS_PER_CUBE);
+
+    const boxBuf  = gl.createBuffer();
+    const cubeBuf = gl.createBuffer();
+
+    // ── Cube geometry ────────────────────────────────────────────────────────
+    const CUBE_V = [
+      [-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],
+      [-1,-1, 1],[1,-1, 1],[1,1, 1],[-1,1, 1],
+    ];
+    const CUBE_E = [
+      [0,1],[1,2],[2,3],[3,0],
+      [4,5],[5,6],[6,7],[7,4],
+      [0,4],[1,5],[2,6],[3,7],
+    ];
+
+    // ── Rotation (in-place) ──────────────────────────────────────────────────
+    const tmp = new Float32Array(3);
+    function rotX(v, a) {
+      const c = Math.cos(a), s = Math.sin(a);
+      const y = v[1]*c - v[2]*s, z = v[1]*s + v[2]*c;
+      v[1] = y; v[2] = z;
+    }
+    function rotY(v, a) {
+      const c = Math.cos(a), s = Math.sin(a);
+      const x = v[0]*c + v[2]*s, z = -v[0]*s + v[2]*c;
+      v[0] = x; v[2] = z;
+    }
+
+    function clipX(wx, wz) { return ((W/2 + (wx - W/2) * FOCAL / (wz + FOCAL)) / W) * 2 - 1; }
+    function clipY(wy, wz) { return 1 - ((H/2 + (wy - H/2) * FOCAL / (wz + FOCAL)) / H) * 2; }
+
+    // ── Physics ──────────────────────────────────────────────────────────────
+    function rand(a, b) { return a + Math.random() * (b - a); }
+
+    const CUBE_SIZE = Math.min(W, H) * 0.08;
+    const FRICTION  = 0.35;
+    const SPIN_DAMP = 0.998;
+    const MAX_SPIN  = 0.18;
+
+    function makeCube() {
+      const size = CUBE_SIZE;
+      const speed = rand(3.5, 7.0), angle = rand(0, Math.PI * 2);
+      return {
+        x: rand(size, W-size), y: rand(size, H-size), z: rand(size, D-size),
+        vx: Math.cos(angle)*speed, vy: Math.sin(angle)*speed, vz: rand(-4, 4),
+        size,
+        ax: rand(0, Math.PI*2), ay: rand(0, Math.PI*2),
+        wx: rand(-0.012, 0.012), wy: rand(-0.015, 0.015),
+      };
+    }
+
+    const cubes = Array.from({ length: 6 }, makeCube);
+    const counter = document.getElementById('counter');
+
+    function spawnCube() {
+      const size = CUBE_SIZE;
+      cubes.push({
+        x: W/2, y: H/2, z: D - size,
+        vx: rand(-1.5, 1.5), vy: rand(-1.5, 1.5), vz: rand(-7, -4.5),
+        size,
+        ax: rand(0, Math.PI*2), ay: rand(0, Math.PI*2),
+        wx: rand(-0.012, 0.012), wy: rand(-0.015, 0.015),
+      });
+      const needed = cubes.length * FLOATS_PER_CUBE;
+      if (needed > cubeVerts.length) cubeVerts = new Float32Array(needed * 2);
+      counter.textContent = cubes.length + ' CUBES';
+    }
+    setInterval(spawnCube, 10000);
+
+    function resolveCollisions() {
+      for (let i = 0; i < cubes.length; i++) {
+        for (let j = i + 1; j < cubes.length; j++) {
+          const a = cubes[i], b = cubes[j];
+          const dx = b.x-a.x, dy = b.y-a.y, dz = b.z-a.z;
+          const dist2 = dx*dx + dy*dy + dz*dz;
+          const minD = a.size + b.size;
+          if (dist2 < minD*minD && dist2 > 0) {
+            const dist = Math.sqrt(dist2);
+            const nx = dx/dist, ny = dy/dist, nz = dz/dist;
+            const ov = (minD - dist) * 0.5;
+            a.x -= nx*ov; a.y -= ny*ov; a.z -= nz*ov;
+            b.x += nx*ov; b.y += ny*ov; b.z += nz*ov;
+            const rvx = a.vx-b.vx, rvy = a.vy-b.vy, rvz = a.vz-b.vz;
+            const dot = rvx*nx + rvy*ny + rvz*nz;
+            if (dot > 0) {
+              a.vx -= dot*nx; a.vy -= dot*ny; a.vz -= dot*nz;
+              b.vx += dot*nx; b.vy += dot*ny; b.vz += dot*nz;
+              const tvx = rvx-dot*nx, tvy = rvy-dot*ny, tvz = rvz-dot*nz;
+              const tv2 = tvx*tvx + tvy*tvy + tvz*tvz;
+              if (tv2 > 0.01) {
+                const Jf = FRICTION * dot / Math.sqrt(tv2);
+                const tx = nz*tvy - ny*tvz, ty = nx*tvz - nz*tvx;
+                const fa = Jf*2.5/a.size, fb = Jf*2.5/b.size;
+                a.wx = Math.max(-MAX_SPIN, Math.min(MAX_SPIN, a.wx + tx*fa));
+                a.wy = Math.max(-MAX_SPIN, Math.min(MAX_SPIN, a.wy + ty*fa));
+                b.wx = Math.max(-MAX_SPIN, Math.min(MAX_SPIN, b.wx + tx*fb));
+                b.wy = Math.max(-MAX_SPIN, Math.min(MAX_SPIN, b.wy + ty*fb));
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // ── Draw loop ────────────────────────────────────────────────────────────
+    const px = new Float32Array(8), py = new Float32Array(8);
+
+    function draw() {
+      for (const c of cubes) {
+        c.x += c.vx; c.y += c.vy; c.z += c.vz;
+        if (c.x < c.size)     { c.x = c.size;     c.vx *= -1; }
+        if (c.x > W - c.size) { c.x = W - c.size; c.vx *= -1; }
+        if (c.y < c.size)     { c.y = c.size;     c.vy *= -1; }
+        if (c.y > H - c.size) { c.y = H - c.size; c.vy *= -1; }
+        if (c.z < c.size)     { c.z = c.size;     c.vz *= -1; }
+        if (c.z > D - c.size) { c.z = D - c.size; c.vz *= -1; }
+        c.ax += c.wx; c.ay += c.wy;
+        c.wx *= SPIN_DAMP; c.wy *= SPIN_DAMP;
+      }
+      resolveCollisions();
+
+      gl.clear(gl.COLOR_BUFFER_BIT);
+
+      // Bounding box
+      let vi = 0;
+      const corners = [[0,0,0],[W,0,0],[W,H,0],[0,H,0],[0,0,D],[W,0,D],[W,H,D],[0,H,D]];
+      for (const [a, b] of CUBE_E) {
+        const [ax,ay,az] = corners[a], [bx,by,bz] = corners[b];
+        boxVerts[vi++] = clipX(ax,az); boxVerts[vi++] = clipY(ay,az);
+        boxVerts[vi++] = clipX(bx,bz); boxVerts[vi++] = clipY(by,bz);
+      }
+      gl.bindBuffer(gl.ARRAY_BUFFER, boxBuf);
+      gl.bufferData(gl.ARRAY_BUFFER, boxVerts, gl.DYNAMIC_DRAW);
+      gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+      gl.uniform4f(uColor, 1, 1, 1, 0.2);
+      gl.drawArrays(gl.LINES, 0, BOX_VCOUNT);
+
+      // Cubes
+      vi = 0;
+      for (const c of cubes) {
+        for (let i = 0; i < 8; i++) {
+          tmp[0] = CUBE_V[i][0]; tmp[1] = CUBE_V[i][1]; tmp[2] = CUBE_V[i][2];
+          rotX(tmp, c.ax); rotY(tmp, c.ay);
+          px[i] = clipX(c.x + tmp[0]*c.size, c.z + tmp[2]*c.size);
+          py[i] = clipY(c.y + tmp[1]*c.size, c.z + tmp[2]*c.size);
+        }
+        for (const [a, b] of CUBE_E) {
+          cubeVerts[vi++] = px[a]; cubeVerts[vi++] = py[a];
+          cubeVerts[vi++] = px[b]; cubeVerts[vi++] = py[b];
+        }
+      }
+      gl.bindBuffer(gl.ARRAY_BUFFER, cubeBuf);
+      gl.bufferData(gl.ARRAY_BUFFER, cubeVerts, gl.DYNAMIC_DRAW);
+      gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+      gl.uniform4f(uColor, 1, 1, 1, 1);
+      gl.drawArrays(gl.LINES, 0, cubes.length * EDGES * 2);
+
+      requestAnimationFrame(draw);
+    }
+
+    gl.clearColor(0, 0, 0, 0);
+    draw();
+  </script>
+</body>
+</html>
