@@ -4,144 +4,150 @@
         {
             "name": "dni",
             "role": "CEO",
-            "img": "img/dni2.jpg",
+            "img": "img/characters/dni.jpg",
             "nostr": "dni@600.wtf"
         },
         {
             "name": "nind",
             "role": "CCS",
-            "img": "img/nind.jpg",
+            "img": "img/characters/nind.jpg",
             "nostr": "n@600.wtf"
         },
         {
             "name": "michael1011",
             "role": "CTO",
-            "img": "img/m2.png",
+            "img": "img/characters/michael1011.jpg",
             "nostr": "m@bol.tz"
         },
         {
             "name": "sat",
             "role": "CMO",
-            "img": "img/sat2.jpg",
+            "img": "img/characters/sat.jpg",
             "nostr": "sat@600.wtf"
         },
         {
             "name": "flx",
             "role": "CWO",
-            "img": "img/flx.jpg",
+            "img": "img/characters/flx.jpg",
             "nostr": "flx@600.wtf"
         },
         {
             "name": "shillie",
             "role": "CDO",
-            "img": "img/quillie2.jpg",
+            "img": "img/characters/shillie.jpg",
             "nostr": "quillie@600.wtf"
         },
         {
             "name": "arbadacarba",
             "role": "CMO",
-            "img": "img/arbadacarba.jpg",
+            "img": "img/characters/arbadacarba.jpg",
             "nostr": "arbadacarba@600.wtf"
         },
         {
             "name": "benarc",
             "role": "CVO",
-            "img": "img/benarc.jpg",
+            "img": "img/characters/benarc.jpg",
             "nostr": "ben@nostr.com"
         },
         {
             "name": "tobo",
             "role": "CDO",
-            "img": "img/tobo.jpg",
+            "img": "img/characters/tobo.jpg",
             "nostr": "tobo@600.wtf"
         },
         {
             "name": "BlackCoffee",
             "role": "CHO",
-            "img": "img/blackcoffee600bn.jpg",
+            "img": "img/characters/blackcoffee.jpg",
             "nostr": "bc@600.wtf"
         },
         {
             "name": "darren",
             "role": "CIO",
-            "img": "img/darren.png",
+            "img": "img/characters/darren.jpg",
             "nostr": "darren@600.wtf"
+        },
+        {
+            "name": "leon",
+            "role": "CHO",
+            "img": "img/characters/leon.jpg",
+            "nostr": "leon@600.wtf"
         },
         {
             "name": "rootzoll",
             "role": "CDJ",
-            "img": "img/rootzoll.png",
+            "img": "img/characters/rootzoll.jpg",
             "nostr": "rootzoll@600.wtf"
         },
         {
             "name": "nc",
             "role": "CCC",
-            "img": "img/nc.png",
+            "img": "img/characters/nc.jpg",
             "nostr": "nc@600.wtf"
         },
         {
             "name": "longy",
             "role": "CSO",
-            "img": "img/600.png",
+            "img": "img/characters/longy.jpg",
             "nostr": "longy@600.wtf"
         },
         {
             "name": "essex",
             "nickname": "aaron of essex",
             "role": "CPO",
-            "img": "img/essex.png",
+            "img": "img/characters/essex.jpg",
             "nostr": "essex@600.wtf"
         },
         {
             "name": "madmunky",
             "role": "CPO",
-            "img": "img/madmunky.png",
+            "img": "img/characters/madmunky.jpg",
             "nostr": "madmunky@600.wtf"
         },
         {
             "name": "jedai",
             "role": "CIAO",
-            "img": "img/jedai.png",
+            "img": "img/characters/jedai.jpg",
             "nostr": "jedai@600.wtf"
         },
         {
             "name": "Gadaj",
             "nickname": "GDJ",
             "role": "CKO",
-            "img": "img/gadaj.png",
+            "img": "img/characters/gadaj.jpg",
             "nostr": "gadaj@600.wtf"
         },
         {
             "name": "p",
             "nickname": "protom",
             "role": "CBDC",
-            "img": "img/600.png",
+            "img": "img/characters/p.jpg",
             "nostr": "p@600.wtf"
         },
         {
             "name": "aj",
             "role": "COL",
-            "img": "img/600.png",
+            "img": "img/characters/aj.jpg",
             "nostr": "aj@600.wtf"
         },
         {
             "name": "bam",
             "nickname": "jose bam",
             "role": "CMO",
-            "img": "img/600.png",
+            "img": "img/characters/bam.jpg",
             "nostr": "bam@600.wtf"
         },
         {
             "name": "mhb",
             "nickname": "mrs. honeybadger",
             "role": "CRO",
-            "img": "img/mhb.jpeg",
+            "img": "img/characters/mhb.jpg",
             "nostr": "mhb@600.wtf"
         },
         {
             "name": "snick",
             "role": "CWO",
-            "img": "img/snick.jpeg",
+            "img": "img/characters/snick.jpg",
             "nostr": "snick@600.wtf"
         }
     ]
