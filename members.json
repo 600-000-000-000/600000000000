@@ -68,6 +68,12 @@
             "nostr": "darren@600.wtf"
         },
         {
+            "name": "leon",
+            "role": "CHO",
+            "img": "img/characters/leon.jpg",
+            "nostr": "leon@600.wtf"
+        },
+        {
             "name": "rootzoll",
             "role": "CDJ",
             "img": "img/characters/rootzoll.jpg",
