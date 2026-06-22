@@ -199,8 +199,8 @@ a:hover {
 }
 
 footer {
-    padding: 0;
-    margin-bottom: 32px;
+    padding: 80px 0 48px;
+    margin-bottom: 0;
 }
 
 .footer-actions {
