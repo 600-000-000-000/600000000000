@@ -144,6 +144,12 @@
             "nostr": "snick@600.wtf"
         },
         {
+            "name": "tal",
+            "role": "CNO",
+            "img": "img/600.png",
+            "nostr": "tal@600.wtf"
+        },
+        {
             "name": "bk",
             "nickname": "bitkarrot",
             "role": "CUO",
@@ -156,6 +162,18 @@
             "role": "CKO",
             "img": "img/characters/gadaj.jpg",
             "nostr": "gdj@600.wtf"
+        },
+        {
+            "name": "mtoshi",
+            "role": "CHR",
+            "img": "img/600.png",
+            "nostr": "mtoshi@600.wtf"
+        },
+        {
+            "name": "morgs",
+            "role": "CFR",
+            "img": "img/600.png",
+            "nostr": "morgs@600.wtf"
         },
         {
             "name": "cuddy",
