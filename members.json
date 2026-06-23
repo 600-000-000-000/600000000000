@@ -4,7 +4,7 @@
         {
             "name": "dni",
             "role": "CEO",
-            "img": "img/characters/dni.jpg",
+            "img": "img/dni2.jpg",
             "nostr": "dni@600.wtf"
         },
         {
@@ -111,13 +111,6 @@
             "nostr": "jedai@600.wtf"
         },
         {
-            "name": "Gadaj",
-            "nickname": "GDJ",
-            "role": "CKO",
-            "img": "img/characters/gadaj.jpg",
-            "nostr": "gadaj@600.wtf"
-        },
-        {
             "name": "p",
             "nickname": "protom",
             "role": "CBDC",
@@ -151,7 +144,8 @@
             "nostr": "snick@600.wtf"
         },
         {
-            "name": "Bk",
+            "name": "bk",
+            "nickname": "bitkarrot",
             "role": "CUO",
             "img": "img/600.png",
             "nostr": "Bk@600.wtf"
@@ -160,7 +154,7 @@
             "name": "GDJ",
             "nickname": "gadaj",
             "role": "CKO",
-            "img": "img/600.png",
+            "img": "img/characters/gadaj.jpg",
             "nostr": "gdj@600.wtf"
         },
         {
