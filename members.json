@@ -149,6 +149,19 @@
             "role": "CWO",
             "img": "img/characters/snick.jpg",
             "nostr": "snick@600.wtf"
+        },
+        {
+            "name": "Bk",
+            "role": "CUO",
+            "img": "img/600.png",
+            "nostr": "Bk@600.wtf"
+        },
+        {
+            "name": "GDJ",
+            "nickname": "gadaj",
+            "role": "CKO",
+            "img": "img/600.png",
+            "nostr": "gdj@600.wtf"
         }
     ]
 }
