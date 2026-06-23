@@ -162,6 +162,12 @@
             "role": "CKO",
             "img": "img/600.png",
             "nostr": "gdj@600.wtf"
+        },
+        {
+            "name": "cuddy",
+            "role": "CLO",
+            "img": "img/600.png",
+            "nostr": "cuddy@600.wtf"
         }
     ]
 }
