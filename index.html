@@ -14,28 +14,17 @@
     <meta property="og:image" content="https://600.wtf/img/600.png">
 </head>
 <body>
+    <div class="intro-stone-wrap">
+        <img src="img/sacred-stone.webp" alt="" class="intro-stone">
+    </div>
+    <div class="page-content">
     <h1>600 000 000 000</h1>
     <section id="team"></section>
-    <section id="parties">
-        <div class="party">
-            <h3>Prague Party</h3>
-            <p class="party-date">Thursday 11th June 2026 · 19:30</p>
-            <p class="party-meta">Live Music · Bands · DJs</p>
-            <p class="party-location"><a href="https://www.openstreetmap.org/?mlat=50.0952&mlon=14.4363#map=16/50.0952/14.4363" target="_blank">FUCHS2</a> · Ostrov Štvanice, Praha 7, Holešovice</p>
-<a class="party-cta" href="https://600000000000.com/" target="_blank">600000000000.com ↗</a>
-        </div>
-    </section>
-    <section>
-        <h2>Liquid Assets</h2>
-        <p></p>
-        <p>Asset Infos: <a href="https://liquid.network/assets/asset/bd1d3b1f10a3e1eb5ac2d332f118005f126f8c37fab490f8c8d84ddbd8c763c7">600</a>,
-            <a href="https://liquid.network/assets/asset/b0375be1caeb8aedc732422b39d357b086af7c793f255eab0cbaf134706b5138">SHROOMS</a>,
-            <a href="https://liquid.network/assets/asset/be61661ecdd155085a103d90c4d190aaab33f1a1efab54476f0672c2c73cff9a">CAT</a>
-        <br />Sideswap: <a target="_blank" href="https://sideswap.io/listings/?product=600">600</a>, <a target="_blank" href="https://sideswap.io/listings/?product=SHROOMS">SHROOMS</a>, <a target="_blank" href="https://sideswap.io/listings/?product=CAT">CAT</a></p>
-    </section>
     <footer>
         <div class="footer-actions">
+            <a class="footer-button footer-button--text" href="https://600000000000.com" target="_blank">600000000000.com</a>
             <a class="footer-button footer-button--text" href="https://memes.600.wtf">Meme's</a>
+            <a class="footer-button footer-button--text" href="liquid.html">Liquid</a>
             <a class="footer-button footer-button--text" href="ordinals.html">Ordinals</a>
             <a class="footer-button footer-button--text" href="business-cards.html">Business Cards</a>
             <a class="footer-button" href="http://6oooooofr5gqoz5rj3ykvw57umyaip46cbtzxu4fdurssvc6bm6kfsqd.onion" rel="noopener noreferrer" aria-label="Open 600 on Tor" title="6oooooofr5gqoz5rj3ykvw57umyaip46cbtzxu4fdurssvc6bm6kfsqd.onion">
@@ -43,6 +32,7 @@
             </a>
         </div>
     </footer>
+    </div>
     <script>
         // render mebers
         fetch('members.json', {
@@ -65,6 +55,12 @@
                     img.src = member.img;
                     headline.innerHTML = member.name;
                     subline.innerHTML = member.role;
+                    if (member.nickname) {
+                        let nickname = document.createElement("p");
+                        nickname.innerHTML = member.nickname;
+                        nickname.className = "team-nickname";
+                        headline.appendChild(nickname);
+                    }
                     div.appendChild(img);
                     div.appendChild(headline);
                     div.appendChild(subline);

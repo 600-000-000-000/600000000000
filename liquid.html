@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>600 Liquid Assets</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="keywords" value="600 Milliarden, 600.000.000.000, liquid assets, bitcoin">
+    <meta name="description" value="600.000.000.000 liquid assets">
+    <meta name="author" value="600.000.000.000 collective">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="600 Liquid Assets">
+    <meta property="og:description" content="600.000.000.000 liquid assets">
+    <meta property="og:image" content="https://600.wtf/img/600.png">
+    <style>
+        .assets {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            padding: 40px 24px;
+        }
+
+        .asset {
+            background: #222;
+            color: white;
+            padding: 40px 40px 32px;
+            max-width: 320px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .asset-ticker {
+            font-family: 'Alfa Slab One', serif;
+            font-size: 56px;
+            line-height: 1;
+            color: #f7931a;
+            margin: 0;
+        }
+
+        .asset img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin: 8px 0;
+        }
+
+        .asset-id {
+            font-family: monospace;
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            word-break: break-all;
+            line-height: 1.5;
+        }
+
+        .asset-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .asset-link {
+            display: inline-block;
+            border: 2px solid #f7931a;
+            color: #f7931a;
+            font-family: 'Anton', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 8px 18px;
+            text-decoration: none;
+        }
+
+        .asset-link:hover {
+            background: #f7931a;
+            color: #222;
+        }
+
+        .asset-link--secondary {
+            border-color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.7);
+        }
+
+        .asset-link--secondary:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .liquid-hero {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 32px 48px;
+            text-align: center;
+        }
+
+        .liquid-hero__eyebrow {
+            font-family: 'Anton', sans-serif;
+            font-size: 16px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin: 0 0 16px;
+        }
+
+        .liquid-hero__title {
+            font-family: 'Alfa Slab One', serif;
+            font-size: clamp(36px, 7vw, 64px);
+            line-height: 1;
+            color: #222;
+            margin: 0 0 24px;
+        }
+
+        .liquid-hero__body {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin: 0 0 16px;
+        }
+
+        .liquid-hero__pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 32px;
+        }
+
+        .liquid-hero__pill {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+            font-family: 'Anton', sans-serif;
+            font-size: 16px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.85);
+            padding: 10px 20px;
+        }
+
+        .asset-stats {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .asset-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .asset-stat__value {
+            font-family: 'Anton', sans-serif;
+            font-size: 20px;
+            color: white;
+            line-height: 1;
+        }
+
+        .asset-stat__label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="liquid-hero">
+        <p class="liquid-hero__eyebrow">Built on Bitcoin</p>
+        <h2 class="liquid-hero__title">The Liquid Network</h2>
+        <p class="liquid-hero__body">
+            Liquid is a Bitcoin sidechain enabling fast, confidential transactions and the issuance of digital assets. Settlements are final in around two minutes, transaction amounts are kept private, and assets are secured by a federation of exchanges and financial institutions.
+        </p>
+        <div class="liquid-hero__pills">
+            <span class="liquid-hero__pill">~2 min finality</span>
+            <span class="liquid-hero__pill">Confidential transactions</span>
+            <span class="liquid-hero__pill">Bitcoin-backed</span>
+        </div>
+    </div>
+    <section class="assets">
+
+        <div class="asset">
+            <p class="asset-ticker">600</p>
+            <img src="img/600.png" alt="600">
+            <div class="asset-stats">
+                <div class="asset-stat">
+                    <span class="asset-stat__value">6,000</span>
+                    <span class="asset-stat__label">Circulating</span>
+                </div>
+                <div class="asset-stat">
+                    <span class="asset-stat__value">8</span>
+                    <span class="asset-stat__label">Precision</span>
+                </div>
+            </div>
+            <p class="asset-id">bd1d3b1f10a3e1eb5ac2d332f118005f126f8c37fab490f8c8d84ddbd8c763c7</p>
+            <div class="asset-links">
+                <a class="asset-link" href="https://liquid.network/assets/asset/bd1d3b1f10a3e1eb5ac2d332f118005f126f8c37fab490f8c8d84ddbd8c763c7" target="_blank">Explorer</a>
+                <a class="asset-link asset-link--secondary" href="https://sideswap.io/swap-market/?base=bd1d3b1f10a3e1eb5ac2d332f118005f126f8c37fab490f8c8d84ddbd8c763c7&quote=6f0279e9ed041c3d710a9f57d0c02928416460c4b722ae3457a11eec381c526d" target="_blank">SideSwap</a>
+            </div>
+        </div>
+
+        <div class="asset">
+            <p class="asset-ticker">SHROOMS</p>
+            <img src="img/shrooms.jpg" alt="SHROOMS">
+            <div class="asset-stats">
+                <div class="asset-stat">
+                    <span class="asset-stat__value">21,000,000</span>
+                    <span class="asset-stat__label">Circulating</span>
+                </div>
+                <div class="asset-stat">
+                    <span class="asset-stat__value">0</span>
+                    <span class="asset-stat__label">Precision</span>
+                </div>
+            </div>
+            <p class="asset-id">b0375be1caeb8aedc732422b39d357b086af7c793f255eab0cbaf134706b5138</p>
+            <div class="asset-links">
+                <a class="asset-link" href="https://liquid.network/assets/asset/b0375be1caeb8aedc732422b39d357b086af7c793f255eab0cbaf134706b5138" target="_blank">Explorer</a>
+                <a class="asset-link asset-link--secondary" href="https://sideswap.io/swap-market/?base=b0375be1caeb8aedc732422b39d357b086af7c793f255eab0cbaf134706b5138&quote=6f0279e9ed041c3d710a9f57d0c02928416460c4b722ae3457a11eec381c526d" target="_blank">SideSwap</a>
+            </div>
+        </div>
+
+        <div class="asset">
+            <p class="asset-ticker">CAT</p>
+            <img src="img/cat.png" alt="CAT">
+            <div class="asset-stats">
+                <div class="asset-stat">
+                    <span class="asset-stat__value">21,000,000</span>
+                    <span class="asset-stat__label">Circulating</span>
+                </div>
+                <div class="asset-stat">
+                    <span class="asset-stat__value">0</span>
+                    <span class="asset-stat__label">Precision</span>
+                </div>
+            </div>
+            <p class="asset-id">be61661ecdd155085a103d90c4d190aaab33f1a1efab54476f0672c2c73cff9a</p>
+            <div class="asset-links">
+                <a class="asset-link" href="https://liquid.network/assets/asset/be61661ecdd155085a103d90c4d190aaab33f1a1efab54476f0672c2c73cff9a" target="_blank">Explorer</a>
+                <a class="asset-link asset-link--secondary" href="https://sideswap.io/swap-market/?base=be61661ecdd155085a103d90c4d190aaab33f1a1efab54476f0672c2c73cff9a&quote=6f0279e9ed041c3d710a9f57d0c02928416460c4b722ae3457a11eec381c526d" target="_blank">SideSwap</a>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="footer-actions">
+            <a class="footer-button footer-button--text" href="/">← Home</a>
+        </div>
+    </footer>
+</body>
+</html>
