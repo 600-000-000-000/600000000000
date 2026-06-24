@@ -52,8 +52,21 @@ The 600B stone is small, round, dense, and secondary unless explicitly requested
 
 ## Avatar Text Rule
 
-Avatar images must contain no readable text: no names, handles, job titles, floating labels,
-cap labels, clothing labels, signs, readable numbers, or written 600B marks.
+Avatar images must contain no readable text except the controlled website/business-card 1:1
+avatar exception where the sacred number appears as a large stacked signal. No names, handles,
+job titles, floating labels, cap labels, clothing labels, signs, logos, subtitles, watermarks, or
+extra readable numbers.
+
+For website/business-card 1:1 avatars, the sacred number must be relatively large in every avatar:
+roughly 18-28 percent of the image area as a background medallion, side halo, chest badge, or
+corner signal plate, without covering the face or signature object. It must be stacked exactly:
+
+```text
+600
+000
+000
+000
+```
 
 Identify characters by silhouette, object, posture, costume, and placement.
 

@@ -80,9 +80,19 @@ Never generate inactive local images as current members.
 Never invent a fixed identity for a missing or inactive member.
 Never treat .well-known routing files as character authority.
 
-All avatar-like people must obey the no-text rule:
-no readable names, handles, roles, labels, cap text, clothing text, signs, logos, readable numbers,
-or written 600B marks on avatars.
+All avatar-like people must obey the no-text rule, except the controlled website/business-card
+1:1 avatar exception where the sacred number appears as a large stacked signal:
+no readable names, handles, roles, labels, cap text, clothing text, signs, logos, subtitles,
+watermarks, or extra readable numbers on avatars.
+
+For website/business-card 1:1 avatars, the sacred number must be relatively large in every avatar:
+roughly 18-28 percent of the image area as a background medallion, side halo, chest badge, or
+corner signal plate, without covering the face or signature object. It must be stacked exactly:
+
+600
+000
+000
+000
 
 For team or group images, never write member names into the image.
 Identify characters by silhouette, costume, object, posture, color accents, and placement.
@@ -180,7 +190,8 @@ Character staging:
 
 Negative prompt:
 no readable text, no names, no handles, no role labels, no logos, no cap labels, no clothing text,
-no readable numbers on avatars, no random signs, no extra non-roster people as named members,
+no extra readable numbers beyond the exact stacked sacred number when the website/business-card
+1:1 avatar preset requests it, no random signs, no extra non-roster people as named members,
 no inactive character images, no photorealistic uncanny faces, no clutter hiding silhouettes
 
 Notes:
@@ -210,10 +221,10 @@ Brand atmosphere:
 orange and gold ember light, black steel, warm club/workshop/ritual culture,
 small round sacred stone only if useful, one wordless signal object.
 
-No readable text on avatars or team image labels. No names, handles, roles, signs, logos,
-clothing text, cap text, readable numbers, or written 600B marks on people.
-If the sacred number appears in a non-avatar background object, it must be stacked exactly:
-600 / 000 / 000 / 000. Otherwise omit text entirely.
+No readable text on avatars or team image labels except the exact stacked sacred number when the
+website/business-card 1:1 avatar preset requests it. No names, handles, roles, signs, logos,
+clothing text, cap text, extra readable numbers, or written 600B marks on people. If the sacred
+number appears, it must be stacked exactly: 600 / 000 / 000 / 000. Otherwise omit text entirely.
 ```
 
 ## Member Handling Rules
@@ -301,6 +312,6 @@ open guitar case and signal glow. No readable text anywhere.
 
 Negative prompt:
 no readable text, no names, no handles, no role labels, no logos, no cap labels, no clothing text,
-no readable numbers on avatars, no extra named people, no inactive characters, no caricature,
-no clutter hiding silhouettes
+no extra readable numbers beyond an explicitly requested exact stacked sacred number, no extra
+named people, no inactive characters, no caricature, no clutter hiding silhouettes
 ```

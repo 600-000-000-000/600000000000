@@ -10,7 +10,9 @@ sacred tech, highly readable composition, canonical 600B style.
 Use only active members from https://600.wtf/members.json.
 Do not generate inactive local character images as current members.
 Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
-For avatars, render no readable text at all. Use wordless symbols and abstract glyphs.
+For avatars, render no readable text at all, except the controlled website/business-card avatar
+exception where the sacred number appears as a large stacked signal. Use wordless symbols and
+abstract glyphs for everything else.
 For non-avatar scenes, if the sacred number appears, write it exactly as:
 
 600
@@ -39,7 +41,10 @@ No readable text anywhere: no names, handles, role labels, cap labels, signs, re
 or written 600B marks. Use wordless symbols instead.
 ```
 
-## 1:1 Avatar Prompt
+## Simple 1:1 Draft Avatar Prompt
+
+Use this only for draft/test crops where no sacred number is required. For website and business
+card avatars, use the universal prompt below.
 
 ```text
 Create a 1:1 circular-crop-safe 600B avatar for [character].
@@ -48,6 +53,55 @@ Keep face, helmet, mask, or main symbol inside the central 70-75 percent.
 Preserve the original avatar's strongest cue.
 Style: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
 No readable text anywhere. Use wordless symbols instead.
+```
+
+## Universal 1:1 Website And Business Card Avatar Prompt
+
+```text
+Create a standardized 1:1 600B avatar for [character], suitable for the website team grid,
+business cards, circular crops, and square profile previews.
+
+Use lore/avatar_character_catalog.json and the character's active entry as the source of truth.
+Preserve the character's strongest identity cue from preserve/full_body_standard:
+[short character cues].
+
+Composition:
+- square 1:1 image
+- crop-safe for circular website avatars
+- character head, face, helmet, mask, or main symbol inside the central 65-75 percent
+- shoulders or upper torso visible if it helps recognition
+- strong silhouette readable at 128 px
+- clean background, no clutter hiding the character
+
+Required 600B brand mark:
+Include the sacred number as a relatively large stacked signal in every avatar.
+It should occupy roughly 18-28 percent of the image area, large enough to be clearly visible on a
+website card, but not covering the face or signature object.
+Place it as a glowing orange/gold background medallion, side halo, chest badge, or corner signal
+plate depending on the character composition.
+The sacred number must be written exactly:
+
+600
+000
+000
+000
+
+Do not write it as 600B, 600 billion, 600000000000, or one horizontal line.
+
+Style:
+cypherpunk, traditional/old-world craft, fantasy, cute manga/toon, warm 600B culture,
+orange/gold ember light, black steel accents, character-specific accent color.
+
+Text rules:
+The sacred stacked number is the only readable text/number allowed.
+No names, handles, roles, job titles, cap labels, clothing labels, signs, logos, subtitles,
+watermarks, brand marks, random letters, or extra readable numbers.
+
+Negative prompt:
+no names, no handles, no role labels, no logos, no cap text, no clothing text, no signs,
+no subtitles, no watermarks, no extra text, no random numbers, no malformed sacred number,
+no horizontal 600000000000, no tiny unreadable sacred number, no face covered by the number,
+no inactive character, no generic corporate crypto art, no cluttered background.
 ```
 
 ## Group Poster Prompt
