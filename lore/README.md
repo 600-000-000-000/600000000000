@@ -2,25 +2,44 @@
 
 We are 600 billion.
 
-This pack is our working documentation for rebuilding avatars, preserving canon, and generating new assets on a standardized basis.
+This pack is the working documentation for rebuilding avatars, preserving canon, and generating
+new assets on a standardized basis.
 
-This is not one giant wall of text. This is a small operating system.
+## What Lives Here
 
-## What lives here
+- `01_BRAND_VOICE.md` - voice, framing, and 600B wording
+- `02_AVATAR_RECREATION_STANDARD.md` - avatar recreation and full-body standards
+- `03_CHARACTER_CANON.md` - active roster, placeholders, inactive local characters
+- `04_WORLD_CANON.md` - stones, gatherings, rituals, and recurring story logic
+- `05_PROMPT_LIBRARY.md` - reusable prompt blocks
+- `06_PUBLIC_FOOTPRINT.md` - website, roster, routing, and public asset snapshot
+- `07_ASSET_PIPELINE.md` - asset generation, review, versioning, release rules
+- `08_LORE_SUMMARY.md` - compact lore summary
+- `09_AVATAR_CHARACTER_REFERENCE.md` - image-derived avatar descriptions and full-body standards
+- `10_600_BILLION_SIGNAL_ENGINE_GPT.md` - Custom GPT spec for branded group image prompts
+- `avatar_character_catalog.json` - machine-readable avatar catalog
 
-- `01_BRAND_VOICE.md` — how we speak, frame, and format 600B
-- `02_AVATAR_RECREATION_STANDARD.md` — our standard for consistent avatar recreation
-- `03_CHARACTER_CANON.md` — our current roster, archetypes, and visual identities
-- `04_WORLD_CANON.md` — stones, Madeira, conferences, rituals, and recurring story logic
-- `05_PROMPT_LIBRARY.md` — reusable prompt blocks for avatars, posters, storyboards, and memes
-- `06_PUBLIC_FOOTPRINT.md` — public references from the website, GitHub, roster, and visible assets
-- `07_ASSET_PIPELINE.md` — how we produce, review, version, and ship images
+## Source Of Truth
 
-## Non-negotiable rules
+Official active member names come from:
 
-### The sacred number
+```text
+https://600.wtf/members.json
+```
 
-We always write it exactly like this:
+When sources disagree, resolve them in this order:
+
+1. live website roster at `https://600.wtf/members.json`
+2. hard visual rules in this pack
+3. avatar extraction in `09_AVATAR_CHARACTER_REFERENCE.md`
+4. recurring 600B canon established by the crew
+5. temporary meme variants
+
+Local images that are not attached to a live website member are inactive for generation.
+
+## Non-Negotiable Rules
+
+The sacred number is always:
 
 ```text
 600
@@ -29,61 +48,35 @@ We always write it exactly like this:
 000
 ```
 
-Never compress it.
-Never improvise it.
-Never stack it in a random layout.
+The sacred stone is small and round.
 
-### The sacred stone
+Avatar images must contain no readable text at all. Use wordless symbols, costumes, objects,
+silhouettes, posture, and palette instead.
 
-The 600B stone is:
+Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
 
-- small
-- round
-- dense
-- glowing or charged when dramatic
-- never a giant slab unless we explicitly break canon for a gag
+## How To Use This Pack
 
-### Our voice
+If remaking a member avatar, start with:
 
-We speak as **we**.
-We are not a brand deck.
-We are not corporate crypto.
-We are myth, meme, ritual, signal, and build energy.
+- `02_AVATAR_RECREATION_STANDARD.md`
+- `03_CHARACTER_CANON.md`
+- `09_AVATAR_CHARACTER_REFERENCE.md`
+- `avatar_character_catalog.json`
 
-## How to use this pack
+If generating a poster, storyboard, or meme, start with:
 
-### If we are remaking a member avatar
-Start with `02_AVATAR_RECREATION_STANDARD.md` and `03_CHARACTER_CANON.md`.
+- `04_WORLD_CANON.md`
+- `05_PROMPT_LIBRARY.md`
 
-### If we are generating a poster, storyboard, or meme
-Start with `04_WORLD_CANON.md` and `05_PROMPT_LIBRARY.md`.
+If building the Custom GPT for standardized group images, start with:
 
-### If we are syncing the docs with public reality
-Check `06_PUBLIC_FOOTPRINT.md` first.
+- `10_600_BILLION_SIGNAL_ENGINE_GPT.md`
+- `avatar_character_catalog.json`
 
-### If we are building a generator, agent, or workflow
-Use `01_BRAND_VOICE.md`, `04_WORLD_CANON.md`, and `07_ASSET_PIPELINE.md` as the core system prompt substrate.
+If syncing docs with public reality, start with:
 
-## Canon priority
+- `06_PUBLIC_FOOTPRINT.md`
 
-When sources disagree, we resolve them in this order:
-
-1. hard visual rule in this pack
-2. recurring 600B canon established by the crew
-3. public roster and public repositories
-4. temporary meme variants
-
-## Current canonical spine
-
-- The signal appears.
-- The small round stones emerge from Madeira.
-- Conferences gather the scattered builders.
-- The council forms.
-- racooDNI keeps the ritual alive.
-- Bullbear and the operators defend the signal.
-- 600B becomes not just a number, but a civilization-scale meme.
-
-We stack.
-We build.
-We meme.
-We repeat.
+If building a generator, use the avatar catalog as the machine-readable input and keep inactive
+items out of generation.

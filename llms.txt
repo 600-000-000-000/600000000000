@@ -1,12 +1,24 @@
 # 600B Universe
 
-> We are 600 billion. This file is the LLM-facing overview of our canon, voice, roster, visual rules, and public footprint. 600B is not just a number; it is a signal, a prophecy, a beacon, and a civilization-scale meme. The sacred number is always written exactly as four lines, and the sacred stone is always small and round.
+This is the LLM-facing overview for generators, editors, and agents working inside the 600B
+world.
 
-This file is for models, agents, generators, and editors that need to work inside the 600B world without drifting into generic crypto art or random lore.
+## Non-Negotiable Rules
 
-Non-negotiable rules:
-
-- Write the sacred number exactly like this:
+- Active member names come from `https://600.wtf/members.json`.
+- Avatar generation must use `lore/09_AVATAR_CHARACTER_REFERENCE.md` and
+  `lore/avatar_character_catalog.json`.
+- Local character images not listed on the live website roster are inactive and must not be
+  generated as current members.
+- Active placeholders using `img/600.png` need identity details before unique avatars are
+  generated. If identity details are explicitly provided, use `source=user_description`.
+- Avatar images must contain no readable text at all: no names, handles, roles, cap labels,
+  clothing labels, signs, readable numbers, or written 600B marks.
+- Use wordless symbols instead: orange disks, stacked abstract glyphs, medallions, stone/orb
+  shapes, silhouettes, costumes, objects, posture, and palette.
+- Avatar style target: cypherpunk, traditional/old-world craft, fantasy, cute manga/toon.
+- The sacred stone is small and round.
+- In non-avatar posters/story scenes, if the sacred number appears, write it exactly like this:
 
 ```text
 600
@@ -15,33 +27,22 @@ Non-negotiable rules:
 000
 ```
 
-- The sacred stone is small and round.
-- Default voice is **we / us / our**.
-- Madeira, conferences, ritual, council, and build energy are core canon.
-- racooDNI and Bullbear are core visual canon.
-- The strongest anchor line is: **600B was never just the price. It was the signal.**
+## Current Active Roster Logic
+
+- `active` plus `generate:true`: generation allowed.
+- `active_placeholder` plus `generate:false`: do not invent identity details.
+- `inactive` plus `generate:false`: do not generate.
 
 ## Start Here
 
-- [README.md](./README.md): Entry point and pack overview.
-- [08_LORE_SUMMARY.md](./08_LORE_SUMMARY.md): Compact lore spine for models and generators.
-- [04_WORLD_CANON.md](./04_WORLD_CANON.md): World rules, stones, Madeira, conferences, ritual hour, OpenClaw, and scene logic.
+- [lore/README.md](./lore/README.md)
+- [lore/02_AVATAR_RECREATION_STANDARD.md](./lore/02_AVATAR_RECREATION_STANDARD.md)
+- [lore/03_CHARACTER_CANON.md](./lore/03_CHARACTER_CANON.md)
+- [lore/09_AVATAR_CHARACTER_REFERENCE.md](./lore/09_AVATAR_CHARACTER_REFERENCE.md)
+- [lore/avatar_character_catalog.json](./lore/avatar_character_catalog.json)
+- [lore/06_PUBLIC_FOOTPRINT.md](./lore/06_PUBLIC_FOOTPRINT.md)
 
-## Voice and Canon
+## Tone
 
-- [01_BRAND_VOICE.md](./01_BRAND_VOICE.md): How we speak, frame scenes, and preserve 600B tone.
-- [03_CHARACTER_CANON.md](./03_CHARACTER_CANON.md): Council roster, archetypes, racooDNI, Bullbear, and interaction rules.
-
-## Visual and Asset Standards
-
-- [02_AVATAR_RECREATION_STANDARD.md](./02_AVATAR_RECREATION_STANDARD.md): Standard for recreating avatars on a consistent basis.
-- [05_PROMPT_LIBRARY.md](./05_PROMPT_LIBRARY.md): Reusable prompt blocks for avatars, storyboards, posters, conferences, rituals, and meme scenes.
-- [07_ASSET_PIPELINE.md](./07_ASSET_PIPELINE.md): Review rules, versioning, release criteria, and future generator guidance.
-
-## Public Footprint
-
-- [06_PUBLIC_FOOTPRINT.md](./06_PUBLIC_FOOTPRINT.md): Public website, GitHub org, roster, visible repos, Nostr aliases, meme files, and inscription cues.
-
-## Optional
-
-- [README.md](./README.md): Human-friendly overview if short context is enough.
+600B is signal, myth, meme, culture, and build energy. Use builder/operator/player language.
+Avoid generic corporate crypto art and avoid cult framing.

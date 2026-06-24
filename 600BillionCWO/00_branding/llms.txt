@@ -1,0 +1,48 @@
+# 600B Universe
+
+This is the LLM-facing entry point for the 600B canon, member system, visual rules, and game
+layer.
+
+600B is not just a number. It is a signal, a civilization-scale meme, and a digital Palace of
+Culture built from locked time.
+
+Non-negotiable rules:
+
+- Write the sacred number exactly like this:
+
+```text
+600
+000
+000
+000
+```
+
+- The sacred stone is small and round.
+- Use builder, operator, contributor, player, culture carrier, guest, candidate, or persona.
+  Do not use cult-member framing.
+- `member_system/member_registry.json` is the structured source for identities, aliases,
+  personas, image descriptions, Nostr anchors by reference, and future GitHub anchors.
+- Signup-generated members start from name + description, use
+  `member_system/generator_library.json`, and stay as candidates before publication.
+- Nostr and LNbits/Lightning anchors are supported, but private keys and LNbits secrets must
+  never appear in public JSON.
+- AvatarConfig/identity is the source of truth. Generated VRM files are derived art and must be
+  reproducible from the member/signup record.
+- Linux avatar generation is documented in `member_system/avatar_generation_linux.md`.
+- Personas are not automatically new people:
+  - dni = dni, prophet, Bitcoin Jesus, racooDNI
+  - flx = flx, Chaos Engineer, Bullbear
+- Team images must not write names, handles, or job titles on people.
+- Madeira is a valid early origin echo, but not mandatory for every scene.
+- Prague Party 2026-06-11 is a high-value event anchor.
+- Palace of Culture game layer: **Money buys style. Time builds legend.**
+
+## Start Here
+
+- [lore/README.md](./lore/README.md)
+- [lore/08_LORE_SUMMARY.md](./lore/08_LORE_SUMMARY.md)
+- [member_system/README.md](./member_system/README.md)
+- [member_system/member_registry.json](./member_system/member_registry.json)
+- [member_system/signup_flow.md](./member_system/signup_flow.md)
+- [member_system/generator_library.json](./member_system/generator_library.json)
+- [member_system/avatar_generation_linux.md](./member_system/avatar_generation_linux.md)
