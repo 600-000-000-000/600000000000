@@ -14,10 +14,31 @@ server {
         add_header Access-Control-Allow-Origin "*" always;
     }
 
-    location ^~ /.well-known/lnurlp {
-        default_type "application/json; charset=utf-8";
+    # Lightning addresses and NIP-05 are served by the mint. Proxied, not
+    # redirected: NIP-05 clients must ignore redirects.
+    location ^~ /.well-known/lnurlp/ {
+        proxy_pass https://mint.600.wtf;
+        proxy_set_header Host mint.600.wtf;
+        proxy_ssl_server_name on;
+        proxy_hide_header Access-Control-Allow-Origin;
         add_header Access-Control-Allow-Origin "*" always;
     }
+
+    location ^~ /.well-known/lnurlw/ {
+        proxy_pass https://mint.600.wtf;
+        proxy_set_header Host mint.600.wtf;
+        proxy_ssl_server_name on;
+        proxy_hide_header Access-Control-Allow-Origin;
+        add_header Access-Control-Allow-Origin "*" always;
+    }
+
+    # location = /.well-known/nostr.json {
+    #     proxy_pass https://mint.600.wtf;
+    #     proxy_set_header Host mint.600.wtf;
+    #     proxy_ssl_server_name on;
+    #     proxy_hide_header Access-Control-Allow-Origin;
+    #     add_header Access-Control-Allow-Origin "*" always;
+    # }
 
     location / {
         try_files $uri $uri/ =404;
