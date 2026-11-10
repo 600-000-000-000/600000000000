@@ -4,3 +4,7 @@ Makefile
 .dockerignore
 node_modules
 *.log
+.github
+test-results
+.playwright-mcp
+.omx
